@@ -22,7 +22,7 @@ const offerings = [
     <div class="hero-tint"></div>
     <div class="hero-inner container-wide">
       <div class="hero-copy">
-        <h1>Agni Agama&nbsp;– the fire of revelation</h1>
+        <h1><span class="brandline">Agni Agama</span> <span class="tagline">– the fire of revelation</span></h1>
         <h2 class="hero-sub">Brilliant awareness for material transformation</h2>
       </div>
       <div class="accordion">
@@ -80,9 +80,11 @@ const offerings = [
   .hero-media { position: absolute; inset: 0; background-size: cover; background-position: center; filter: saturate(0.55) contrast(1.02); }
   .hero-tint { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(228,232,190,0.55), rgba(52,71,52,0.42)); mix-blend-mode: multiply; }
   .hero-inner { position: relative; display: grid; grid-template-columns: 1.35fr 0.65fr; gap: 2rem; align-items: center; width: 100%; padding-top: 6rem; }
-  .hero-copy { max-width: 15ch; }
-  .hero h1 { color: var(--ink); font-size: clamp(2.6rem, 6vw, 4.6rem); margin-bottom: 0.6em; }
-  .hero-sub { color: var(--ink); font-size: clamp(2rem, 5vw, 3.6rem); max-width: 14ch; }
+  .hero-copy { max-width: 40rem; }
+  .hero h1 { color: #fdfbf5; font-size: clamp(2.3rem, 5vw, 4rem); margin-bottom: 0.45em; text-shadow: 0 2px 18px rgba(18,24,14,0.6); }
+  .hero h1 .brandline { display: block; white-space: nowrap; }
+  .hero h1 .tagline { display: block; max-width: 16ch; }
+  .hero-sub { color: #fdfbf5; font-size: clamp(1.7rem, 3.8vw, 2.8rem); max-width: 20rem; text-shadow: 0 2px 18px rgba(18,24,14,0.6); }
 
   /* Accordion */
   .accordion { display: flex; flex-direction: column; gap: 0.4rem; align-self: center; }
