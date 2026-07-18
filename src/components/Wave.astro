@@ -1,0 +1,11 @@
+---
+// A gentle wavy divider between color-blocked sections, echoing the original
+// Squarespace curves. `color` should match the NEXT section's background.
+interface Props { color: string; flip?: boolean }
+const { color, flip = false } = Astro.props;
+---
+<div class="wave" style={flip ? 'transform: scaleY(-1)' : undefined} aria-hidden="true">
+  <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+    <path d="M0,40 C280,110 620,-10 900,30 C1140,64 1300,72 1440,36 L1440,100 L0,100 Z" fill={color} />
+  </svg>
+</div>

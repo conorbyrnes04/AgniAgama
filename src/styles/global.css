@@ -1,0 +1,158 @@
+/* Fonts — self-hosted via Fontsource (no external CDN).
+   Jost ≈ ITC Avant Garde Gothic (the site's display face).
+   Inter = body: chosen for complete IAST coverage (ṛ ṇ ṭ ḍ ṣ ṃ ḥ ṅ …) so
+   transliterated Sanskrit renders coherently rather than falling back per-glyph.
+   Noto Sans Devanagari renders the actual देवनागरी script. */
+@import '@fontsource-variable/jost';
+@import '@fontsource-variable/noto-sans-devanagari';
+@import '@fontsource/inter/300.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+
+:root {
+  /* Palette sampled from agniagama.com's Squarespace theme */
+  --green: #344734;       /* darkAccent — deep muted forest green */
+  --green-deep: #26331f;  /* darker green for hero/footer */
+  --amber: #f1a638;       /* safeLightAccent — warm amber/orange (buttons, CTAs) */
+  --amber-dark: #dd8f22;
+  --sand: #e7d1b5;        /* lightAccent — warm sand/parchment */
+  --sand-soft: #f4ece0;   /* lighter parchment for section backgrounds */
+  --yellow: #fffc52;      /* accent — bright highlight */
+  --ink: #1c1c18;
+  --muted: #6b6a5f;
+  --cream: #faf6ef;
+  --card: #ffffff;
+  --border: #e3dccf;
+
+  /* Devanagari fallback is appended so देवनागरी glyphs use Noto Sans Devanagari
+     while all Latin + IAST stays in the primary face. */
+  --display: 'Jost Variable', 'Noto Sans Devanagari Variable', 'Inter', system-ui, sans-serif;
+  --body: 'Inter', 'Noto Sans Devanagari Variable', system-ui, -apple-system, sans-serif;
+
+  --maxw: 1180px;
+  --radius: 4px;
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--body);
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.75;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--display);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.005em;
+  margin: 0 0 0.5em;
+}
+h1 { font-size: clamp(2.8rem, 7.5vw, 5.5rem); }
+h2 { font-size: clamp(2rem, 5vw, 3.4rem); }
+h3 { font-size: clamp(1.4rem, 3vw, 1.9rem); }
+h4 { font-size: clamp(1.05rem, 2.2vw, 1.25rem); }
+
+p { margin: 0 0 1.2em; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+
+.container { max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); }
+.container-wide { max-width: 1400px; margin-inline: auto; padding-inline: var(--gutter); }
+.container-narrow { max-width: 760px; margin-inline: auto; padding-inline: var(--gutter); }
+
+section { padding-block: clamp(3.5rem, 8vw, 7rem); }
+
+.eyebrow {
+  font-family: var(--display);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.75rem;
+  color: var(--amber);
+  margin-bottom: 1.2rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.95em 2em;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  line-height: 1;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-amber { background: var(--amber); color: var(--ink); }
+.btn-amber:hover { background: var(--amber-dark); }
+.btn-green { background: var(--green); color: #fff; }
+.btn-green:hover { background: var(--green-deep); }
+.btn-outline { border-color: currentColor; }
+.btn-outline-light { border-color: rgba(255,255,255,0.6); color: #fff; }
+.btn-outline-light:hover { background: rgba(255,255,255,0.1); }
+
+/* Utility */
+.text-center { text-align: center; }
+.lead { font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--muted); font-weight: 300; }
+.on-dark .lead { color: rgba(255,255,255,0.82); }
+
+/* Flat color-blocked section themes (mirrors the original Squarespace design) */
+.sec-yellow { background: var(--yellow); color: var(--ink); }
+.sec-sand   { background: var(--sand); color: var(--ink); }
+.sec-cream  { background: var(--cream); color: var(--ink); }
+.sec-green  { background: var(--green-deep); color: #fff; }
+.sec-green h1, .sec-green h2, .sec-green h3, .sec-green h4 { color: #fff; }
+.sec-white  { background: #fff; color: var(--ink); }
+.amber-head { color: var(--amber); }
+/* amber headings must win over the white-on-green default above */
+.sec-green .amber-head, .sec-green h1.amber-head, .sec-green h2.amber-head { color: var(--amber); }
+
+/* Wavy section divider — place at a section's bottom; set fill to the NEXT section's colour. */
+.wave { display: block; width: 100%; height: clamp(38px, 6vw, 88px); margin-bottom: -1px; }
+.wave svg { display: block; width: 100%; height: 100%; }
+
+/* Prose (article / blog body) */
+.prose { max-width: 720px; margin-inline: auto; }
+.prose p { font-size: 1.08rem; line-height: 1.85; }
+.prose h2 { margin-top: 1.8em; }
+.prose h3 { margin-top: 1.5em; color: var(--green); }
+.prose h4 { margin-top: 1.4em; letter-spacing: 0.02em; }
+.prose ul { padding-left: 1.2em; }
+.prose li { margin-bottom: 0.6em; }
+.prose blockquote {
+  margin: 1.8em 0;
+  padding: 0.4em 0 0.4em 1.5em;
+  border-left: 3px solid var(--amber);
+  font-style: italic;
+  color: var(--green);
+}
+.prose img { border-radius: var(--radius); margin: 2em auto; }
+/* Verse: consecutive short lines are grouped into .verse (see Blocks.astro) and
+   set tight so stanzas read as poetry rather than loosely-spaced body copy. */
+.prose .verse { margin: 1.8em 0; }
+.prose .verse p { margin: 0 0 0.1em; line-height: 1.55; font-size: 1.05rem; }
+.prose .verse p:empty { height: 0.7em; }
+
+/* Reveal-on-scroll */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}

@@ -1,0 +1,127 @@
+---
+import Base from '../layouts/Base.astro';
+import Wave from '../components/Wave.astro';
+
+const practices = [
+  { title: 'Will it', copy: "Inner vision is the starting point. If you feel dissatisfied with life that means the power of your will wants to more fully awaken. Recognize your ideal, and let your thirst for its taste guide. Clarity turns desire into intention, aligning orientation and purpose." },
+  { title: 'Know it', copy: "This life is constantly opening before your very eyes. You know more intimately than anyone else what this home called 'me' is like. By paying attention, steadily we unravel the mystery of this lifetime. Know your needs and fears to become master of your direction." },
+  { title: 'Act it', copy: 'Action is never without consequence. If we want to know why we taste sweet and bitter fruit in life we must simply look at the seeds we are habitually planting. If you want to architect beauty and bliss, then action in service to your vision will inevitably give you your result.' },
+];
+
+const offerings = [
+  { img: '2c0a7398.jpg', title: 'Open Classes', copy: 'Breath. Sweat. Music. Synchronicity. We open a sacred space to move together, until we collapse into one. This collective release encourages communion with All.' },
+  { img: '2c0a7758.jpg', title: 'Workshops', copy: 'From learning to stand on your hands to breathing pure light along your spine, we offer a variety of workshops that spark insight into our connection with the divine.' },
+  { img: '2c0a7454.jpg', title: 'Retreats', copy: 'Learning the art of living together. Amongst spectacular landscapes, we dig to the root of a conscious compassionate connection to life, finding freedom through discipline.' },
+  { img: '2c0a7663.jpeg', title: 'Private Classes', copy: 'A personal diagnostic, simultaneously physical and mental, that allows us to together approach the unbinding of knots in order to allow evolution towards luminosity.' },
+];
+---
+<Base headerTheme="dark">
+  <!-- Hero: green-duotone forest, black left text + Will/Know/Act accordion -->
+  <section class="hero">
+    <div class="hero-media" style="background-image:url(/media/unsplash-image-2hzmz15wgik.jpg)"></div>
+    <div class="hero-tint"></div>
+    <div class="hero-inner container-wide">
+      <div class="hero-copy">
+        <h1>Agni Agama&nbsp;– the fire of revelation</h1>
+        <h2 class="hero-sub">Brilliant awareness for material transformation</h2>
+      </div>
+      <div class="accordion">
+        {practices.map((p) => (
+          <details>
+            <summary><span>{p.title}</span><span class="chev">⌄</span></summary>
+            <p>{p.copy}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Offerings: circular B&W photos on tan cards -->
+  <section class="offerings sec-cream">
+    <div class="container-wide">
+      <div class="offer-grid">
+        {offerings.map((o) => (
+          <article class="offer reveal">
+            <div class="offer-circle"><img src={`/media/${o.img}`} alt={o.title} loading="lazy" /></div>
+            <h3>{o.title}</h3>
+            <p>{o.copy}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Wave color="var(--sand)" />
+  <!-- PRĀMAṆA -->
+  <section class="pramana sec-sand">
+    <div class="container pramana-grid">
+      <div class="pramana-img reveal"><img src="/media/unsplash-image-lpj6e4wyg_0.jpg" alt="Fire at dusk" loading="lazy" /></div>
+      <div class="pramana-copy">
+        <p><a href="/blog"><strong class="amber-strong">PRĀMAṆA</strong></a> is our written platform for discussing and elucidating philosophy for real-world transformation, both personal and collective. It invites us to challenge our deeply held notions, in the name of embodying a truth that is both truly felt and that truly empowers: living radically, directly and unapologetically.</p>
+        <a href="/blog" class="btn btn-green">Read PRĀMAṆA</a>
+      </div>
+    </div>
+  </section>
+
+  <Wave color="var(--green-deep)" />
+  <!-- Evolve and Awaken -->
+  <section class="awaken sec-green">
+    <div class="container-narrow text-center">
+      <h2>Evolve and Awaken</h2>
+      <p class="lead">If you're interested in collaborating to design a unique workshop, event, retreat, or private class tailored to your vision and journey of transformation, I'd love to hear from you. Reach out and let's explore how we can bring your vision to life.</p>
+      <a href="/contact" class="btn btn-amber">Get in touch</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* Hero */
+  .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; }
+  .hero-media { position: absolute; inset: 0; background-size: cover; background-position: center; filter: saturate(0.55) contrast(1.02); }
+  .hero-tint { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(228,232,190,0.55), rgba(52,71,52,0.42)); mix-blend-mode: multiply; }
+  .hero-inner { position: relative; display: grid; grid-template-columns: 1.35fr 0.65fr; gap: 2rem; align-items: center; width: 100%; padding-top: 6rem; }
+  .hero-copy { max-width: 15ch; }
+  .hero h1 { color: var(--ink); font-size: clamp(2.6rem, 6vw, 4.6rem); margin-bottom: 0.6em; }
+  .hero-sub { color: var(--ink); font-size: clamp(2rem, 5vw, 3.6rem); max-width: 14ch; }
+
+  /* Accordion */
+  .accordion { display: flex; flex-direction: column; gap: 0.4rem; align-self: center; }
+  .accordion details { border-bottom: 1px solid rgba(0,0,0,0.15); }
+  .accordion summary {
+    list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--display); font-weight: 500; font-size: 1.3rem; color: var(--amber);
+    padding: 0.6rem 0;
+  }
+  .accordion summary::-webkit-details-marker { display: none; }
+  .accordion .chev { transition: transform 0.2s ease; font-size: 1.3rem; }
+  .accordion details[open] .chev { transform: rotate(180deg); }
+  .accordion p {
+    color: var(--ink); font-size: 0.9rem; font-weight: 400; margin: 0 0 0.9rem;
+    background: rgba(244,236,224,0.92); padding: 0.7rem 0.9rem; border-radius: 4px;
+  }
+
+  /* Offerings */
+  .offer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  .offer { background: var(--sand); border-radius: 6px; padding: 2rem 1.5rem 2.2rem; text-align: center; }
+  .offer-circle { width: 160px; height: 160px; margin: 0 auto 1.4rem; border-radius: 50%; overflow: hidden; }
+  .offer-circle img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.05); }
+  .offer h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.6rem; }
+  .offer p { font-size: 0.86rem; font-weight: 300; color: #4a4a42; margin: 0; }
+
+  /* PRĀMAṆA */
+  .pramana-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+  .pramana-img img { width: 100%; border-radius: 6px; aspect-ratio: 4/3; object-fit: cover; }
+  .pramana-copy p { font-size: 1.15rem; }
+  .amber-strong { color: var(--amber-dark); }
+
+  /* Awaken */
+  .awaken .lead { color: rgba(255,255,255,0.85); margin-bottom: 2rem; }
+
+  @media (max-width: 860px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; padding-top: 7rem; }
+    .hero-copy { max-width: none; }
+    .offer-grid { grid-template-columns: 1fr 1fr; }
+    .pramana-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 520px) { .offer-grid { grid-template-columns: 1fr; } }
+</style>

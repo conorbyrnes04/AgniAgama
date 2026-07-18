@@ -1,0 +1,80 @@
+---
+import { site } from '../data/site';
+// theme: 'dark' = dark text (over light sections), 'light' = light text (over dark sections)
+interface Props { theme?: 'dark' | 'light' }
+const { theme = 'dark' } = Astro.props;
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isActive = (href: string) =>
+  href === '/' ? path === '/' : path === href || (href === '/blog' && path.startsWith('/blog'));
+const logo = theme === 'light' ? '/media/logo-white.png' : '/media/logo.png';
+---
+<header class:list={['site-header', theme]}>
+  <div class="header-inner container-wide">
+    <nav class="nav" aria-label="Primary">
+      {site.nav.map((item) => (
+        <a href={item.href} class:list={['nav-link', { active: isActive(item.href) }]}>{item.label}</a>
+      ))}
+    </nav>
+    <a href="/" class="brand" aria-label="Agni Agama home">
+      <img src={logo} alt="Agni Agama" width="40" height="40" />
+    </a>
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <nav class="mobile-nav" aria-label="Mobile">
+    {site.nav.map((item) => <a href={item.href} class="nav-link">{item.label}</a>)}
+  </nav>
+</header>
+
+<style>
+  .site-header { position: absolute; top: 0; left: 0; right: 0; z-index: 100; }
+  .header-inner {
+    display: grid; grid-template-columns: 1fr auto 1fr; align-items: start;
+    padding-top: 1.5rem; min-height: 64px;
+  }
+  /* left: two-row nav */
+  .nav { display: flex; flex-wrap: wrap; max-width: 320px; gap: 0.35rem 1rem; }
+  .nav-link {
+    font-family: var(--body); font-weight: 400; font-size: 0.82rem;
+    color: var(--ink); opacity: 0.85; white-space: nowrap;
+  }
+  .nav-link:hover { opacity: 1; }
+  .nav-link.active { text-decoration: underline; text-underline-offset: 4px; opacity: 1; }
+  .light .nav-link { color: #fff; }
+  .light .nav-link.active { color: var(--amber); text-decoration-color: var(--amber); }
+
+  /* center: sun logo */
+  .brand { grid-column: 2; justify-self: center; }
+  .brand img { height: 34px; width: auto; }
+
+  .menu-toggle { display: none; grid-column: 3; justify-self: end; background: none; border: 0; cursor: pointer; flex-direction: column; gap: 5px; padding: 8px; }
+  .menu-toggle span { width: 24px; height: 2px; background: var(--ink); display: block; transition: 0.2s; }
+  .light .menu-toggle span { background: #fff; }
+  .mobile-nav { display: none; }
+
+  @media (max-width: 720px) {
+    .nav { display: none; }
+    .header-inner { grid-template-columns: auto 1fr auto; padding-top: 1rem; align-items: center; }
+    .brand { grid-column: 1; justify-self: start; }
+    .menu-toggle { display: flex; }
+    .mobile-nav { display: none; flex-direction: column; gap: 0.3rem; padding: 0.5rem var(--gutter) 1.2rem; background: var(--green-deep); }
+    .site-header.open .mobile-nav { display: flex; }
+    .site-header.open .mobile-nav .nav-link { color: #fff; font-size: 1rem; padding: 0.5rem 0; }
+    .site-header.open { background: var(--green-deep); }
+    .site-header.open .menu-toggle span { background: #fff; }
+    .site-header.open .menu-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .site-header.open .menu-toggle span:nth-child(2) { opacity: 0; }
+    .site-header.open .menu-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  }
+</style>
+
+<script>
+  const header = document.querySelector('.site-header');
+  const toggle = header?.querySelector('.menu-toggle');
+  toggle?.addEventListener('click', () => {
+    const open = header!.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+</script>

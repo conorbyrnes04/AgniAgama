@@ -1,0 +1,68 @@
+---
+// Renders parsed blog-post content blocks: headings, paragraphs, lists, images.
+// Consecutive <li> are grouped into a <ul>. Devanagari / transliteration lines
+// (short paragraphs) render fine as normal paragraphs within .prose.
+interface Block { tag: string; text?: string; href?: string; src?: string; alt?: string; }
+interface Props { blocks: Block[]; }
+const { blocks } = Astro.props;
+
+type Node =
+  | { type: 'heading'; tag: string; text: string }
+  | { type: 'para'; text: string; href?: string }
+  | { type: 'quote'; text: string }
+  | { type: 'list'; items: string[] }
+  | { type: 'verse'; lines: string[] }
+  | { type: 'img'; src: string; alt: string };
+
+const nodes: Node[] = [];
+for (const b of blocks) {
+  if (b.tag === 'img' && b.src) {
+    nodes.push({ type: 'img', src: b.src, alt: b.alt ?? '' });
+  } else if (b.tag === 'li') {
+    const last = nodes[nodes.length - 1];
+    if (last && last.type === 'list') last.items.push(b.text ?? '');
+    else nodes.push({ type: 'list', items: [b.text ?? ''] });
+  } else if (b.tag === 'blockquote') {
+    nodes.push({ type: 'quote', text: b.text ?? '' });
+  } else if (/^h[1-4]$/.test(b.tag)) {
+    nodes.push({ type: 'heading', tag: b.tag, text: b.text ?? '' });
+  } else {
+    nodes.push({ type: 'para', text: b.text ?? '', href: b.href });
+  }
+}
+
+// Many posts were scraped as one <p> per line — collapse runs of short,
+// link-free paragraphs into a single tightly-spaced verse block so poems and
+// śloka read as poetry rather than loosely-spaced prose.
+const isShort = (n: Node) =>
+  n.type === 'para' && !n.href && n.text.length <= 64 && n.text.split(/\s+/).length <= 11;
+const grouped: Node[] = [];
+for (let i = 0; i < nodes.length; i++) {
+  if (isShort(nodes[i])) {
+    let j = i;
+    const lines: string[] = [];
+    while (j < nodes.length && isShort(nodes[j])) {
+      lines.push((nodes[j] as { text: string }).text);
+      j++;
+    }
+    if (lines.length >= 2) {
+      grouped.push({ type: 'verse', lines });
+      i = j - 1;
+      continue;
+    }
+  }
+  grouped.push(nodes[i]);
+}
+---
+{grouped.map((n) => {
+  if (n.type === 'heading') {
+    const Tag = n.tag as 'h1' | 'h2' | 'h3' | 'h4';
+    return <Tag set:html={n.text} />;
+  }
+  if (n.type === 'list') return <ul>{n.items.map((it) => <li>{it}</li>)}</ul>;
+  if (n.type === 'quote') return <blockquote>{n.text}</blockquote>;
+  if (n.type === 'verse') return <div class="verse">{n.lines.map((l) => <p>{l}</p>)}</div>;
+  if (n.type === 'img') return <img src={`/media/${n.src}`} alt={n.alt} loading="lazy" />;
+  if (n.href) return <p><a href={n.href} target="_blank" rel="noopener" class="inline-link">{n.text}</a></p>;
+  return <p>{n.text}</p>;
+})}

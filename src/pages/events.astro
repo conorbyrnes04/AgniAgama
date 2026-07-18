@@ -1,0 +1,105 @@
+---
+import Base from '../layouts/Base.astro';
+import { events } from '../data/events';
+import { site } from '../data/site';
+
+const bookingOptions = [
+  ['Private or small group yoga classes', ' (online or in-person)'],
+  ['Breathwork journeys', ' to regulate, awaken, or release'],
+  ['Foundations of yoga', ': asana, bandha, and alignment training'],
+  ['Philosophical mentoring', ' rooted in nondual Śaiva Tantra and yogic texts'],
+  ['Spiritual coaching', ' to support your inner inquiry and integration'],
+];
+---
+<Base title="Events" description="Upcoming retreats, teacher trainings, and ceremonies with Conor Byrnes — Morocco, India, Sri Lanka, Oman, Marseille, and regular classes at Jivamukti Yoga Paris." headerTheme="light">
+  <section class="events sec-green">
+    <div class="container events-grid">
+      <!-- Left: heading + event cards -->
+      <div class="events-left">
+        <h1 class="amber-head">Events</h1>
+        <h2 class="amber-head sub">Upcoming Retreats, Trainings &amp; Ceremonies</h2>
+
+        <div class="cards">
+          {events.map((e) => (
+            <article class="ecard reveal">
+              {e.image && <div class="ecard-img"><img src={`/media/${e.image}`} alt={e.title} loading="lazy" /></div>}
+              <div class="ecard-body">
+                <h3>{e.title}</h3>
+                <p class="edate">{e.dates}</p>
+                <p class="eloc">{e.location}</p>
+                <p class="ecopy">{e.copy}</p>
+                {e.link && <a class="elink" href={e.link.href} target="_blank" rel="noopener">{e.link.label}</a>}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <!-- Right: image collage + regular classes + private sessions -->
+      <div class="events-right">
+        <div class="collage">
+          <img class="c1" src="/media/unsplash-image-a2iuoznmhs.jpg" alt="Forest path" loading="lazy" />
+          <img class="c2" src="/media/hd-0963_web.jpg" alt="Conor practicing" loading="lazy" />
+        </div>
+
+        <div class="right-block">
+          <h2 class="amber-head underlined">Regular Classes at Jivamukti Yoga Paris</h2>
+          <p>In addition to these special events and guest teachings, I offer regular classes at Jivamukti Yoga Paris. These sessions are deeply rooted in the Jivamukti tradition, combining vigorous asana practice with spiritual teachings, chanting, and meditation. Whether you are a seasoned practitioner or new to yoga, my classes are designed to challenge, inspire, and uplift, helping you connect more deeply with yourself and the world around you.</p>
+          <a href={site.external.jivamuktiParis} target="_blank" rel="noopener" class="btn btn-amber">Paris schedule</a>
+        </div>
+
+        <div class="right-block">
+          <h2 class="amber-head">Private Sessions &amp; Tailored Guidance</h2>
+          <p>Whether you are seeking a more intimate container for transformation, beginning your journey with yoga, or deepening an existing practice, I offer personalized sessions that meet you where you are. You can book:</p>
+          <ul class="booking-list">
+            {bookingOptions.map(([b, rest]) => <li><strong>{b}</strong>{rest}</li>)}
+          </ul>
+          <p>To inquire about private sessions or to co-create a custom program, please <a href="/contact" class="inline-a">contact me directly</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .events { padding-top: 8rem; }
+  .events-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
+  .events-left h1 { font-size: clamp(3.5rem, 9vw, 6rem); margin-bottom: 0.1em; }
+  .sub { font-size: clamp(1.3rem, 3vw, 1.9rem); margin-bottom: 2rem; }
+
+  .cards { display: flex; flex-direction: column; gap: 1.6rem; }
+  .ecard { background: #fff; color: var(--ink); border-radius: 6px; overflow: hidden; text-align: center; }
+  .ecard-img { aspect-ratio: 16/10; overflow: hidden; }
+  .ecard-img img { width: 100%; height: 100%; object-fit: cover; }
+  .ecard-body { padding: 1.6rem 1.8rem 2rem; }
+  .ecard h3 { color: var(--amber-dark); font-size: 1.35rem; margin-bottom: 0.5rem; }
+  .edate { font-weight: 700; margin: 0 0 0.1rem; font-family: var(--display); }
+  .eloc { color: #6b6a5f; margin: 0 0 0.9rem; font-size: 0.95rem; }
+  .ecopy { font-weight: 300; font-size: 0.95rem; margin-bottom: 0.9rem; }
+  .elink { color: #3a6ea5; font-weight: 500; }
+  .elink:hover { text-decoration: underline; }
+
+  .events-right { position: sticky; top: 6rem; }
+  .collage { position: relative; margin-bottom: 2.5rem; min-height: 340px; }
+  .collage img { border-radius: 6px; object-fit: cover; position: absolute; box-shadow: 0 12px 30px rgba(0,0,0,0.25); }
+  .collage .c1 { width: 68%; height: 300px; right: 0; top: 0; }
+  .collage .c2 { width: 46%; height: 230px; left: 0; top: 120px; }
+  .right-block { margin-bottom: 2.5rem; }
+  .right-block h2 { font-size: clamp(1.5rem, 3.4vw, 2.1rem); }
+  .underlined { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; }
+  .events-right p { color: rgba(255,255,255,0.82); font-weight: 300; }
+  .booking-list { padding-left: 1.1rem; color: rgba(255,255,255,0.82); font-weight: 300; }
+  .booking-list li { margin-bottom: 0.5rem; }
+  .booking-list strong { color: #fff; font-weight: 600; }
+  .inline-a { color: var(--amber); text-decoration: underline; }
+
+  @media (max-width: 860px) {
+    .events-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .events-right { position: static; }
+    .collage { min-height: 300px; }
+  }
+  @media (max-width: 480px) {
+    .collage { min-height: 0; display: flex; flex-direction: column; gap: 1rem; }
+    .collage img { position: static; width: 100% !important; height: 220px !important; }
+  }
+</style>

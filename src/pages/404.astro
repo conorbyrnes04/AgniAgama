@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Page not found" headerTheme="light">
+  <section class="notfound sec-green">
+    <div class="container-narrow text-center">
+      <img src="/media/logo-white.png" alt="" class="mark" aria-hidden="true" />
+      <p class="four">404</p>
+      <h1>This path has gone quiet</h1>
+      <p class="lead">The page you're looking for isn't here — it may have moved, or the link led somewhere that no longer exists.</p>
+      <div class="actions">
+        <a href="/" class="btn btn-amber">Return home</a>
+        <a href="/blog" class="btn btn-outline-light">Read PRĀMAṆA</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .notfound { min-height: 80vh; display: flex; align-items: center; padding-top: 8rem; }
+  .mark { width: 64px; margin: 0 auto 1.5rem; opacity: 0.9; }
+  .four { font-family: var(--display); font-weight: 700; letter-spacing: 0.3em; color: var(--amber); margin: 0 0 0.5rem; }
+  .notfound h1 { color: #fff; }
+  .notfound .lead { color: rgba(255,255,255,0.82); max-width: 46ch; margin-inline: auto; margin-bottom: 2rem; }
+  .actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+</style>

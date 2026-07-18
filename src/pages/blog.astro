@@ -1,0 +1,69 @@
+---
+import Base from '../layouts/Base.astro';
+import Wave from '../components/Wave.astro';
+import posts from '../data/blog.json';
+
+const fmt = (d: string) => {
+  const [y, m, day] = d.split('-');
+  return `${+m}/${+day}/${y.slice(2)}`;
+};
+---
+<Base title="PRĀMAṆA" description="PRĀMAṆA — a means of knowing, a way of understanding. Writing on yoga, nondual Śaiva Tantra, and philosophy for real-world transformation." headerTheme="light">
+  <section class="blog-hero" style="background-image:url(/media/unsplash-image-yiglfu6eebw.jpg)">
+    <div class="container blog-hero-inner">
+      <h1>PRĀMAṆA is a means of knowing, a way of understanding</h1>
+    </div>
+  </section>
+  <Wave color="var(--green-deep)" />
+
+  <section class="blog-list sec-green">
+    <div class="container">
+      {posts.map((p, i) => (
+        <article class:list={['post-row reveal', { flip: i % 2 === 1 }]}>
+          <a class="post-thumb" href={`/blog/${p.slug}`}>
+            {p.hero && <img src={`/media/${p.hero}`} alt={p.title} loading="lazy" />}
+          </a>
+          <div class="post-info">
+            <p class="post-date">{fmt(p.date)}</p>
+            <h2 class="amber-head"><a href={`/blog/${p.slug}`}>{p.title}</a></h2>
+            {p.tags && p.tags.length > 0 && (
+              <div class="post-tags">{p.tags.map((t) => <span class="tag">{t}</span>)}</div>
+            )}
+            <a class="read-more" href={`/blog/${p.slug}`}>Read More</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</Base>
+
+<style>
+  .blog-hero {
+    min-height: 78vh; background-size: cover; background-position: center;
+    display: flex; align-items: center; padding-top: 6rem;
+  }
+  .blog-hero-inner { max-width: 900px; }
+  .blog-hero h1 {
+    color: #fff; font-size: clamp(2.2rem, 5.5vw, 4rem); max-width: 20ch;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.35);
+  }
+
+  .blog-list { padding-top: 2rem; }
+  .post-row { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; padding-block: 2.5rem; }
+  .post-row.flip .post-thumb { order: 2; }
+  .post-thumb { display: block; overflow: hidden; border-radius: 4px; aspect-ratio: 4/3; background: rgba(255,255,255,0.05); }
+  .post-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+  .post-thumb:hover img { transform: scale(1.04); }
+  .post-date { font-family: var(--display); font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 0 0 0.6rem; }
+  .post-info h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 0.8rem; line-height: 1.05; }
+  .post-info h2 a:hover { color: var(--amber-dark); }
+  .post-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.9rem; }
+  .tag { font-family: var(--display); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; background: rgba(255,255,255,0.14); color: #fff; padding: 0.25em 0.7em; border-radius: 999px; }
+  .read-more { font-family: var(--display); font-weight: 500; color: var(--amber); text-decoration: underline; text-underline-offset: 4px; }
+  .read-more:hover { color: #fff; }
+
+  @media (max-width: 760px) {
+    .post-row, .post-row.flip { grid-template-columns: 1fr; gap: 1.2rem; }
+    .post-row.flip .post-thumb { order: 0; }
+  }
+</style>

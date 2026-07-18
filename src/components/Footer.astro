@@ -1,0 +1,59 @@
+---
+import { site } from '../data/site';
+const socialEntries = Object.entries(site.socials);
+---
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="/media/logo-white.png" alt="Agni Agama" width="52" height="52" />
+      <p class="footer-tag">{site.tagline}</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Explore</h4>
+      {site.nav.map((item) => <a href={item.href}>{item.label}</a>)}
+    </div>
+
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href={`mailto:${site.email}`}>{site.email}</a>
+      <a href={site.external.jivamuktiParis} target="_blank" rel="noopener">Jivamukti Yoga Paris</a>
+      {socialEntries.map(([name, url]) => (
+        <a href={url} target="_blank" rel="noopener" style="text-transform:capitalize">{name}</a>
+      ))}
+    </div>
+  </div>
+
+  <div class="container footer-legal">
+    <p>© {new Date().getFullYear()} Agni Agama · Conor Byrnes. All rights reserved.</p>
+    <a href="/" class="om" aria-label="Home">ॐ</a>
+  </div>
+</footer>
+
+<style>
+  .site-footer { position: relative; z-index: 1; background: var(--green-deep); color: #fff; padding-block: 3.5rem 2rem; }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr;
+    gap: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.16);
+  }
+  .footer-brand img { height: 46px; width: auto; margin-bottom: 1.1rem; }
+  .footer-tag { max-width: 32ch; opacity: 0.8; font-weight: 300; }
+  .footer-col { display: flex; flex-direction: column; gap: 0.55rem; }
+  .footer-col h4 {
+    font-family: var(--display); font-size: 0.8rem; text-transform: uppercase;
+    letter-spacing: 0.2em; margin-bottom: 0.7rem; color: var(--amber);
+  }
+  .footer-col a { color: #fff; opacity: 0.82; font-size: 0.92rem; }
+  .footer-col a:hover { opacity: 1; color: var(--amber); }
+  .footer-legal {
+    padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 0.5rem; font-size: 0.82rem; opacity: 0.85;
+  }
+  .footer-legal p { margin: 0; }
+  .om { font-size: 1.4rem; opacity: 0.7; }
+  .om:hover { opacity: 1; color: var(--amber); }
+  @media (max-width: 720px) { .footer-grid { grid-template-columns: 1fr; gap: 2rem; } }
+</style>

@@ -1,0 +1,118 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+
+// Web3Forms: free, no backend. Create a key at https://web3forms.com (enter conorbyrnesyoga@gmail.com)
+// and paste it below, or set PUBLIC_WEB3FORMS_KEY in your host's env vars.
+const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? 'REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY';
+---
+<Base title="Contact" description="Write to Conor directly — about a retreat, a private practice, the philosophy, or simply to say hello. Every message gets a real reply." headerTheme="dark">
+  <section class="contact sec-sand">
+    <div class="container contact-grid">
+      <div class="contact-intro">
+        <h1>Let's Connect</h1>
+        <p class="book">Book your experience</p>
+        <p class="lead">
+          Whether you're curious about an upcoming retreat, want to begin — or deepen — a private practice,
+          or have a question about the philosophy, write to me here. I read and answer every message myself.
+        </p>
+        <p>
+          Tell me a little about where you are and what you're drawn to, and we'll find the right way in —
+          a class, a workshop, a conversation. No funnel, no pressure. Just a real reply.
+        </p>
+        <a href={`mailto:${site.email}`} class="email">{site.email}</a>
+      </div>
+
+      <div class="contact-photo">
+        <img src="/media/hd-0876_web.jpg" alt="Conor Byrnes by the Canal Saint-Martin, Paris" loading="eager" />
+      </div>
+    </div>
+
+    <div class="container form-wrap">
+      <form id="contact-form" class="contact-form">
+        <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
+        <input type="hidden" name="subject" value="New message from agniagama.com" />
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+        <div class="row">
+          <label>Name<input type="text" name="name" required /></label>
+          <label>Email<input type="email" name="email" required /></label>
+        </div>
+        <label>What are you drawn to?<input type="text" name="interest" placeholder="A retreat, private practice, a question…" /></label>
+        <label>Your message<textarea name="message" rows="5" required></textarea></label>
+        <button type="submit" class="btn btn-dark">Send message</button>
+        <p id="form-status" class="form-status" role="status"></p>
+      </form>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .contact { padding-top: 8rem; }
+  .contact-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center; margin-bottom: 3.5rem; }
+  .contact-intro h1 { font-size: clamp(3rem, 8vw, 5.5rem); margin-bottom: 0.2em; }
+  .book { font-family: var(--display); font-weight: 700; font-size: 1.05rem; margin-bottom: 1rem; }
+  .contact-intro .lead { color: #33322c; }
+  .contact-intro p { color: #4a4a42; font-weight: 300; }
+  .email { display: inline-block; margin-top: 1rem; font-family: var(--display); font-weight: 700; font-size: clamp(1.05rem, 2.4vw, 1.5rem); }
+  .email:hover { color: var(--amber-dark); }
+
+  .contact-photo img {
+    width: 100%; border-radius: 14px; aspect-ratio: 4/5; object-fit: cover;
+    object-position: 50% 14%; box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+  }
+
+  .form-wrap { max-width: 720px; }
+  .contact-form { display: flex; flex-direction: column; gap: 1.05rem; }
+  .contact-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .contact-form label { display: flex; flex-direction: column; gap: 0.35rem; font-family: var(--display); font-weight: 600; font-size: 0.85rem; }
+  .contact-form input, .contact-form textarea {
+    font-family: var(--body); font-size: 1rem; padding: 0.75em 0.9em; font-weight: 300;
+    border: 1px solid rgba(0,0,0,0.2); border-radius: 4px; background: rgba(255,255,255,0.7);
+  }
+  .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--ink); background: #fff; }
+  .contact-form button { align-self: flex-start; margin-top: 0.4rem; }
+  .btn-dark { background: var(--ink); color: #fff; }
+  .form-status { margin: 0; font-family: var(--display); font-weight: 600; }
+  .form-status.ok { color: var(--green); }
+  .form-status.err { color: #c0392b; }
+
+  @media (max-width: 860px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .contact-photo { max-width: 360px; }
+    .contact-form .row { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const status = document.getElementById('form-status')!;
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    if ((data.get('access_key') as string)?.startsWith('REPLACE_')) {
+      status.className = 'form-status err';
+      status.textContent = 'Form not configured yet — add your Web3Forms access key.';
+      return;
+    }
+    status.className = 'form-status';
+    status.textContent = 'Sending…';
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: data,
+      });
+      const json = await res.json();
+      if (json.success) {
+        status.className = 'form-status ok';
+        status.textContent = 'Thank you — your message is on its way. I will be in touch soon.';
+        form.reset();
+      } else {
+        throw new Error(json.message || 'Failed');
+      }
+    } catch (err) {
+      status.className = 'form-status err';
+      status.textContent = 'Something went wrong. Please email me directly.';
+    }
+  });
+</script>

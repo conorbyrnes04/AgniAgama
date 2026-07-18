@@ -1,0 +1,141 @@
+---
+import Base from '../layouts/Base.astro';
+import Wave from '../components/Wave.astro';
+import { site } from '../data/site';
+
+const branches = [
+  { emoji: '📚', title: 'Education', tag: 'Empowering Young Minds', copy: 'Quality education is the cornerstone of a brighter future. Through our preschool initiatives in Senegal, we give children the foundation they need to succeed — academic instruction, cultural education, and nutritious meals, in government-recognized schools.' },
+  { emoji: '🥗', title: 'Nutrition', tag: 'Fueling Healthy Development', copy: 'Proper nutrition is vital for a child’s growth and ability to learn. We tackle food insecurity through local gardens, sustainable agriculture, and nutritious meals — improving both health and the capacity to thrive.' },
+  { emoji: '🌱', title: 'Environment', tag: 'Preserving Our Planet', copy: 'Our environmental initiatives protect the natural world that sustains us — from building playgrounds out of recycled materials in Kenya’s slums to supporting reforestation for the next generation.' },
+];
+const donateUrl = `${site.external.jangoProject}/donate`;
+---
+<Base title="The Jango Project" description="At the heart of yoga lies compassion. The Jango Project — founded by Conor Byrnes — creates brighter futures for children in need through education, nutrition, and the environment." headerTheme="light">
+  <!-- Green top -->
+  <section class="jp-top sec-green">
+    <div class="container">
+      <a href={donateUrl} target="_blank" rel="noopener" class="marquee-pill">
+        <div class="marquee-track">
+          {Array.from({ length: 6 }).map(() => <span>✩ Donate Today</span>)}
+          {Array.from({ length: 6 }).map(() => <span>✩ Donate Today</span>)}
+        </div>
+      </a>
+
+      <div class="jp-head">
+        <h1>Community &amp; Compassion:</h1>
+        <img src="/media/jango-1.png" alt="Jango Project" class="jp-logo" />
+      </div>
+
+      <div class="jp-why">
+        <div class="jp-why-head">
+          <h2>Why give?</h2>
+          <a href={donateUrl} target="_blank" rel="noopener" class="btn btn-amber">Donate</a>
+        </div>
+        <div class="jp-why-cols">
+          <div>
+            <p>At the heart of yoga lies the principle of compassion — for oneself, for others, and for all living beings. The practice of yoga is not just about the postures we perform on the mat, but how we extend our practice into the world. The wisdom of non-duality teaches us that true liberation comes from recognizing our interconnectedness with all life. As Patañjali's Yoga Sūtras remind us, through <em>Maitrī</em> (friendliness) and <em>Karuṇā</em> (compassion), we cultivate a heart that is open and ready to give.</p>
+            <p>This philosophy is the driving force behind the <strong>Jango Project</strong>, a non-profit initiative I founded to create brighter futures for children in need — through education, nutrition, and the environment. Together, we can flourish by giving back to those who need it most.</p>
+          </div>
+          <div class="jp-why-img"><img src="/media/179a8861-min.jpg" alt="Children supported by the Jango Project" loading="lazy" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Wave color="var(--sand)" />
+  <!-- Tan mission -->
+  <section class="jp-mission sec-sand">
+    <div class="container">
+      <div class="jp-split">
+        <h2>Our Mission</h2>
+        <div class="jp-split-body">
+          <p>The Jango Project was born out of a deep commitment to serve the most vulnerable. Our mission is simple yet profound: to empower children in developing countries by providing them with the tools they need to thrive. Whether it's building preschools in Senegal, ensuring nutritious meals, or fostering environmental stewardship, every initiative is rooted in compassion and a desire to create lasting, positive change.</p>
+        </div>
+        <div class="jp-split-img"><img src="/media/dscf2495-min.jpg" alt="Jango Project preschool" loading="lazy" /></div>
+      </div>
+
+      <div class="jp-split reverse">
+        <h2>Why your help matters</h2>
+        <div class="jp-split-body">
+          <p>In the teachings of Śāntideva's <em>Way of the Bodhisattva</em>, it is said, "All the joy the world contains has come through wishing happiness for others." Children in developing countries face immense challenges — poverty, lack of education, malnutrition, and environmental degradation.</p>
+          <p>By supporting the Jango Project, you are not only contributing to the well-being of these children but also fulfilling the deeper purpose of your practice by embodying the principles of compassion and selfless service.</p>
+        </div>
+        <div class="jp-split-img"><img src="/media/dscf2207-min.jpg" alt="Children in Senegal" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three branches -->
+  <section class="jp-branches sec-cream">
+    <div class="container">
+      <h2 class="text-center">Three Branches</h2>
+      <div class="branch-grid">
+        {branches.map((b) => (
+          <div class="branch reveal">
+            <div class="branch-emoji">{b.emoji}</div>
+            <h3>{b.title}</h3>
+            <p class="branch-tag">{b.tag}</p>
+            <p>{b.copy}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Wave color="var(--green-deep)" />
+  <!-- CTA -->
+  <section class="jp-cta sec-green">
+    <div class="container-narrow text-center">
+      <h2>Support our growth</h2>
+      <p class="lead">Whether you're interested in volunteering, partnering with us for a project, or making a donation, your support is invaluable. Every contribution, no matter the size, helps us continue our mission of compassion in action.</p>
+      <div class="jp-cta-actions">
+        <a href={donateUrl} target="_blank" rel="noopener" class="btn btn-amber">Donate</a>
+        <a href={site.external.jangoProject} target="_blank" rel="noopener" class="btn btn-outline-light">Visit jangoproject.com</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .jp-top { padding-top: 7rem; }
+  .marquee-pill { display: block; background: #fff; border-radius: 999px; overflow: hidden; max-width: 620px; margin: 0 auto 3rem; padding: 0.7rem 0; }
+  .marquee-track { display: flex; gap: 2rem; width: max-content; animation: marquee 18s linear infinite; }
+  .marquee-track span { font-family: var(--display); font-weight: 700; color: var(--ink); white-space: nowrap; }
+  @keyframes marquee { to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+
+  .jp-head { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 3rem; }
+  .jp-head h1 { margin: 0; }
+  .jp-logo { height: 72px; width: auto; }
+
+  .jp-why-head { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem; }
+  .jp-why-head h2 { margin: 0; }
+  .jp-why-cols { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2.5rem; align-items: start; }
+  .jp-why-cols p { color: rgba(255,255,255,0.85); font-weight: 300; }
+  .jp-why-cols em { font-style: italic; color: var(--amber); }
+  .jp-why-cols strong { color: #fff; }
+  .jp-why-img img { width: 100%; border-radius: 6px; aspect-ratio: 3/4; object-fit: cover; }
+
+  .jp-split { display: grid; grid-template-columns: auto 1fr; grid-template-areas: 'head body' 'img img'; gap: 1rem 2.5rem; align-items: start; margin-bottom: 3.5rem; }
+  .jp-split h2 { grid-area: head; font-size: clamp(2.2rem, 6vw, 4rem); }
+  .jp-split-body { grid-area: body; }
+  .jp-split-body em { font-style: italic; }
+  .jp-split-img { grid-area: img; margin-top: 1rem; }
+  .jp-split-img img { width: 100%; border-radius: 6px; max-height: 420px; object-fit: cover; }
+
+  .branch-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+  .branch { background: #fff; border-radius: 6px; padding: 2rem; border-top: 4px solid var(--amber); }
+  .branch-emoji { font-size: 2.2rem; }
+  .branch h3 { margin: 0.3rem 0 0; }
+  .branch-tag { font-family: var(--display); font-weight: 600; color: var(--amber-dark); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; margin: 0 0 0.7rem; }
+  .branch p:last-child { font-weight: 300; margin: 0; }
+
+  .jp-cta .lead { color: rgba(255,255,255,0.85); margin-bottom: 1.8rem; }
+  .jp-cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  @media (max-width: 820px) {
+    .jp-why-cols { grid-template-columns: 1fr; }
+    .jp-split { grid-template-columns: 1fr; grid-template-areas: 'head' 'body' 'img'; }
+    .branch-grid { grid-template-columns: 1fr; }
+  }
+</style>

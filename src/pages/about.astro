@@ -1,0 +1,52 @@
+---
+import Base from '../layouts/Base.astro';
+
+const intro = 'My journey has been shaped by a lifelong quest to understand why, amidst material abundance, so many of us remain spiritually starved.';
+const paras = [
+  'From a young age, I was curious about the role of the divine — or whether such a thing existed at all — and whether a wonderful life was truly possible. This curiosity led me to profound early experiences: the ecstasy of seeing the sun shine through the blinds in the morning, hearing the birds singing, and the overwhelming gratitude for the simple yet miraculous functions of my organs.',
+  'However, my path was not without struggle. Years of disillusionment and depression made me realize that the contemporary spiritual beliefs I had inherited were deeply flawed. I saw myself living in a society of "rich slaves," floating on the surface but starting to sink. This realization led me to Colorado, where I sought more open minds and to study psychology and religion, with a focus on Taoist and Buddhist teachings.',
+  'Feeling a deeper calling, I left the United States to pursue what I believed to be a humanitarian mission in Senegal with the U.S. Peace Corps. However, it was the people of Senegal who taught me more than I could ever give to them. They showed me that the essence of a life well-lived is not found in extraordinary comfort or extravagant experiences, but in a deep faith in the divine connection that binds us all — almost like family — to everyone we meet.',
+  'After nearly two years in Senegal, I moved to Berlin to study neuroscience, earning a Master’s degree from Humboldt University in 2022. Yet, even after achieving this academic success, I felt an undeniable pull towards what I believed was part of my life’s calling: sitting with people and reminding each other to bask in our shared light of kindness, compassion, and understanding.',
+  'Throughout my life, I faced fears, doubts, and pains, yet my yoga practice has always been my sanctuary — allowing me to transcend my flickering, often feeble mind. It was through yoga that I eventually found myself in the role of a teacher, a role that breathed life into my being and gave me a profound sense of purpose.',
+  'My passion for yoga began at 18 and has since become the cornerstone of my life, guiding me with joy and inspiring determination. Inspired by my teachers, I developed a deep belief in the transformative power of asana and meditation, emphasizing the cultivation of compassion and intuition through embodied practice.',
+  'Having had the privilege of studying with the founders of Jivamukti Yoga, Sharon Gannon and David Life, and completing my apprenticeship under Anja Kühnel, I was certified as an advanced teacher in 2021. I relish the opportunity to share this integrative and powerful form of yoga with you, within a vibrant and supportive community.',
+  'In addition to teaching, I am the founder of the Jango Project, a nonprofit organization dedicated to enhancing the well-being and prosperity of children through initiatives focused on nutrition, education, and the environment. Driven by a desire to create meaningful change and promote holistic wellness, I do my best to fuse contemporary scientific knowledge with traditional spiritual wisdom to foster collective peace and alleviate suffering — both on and off the mat.',
+];
+---
+<Base title="About" description="Conor Byrnes — yoga teacher, neuroscientist, and founder of the Jango Project." headerTheme="dark">
+  <section class="about sec-yellow">
+    <div class="container about-grid">
+      <div class="about-text">
+        <h1>About me</h1>
+        <p class="intro">{intro}</p>
+        {paras.map((p) => <p class="reveal">{p}</p>)}
+        <div class="about-cta">
+          <a href="/events" class="btn btn-green">Practice with me</a>
+          <a href="/jango-project" class="btn btn-dark">The Jango Project</a>
+        </div>
+      </div>
+      <div class="about-photo">
+        <img src="/media/dsc01432-copy.jpeg" alt="Conor Byrnes practicing yoga" loading="eager" />
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .about { padding-top: 8rem; }
+  .about-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; align-items: start; }
+  .about-text { max-width: 60ch; }
+  .about-text h1 { margin-bottom: 0.5em; }
+  .about-text .intro { font-size: clamp(1.2rem, 2.4vw, 1.6rem); font-weight: 400; line-height: 1.4; margin-bottom: 1.5em; }
+  .about-text p { color: #1c1c18; }
+  .about-text .reveal { font-size: 0.98rem; }
+  .about-photo { position: sticky; top: 6rem; }
+  .about-photo img { width: 100%; border-radius: 4px; filter: grayscale(1) contrast(1.03); aspect-ratio: 3/4; object-fit: cover; }
+  .about-cta { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
+  .btn-dark { background: var(--ink); color: #fff; }
+  .btn-dark:hover { background: #000; }
+  @media (max-width: 860px) {
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .about-photo { position: static; order: -1; max-width: 360px; }
+  }
+</style>

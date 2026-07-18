@@ -1,0 +1,3 @@
+# Old Squarespace URLs → new slugs (301 permanent)
+/contact-1   /contact   301
+/home        /          301
