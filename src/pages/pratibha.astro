@@ -1,0 +1,145 @@
+---
+import Base from '../layouts/Base.astro';
+import Wave from '../components/Wave.astro';
+import { site } from '../data/site';
+
+const app = site.external.pratibha;
+
+const layers = [
+  { emoji: '📜', title: 'Original', copy: 'The canonical text in its own tongue — Sanskrit, Greek, Chinese — kept intact.' },
+  { emoji: '🔤', title: 'Translation', copy: 'A faithful, readable rendering that stays close to the source.' },
+  { emoji: '📖', title: 'Commentary', copy: 'Context and interpretation that open the passage without flattening it.' },
+  { emoji: '🕉', title: 'Key terms', copy: 'The load-bearing words unpacked — the vocabulary a tradition thinks with.' },
+  { emoji: '🔗', title: 'Resonances', copy: 'Cross-tradition echoes: where the Upaniṣads and Heraclitus rhyme.' },
+  { emoji: '🧘', title: 'Practice', copy: 'How the passage lives off the page — the practice it points toward.' },
+];
+
+const traditions = ['Upaniṣads', 'Tao Te Ching', 'Heraclitus', "Patañjali's Yoga Sūtras", 'Kashmir Śaivism', 'Buddhism', '…and more'];
+---
+<Base title="Pratibha" description="Pratibha — a living manuscript of world wisdom. Layered canonical texts (original, translation, commentary, key terms, cross-tradition resonances, practice) with a source-grounded study companion." headerTheme="light">
+  <!-- Hero -->
+  <section class="pr-hero sec-green">
+    <div class="container pr-hero-grid">
+      <div class="pr-hero-copy">
+        <p class="eyebrow">A living manuscript of world wisdom</p>
+        <h1>Pratibha</h1>
+        <p class="lead">Study living wisdom, not just text. Move from source to translation, from commentary to practice — and from one tradition to another.</p>
+        <div class="pr-actions">
+          <a href={app} target="_blank" rel="noopener" class="btn btn-amber">Open Pratibha</a>
+          <a href="#about-pratibha" class="btn btn-outline-light">What is it?</a>
+        </div>
+      </div>
+      <a href={app} target="_blank" rel="noopener" class="pr-preview reveal" aria-label="Open Pratibha">
+        <img src="/media/pratibha-preview.jpg" alt="The Pratibha reading interface" loading="eager" />
+      </a>
+    </div>
+  </section>
+
+  <!-- What it is -->
+  <section id="about-pratibha" class="pr-intro sec-cream">
+    <div class="container-narrow text-center">
+      <p class="eyebrow">प्रतिभा · Pratibha</p>
+      <h2>A contemplative library that speaks back</h2>
+      <p class="lead">
+        <em>Pratibha</em> — the flash of intuitive insight — is a study platform for the world's contemplative
+        texts. Each passage is layered so you can read it from every side, and a source-grounded companion is
+        always there to think it through with you.
+      </p>
+    </div>
+  </section>
+
+  <!-- Layered reading -->
+  <section class="pr-layers sec-sand">
+    <div class="container">
+      <p class="eyebrow text-center">Six layers, one passage</p>
+      <h2 class="text-center">Read from every side</h2>
+      <div class="layer-grid">
+        {layers.map((l) => (
+          <div class="layer reveal">
+            <div class="layer-emoji">{l.emoji}</div>
+            <h3>{l.title}</h3>
+            <p>{l.copy}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Traditions -->
+  <section class="pr-trad sec-cream">
+    <div class="container-narrow text-center">
+      <p class="eyebrow">Many rivers, one ocean</p>
+      <h2>Across the traditions</h2>
+      <p class="lead">Pratibha draws canonical sources into one place, so their conversations become visible.</p>
+      <ul class="trad-list">
+        {traditions.map((t) => <li>{t}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Companion -->
+  <section class="pr-companion sec-cream">
+    <div class="container pr-comp-grid">
+      <div>
+        <h2>A study companion, grounded in the sources</h2>
+        <p>Ask about any passage and get an answer rooted in the text itself — not a guess. Wander with <strong>Random</strong>, follow a curated <strong>Path</strong>, keep a <strong>Journal</strong> of what moves you, and trace every claim back to its <strong>Source</strong>.</p>
+        <a href={app} target="_blank" rel="noopener" class="btn btn-green">Start reading</a>
+      </div>
+      <ul class="feat-list">
+        <li><strong>Read</strong> — layered passages, one screen</li>
+        <li><strong>Study Chat</strong> — a library that speaks back</li>
+        <li><strong>Paths</strong> — guided journeys through a theme</li>
+        <li><strong>Random</strong> — serendipity as a practice</li>
+        <li><strong>Journal</strong> — hold onto what lands</li>
+        <li><strong>Sources</strong> — every passage, traceable</li>
+      </ul>
+    </div>
+  </section>
+
+  <Wave color="var(--green-deep)" />
+  <!-- CTA -->
+  <section class="pr-cta sec-green">
+    <div class="container-narrow text-center">
+      <h2>Sit with the wisdom of the ages</h2>
+      <p class="lead">Pratibha is open and free to explore — a quiet room for the texts that have carried us.</p>
+      <a href={app} target="_blank" rel="noopener" class="btn btn-amber">Open Pratibha →</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .pr-hero { padding-top: 8rem; }
+  .pr-hero-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 3rem; align-items: center; }
+  .pr-hero-copy .eyebrow { color: var(--amber); }
+  .pr-hero-copy h1 { font-size: clamp(3rem, 8vw, 5.5rem); }
+  .pr-hero-copy .lead { color: rgba(255,255,255,0.85); }
+  .pr-actions { display: flex; gap: 1rem; margin-top: 1.8rem; flex-wrap: wrap; }
+  .pr-preview { display: block; border-radius: 8px; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.12); }
+  .pr-preview img { width: 100%; display: block; transition: transform 0.5s ease; }
+  .pr-preview:hover img { transform: scale(1.03); }
+
+  .pr-intro em { font-style: italic; color: var(--green); }
+
+  .layer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+  .layer { background: #fff; border-radius: 6px; padding: 1.8rem; border-top: 3px solid var(--amber); }
+  .layer-emoji { font-size: 1.9rem; }
+  .layer h3 { margin: 0.4rem 0 0.4rem; color: var(--green); }
+  .layer p { font-weight: 300; margin: 0; color: #4a4a42; }
+
+  .trad-list { list-style: none; padding: 0; margin: 2rem 0 0; display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; }
+  .trad-list li { font-family: var(--display); font-weight: 500; background: var(--sand); color: var(--green); padding: 0.5em 1.1em; border-radius: 999px; }
+
+  .pr-comp-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center; }
+  .pr-comp-grid h2 { color: var(--green); }
+  .pr-comp-grid strong { color: var(--green-deep); }
+  .feat-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.6rem; }
+  .feat-list li { padding: 0.9rem 1.1rem; background: #fff; border: 1px solid var(--border); border-radius: 6px; font-weight: 300; }
+  .feat-list strong { font-family: var(--display); font-weight: 600; color: var(--green); }
+
+  .pr-cta .lead { color: rgba(255,255,255,0.85); margin-bottom: 1.8rem; }
+
+  @media (max-width: 860px) {
+    .pr-hero-grid, .pr-comp-grid { grid-template-columns: 1fr; }
+    .layer-grid { grid-template-columns: 1fr; }
+  }
+</style>
