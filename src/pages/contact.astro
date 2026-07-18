@@ -29,6 +29,13 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '3b715197-90e3-4ac
     </div>
 
     <div class="container form-wrap">
+      <div class="reach-out">
+        <p class="eyebrow">Reach Out</p>
+        <h2>Let's create an experience</h2>
+        <p>If you're curious about an upcoming event, or you want to deepen your practice, or have a question about anything yoga philosophy related, write to me here. I love to connect our ideas and learn from our shared process.</p>
+        <p>Feel free to tell a little about where you are and what you're drawn to, and perhaps we'll find a way in together — a class, a workshop, a conversation.</p>
+      </div>
+
       <form id="contact-form" class="contact-form">
         <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
         <input type="hidden" name="subject" value="New message from agniagama.com" />
@@ -62,6 +69,10 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '3b715197-90e3-4ac
   }
 
   .form-wrap { max-width: 720px; }
+  .reach-out { margin-bottom: 2.2rem; }
+  .reach-out .eyebrow { color: var(--amber-dark); margin-bottom: 0.6rem; }
+  .reach-out h2 { font-size: clamp(1.8rem, 4.5vw, 2.8rem); margin-bottom: 0.7rem; }
+  .reach-out p { color: #4a4a42; font-weight: 300; }
   .contact-form { display: flex; flex-direction: column; gap: 1.05rem; }
   .contact-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   .contact-form label { display: flex; flex-direction: column; gap: 0.35rem; font-family: var(--display); font-weight: 600; font-size: 0.85rem; }
