@@ -11,9 +11,7 @@ export const site = {
   external: {
     jivamuktiParis: 'https://www.jivamuktiyoga.fr/schedule/',
     jangoProject: 'https://jangoproject.com',
-    // Pratibha study app. Intended branded URL is pratibha.agniagama.com once the
-    // subdomain is wired to its Worker; workers.dev URL works today.
-    pratibha: 'https://pratibha.conorbyrnes04.workers.dev',
+    pratibha: 'https://pratibha.agniagama.com',
   },
   // Order mirrors the original Squarespace nav (two rows, left-aligned).
   nav: [
