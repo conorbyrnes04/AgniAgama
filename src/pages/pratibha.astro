@@ -6,12 +6,36 @@ import { site } from '../data/site';
 const app = site.external.pratibha;
 
 const layers = [
-  { emoji: '📜', title: 'Original', copy: 'The canonical text in its own tongue — Sanskrit, Greek, Chinese — kept intact.' },
-  { emoji: '🔤', title: 'Translation', copy: 'A faithful, readable rendering that stays close to the source.' },
-  { emoji: '📖', title: 'Commentary', copy: 'Context and interpretation that open the passage without flattening it.' },
-  { emoji: '🕉', title: 'Key terms', copy: 'The load-bearing words unpacked — the vocabulary a tradition thinks with.' },
-  { emoji: '🔗', title: 'Resonances', copy: 'Cross-tradition echoes: where the Upaniṣads and Heraclitus rhyme.' },
-  { emoji: '🧘', title: 'Practice', copy: 'How the passage lives off the page — the practice it points toward.' },
+  {
+    glyph: 'fire',
+    title: 'Original',
+    copy: 'The canonical text in its own tongue — Sanskrit, Greek, Chinese — kept intact.',
+  },
+  {
+    glyph: 'air',
+    title: 'Translation',
+    copy: 'A faithful, readable rendering that stays close to the source.',
+  },
+  {
+    glyph: 'sage',
+    title: 'Commentary',
+    copy: 'Context and interpretation that open the passage without flattening it.',
+  },
+  {
+    glyph: 'celtic-key',
+    title: 'Key terms',
+    copy: 'The load-bearing words unpacked — the vocabulary a tradition thinks with.',
+  },
+  {
+    glyph: 'infinity',
+    title: 'Resonances',
+    copy: 'Cross-tradition echoes: where the Upaniṣads and Heraclitus rhyme.',
+  },
+  {
+    glyph: 'lotus',
+    title: 'Practice',
+    copy: 'How the passage lives off the page — the practice it points toward.',
+  },
 ];
 
 const traditions = ['Upaniṣads', 'Tao Te Ching', 'Heraclitus', "Patañjali's Yoga Sūtras", 'Kashmir Śaivism', 'Buddhism', '…and more'];
@@ -54,9 +78,17 @@ const traditions = ['Upaniṣads', 'Tao Te Ching', 'Heraclitus', "Patañjali's Y
       <p class="eyebrow text-center">Six layers, one passage</p>
       <h2 class="text-center">Read from every side</h2>
       <div class="layer-grid">
-        {layers.map((l) => (
+        {layers.map((l, i) => (
           <div class="layer reveal">
-            <div class="layer-emoji">{l.emoji}</div>
+            <span class="layer-index" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+            <img
+              class="layer-glyph"
+              src={`/media/glyphs/${l.glyph}.svg`}
+              alt=""
+              width="48"
+              height="48"
+              loading="lazy"
+            />
             <h3>{l.title}</h3>
             <p>{l.copy}</p>
           </div>
@@ -120,11 +152,47 @@ const traditions = ['Upaniṣads', 'Tao Te Ching', 'Heraclitus', "Patañjali's Y
 
   .pr-intro em { font-style: italic; color: var(--green); }
 
-  .layer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
-  .layer { background: #fff; border-radius: 6px; padding: 1.8rem; border-top: 3px solid var(--amber); }
-  .layer-emoji { font-size: 1.9rem; }
-  .layer h3 { margin: 0.4rem 0 0.4rem; color: var(--green); }
-  .layer p { font-weight: 300; margin: 0; color: #4a4a42; }
+  .layer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.4rem 2rem;
+    margin-top: 2.8rem;
+  }
+  .layer {
+    position: relative;
+    padding: 1.4rem 0 0.2rem;
+    border-top: 1px solid rgba(52, 71, 52, 0.22);
+  }
+  .layer-index {
+    position: absolute;
+    top: 1.35rem;
+    right: 0;
+    font-family: var(--display);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    color: var(--amber-dark);
+    opacity: 0.75;
+  }
+  .layer-glyph {
+    width: 2.6rem;
+    height: 2.6rem;
+    object-fit: contain;
+    margin-bottom: 0.85rem;
+    /* Tint black ink glyphs to Agni amber */
+    filter: invert(62%) sepia(72%) saturate(650%) hue-rotate(352deg) brightness(98%) contrast(95%);
+  }
+  .layer h3 {
+    margin: 0 0 0.45rem;
+    color: var(--green);
+    font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  }
+  .layer p {
+    font-weight: 300;
+    margin: 0;
+    color: #4a4a42;
+    max-width: 28ch;
+  }
 
   .trad-list { list-style: none; padding: 0; margin: 2rem 0 0; display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; }
   .trad-list li { font-family: var(--display); font-weight: 500; background: var(--sand); color: var(--green); padding: 0.5em 1.1em; border-radius: 999px; }
@@ -140,6 +208,7 @@ const traditions = ['Upaniṣads', 'Tao Te Ching', 'Heraclitus', "Patañjali's Y
 
   @media (max-width: 860px) {
     .pr-hero-grid, .pr-comp-grid { grid-template-columns: 1fr; }
-    .layer-grid { grid-template-columns: 1fr; }
+    .layer-grid { grid-template-columns: 1fr; gap: 1.8rem; }
+    .layer p { max-width: none; }
   }
 </style>
