@@ -13,11 +13,18 @@ const paras = [
   'In addition to teaching, I am the founder of the Jango Project, a nonprofit organization dedicated to enhancing the well-being and prosperity of children through initiatives focused on nutrition, education, and the environment. Driven by a desire to create meaningful change and promote holistic wellness, I do my best to fuse contemporary scientific knowledge with traditional spiritual wisdom to foster collective peace and alleviate suffering — both on and off the mat.',
 ];
 ---
-<Base title="About" description="Conor Byrnes — yoga teacher, neuroscientist, and founder of the Jango Project." headerTheme="dark">
+<Base
+  title="Conor Byrnes — Yoga Teacher"
+  description="Conor Byrnes is an Advanced Certified Jivamukti Yoga teacher and neuropsychologist based in Paris. Founder of Agni Agama — classes, retreats, workshops, and the Jango Project."
+  image="/media/dsc01432-copy.jpeg"
+  headerTheme="dark"
+>
   <section class="about sec-yellow">
     <div class="container about-grid">
       <div class="about-text">
-        <h1>About me</h1>
+        <p class="eyebrow">Agni Agama · Conor Byrnes Yoga</p>
+        <h1>Conor Byrnes</h1>
+        <p class="role">Advanced Certified Jivamukti Yoga teacher · Neuropsychologist · Paris</p>
         <p class="intro">{intro}</p>
         {paras.map((p) => <p class="reveal">{p}</p>)}
         <div class="about-cta">
@@ -36,7 +43,15 @@ const paras = [
   .about { padding-top: 8rem; }
   .about-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 3.5rem; align-items: start; }
   .about-text { max-width: 60ch; }
-  .about-text h1 { margin-bottom: 0.5em; }
+  .about-text .eyebrow {
+    font-family: var(--display); font-size: 0.78rem; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--green-deep); margin-bottom: 0.6rem;
+  }
+  .about-text h1 { margin-bottom: 0.25em; }
+  .about-text .role {
+    font-family: var(--display); font-size: 0.95rem; font-weight: 500;
+    color: var(--green-deep); margin-bottom: 1.25em; line-height: 1.45;
+  }
   .about-text .intro { font-size: clamp(1.2rem, 2.4vw, 1.6rem); font-weight: 400; line-height: 1.4; margin-bottom: 1.5em; }
   .about-text p { color: #1c1c18; }
   .about-text .reveal { font-size: 0.98rem; }

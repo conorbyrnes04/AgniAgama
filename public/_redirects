@@ -1,3 +1,6 @@
 # Old Squarespace URLs → new slugs (301 permanent)
 /contact-1   /contact   301
 /home        /          301
+
+# SEO: /sitemap.xml bookmarks → Astro sitemap index
+/sitemap.xml   /sitemap-index.xml   200

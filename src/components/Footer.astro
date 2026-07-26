@@ -1,12 +1,19 @@
 ---
 import { site } from '../data/site';
+
+const socialLabels: Record<string, string> = {
+  linkedin: 'LinkedIn',
+  jivamukti: 'Jivamukti Yoga (global)',
+  jivamuktiParis: 'Teacher profile — Paris',
+};
 const socialEntries = Object.entries(site.socials);
 ---
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <img src="/media/logo-white.png" alt="Agni Agama" width="52" height="52" />
+      <img src="/media/logo-white.png" alt="Agni Agama — Conor Byrnes Yoga" width="52" height="52" />
       <p class="footer-tag">{site.tagline}</p>
+      <p class="footer-person">Yoga with Conor Byrnes</p>
     </div>
 
     <div class="footer-col">
@@ -17,15 +24,15 @@ const socialEntries = Object.entries(site.socials);
     <div class="footer-col">
       <h4>Connect</h4>
       <a href={`mailto:${site.email}`}>{site.email}</a>
-      <a href={site.external.jivamuktiParis} target="_blank" rel="noopener">Jivamukti Yoga Paris</a>
+      <a href={site.external.jivamuktiParis} target="_blank" rel="noopener">Jivamukti Yoga Paris schedule</a>
       {socialEntries.map(([name, url]) => (
-        <a href={url} target="_blank" rel="noopener" style="text-transform:capitalize">{name}</a>
+        <a href={url} target="_blank" rel="noopener">{socialLabels[name] ?? name}</a>
       ))}
     </div>
   </div>
 
   <div class="container footer-legal">
-    <p>© {new Date().getFullYear()} Agni Agama · Conor Byrnes. All rights reserved.</p>
+    <p>© {new Date().getFullYear()} Agni Agama · Conor Byrnes Yoga. All rights reserved.</p>
     <a href="/" class="om" aria-label="Home">ॐ</a>
   </div>
 </footer>
@@ -41,6 +48,7 @@ const socialEntries = Object.entries(site.socials);
   }
   .footer-brand img { height: 46px; width: auto; margin-bottom: 1.1rem; }
   .footer-tag { max-width: 32ch; opacity: 0.8; font-weight: 300; }
+  .footer-person { margin-top: 0.65rem; font-family: var(--display); font-size: 0.9rem; color: var(--amber); }
   .footer-col { display: flex; flex-direction: column; gap: 0.55rem; }
   .footer-col h4 {
     font-family: var(--display); font-size: 0.8rem; text-transform: uppercase;

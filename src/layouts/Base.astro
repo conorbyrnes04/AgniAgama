@@ -9,14 +9,95 @@ interface Props {
   description?: string;
   image?: string;
   headerTheme?: 'dark' | 'light';
+  /** Override canonical path (defaults to current URL). */
+  canonical?: string;
+  /** Open Graph type — use "article" for blog posts. */
+  ogType?: 'website' | 'article';
+  /** Extra JSON-LD objects (e.g. BlogPosting) merged into the head. */
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  /** Set true for pages that should stay out of the index (rare). */
+  noindex?: boolean;
 }
 const {
   title,
-  description = 'Agni Agama — the fire of revelation. Yoga, nondual Śaiva Tantra, retreats, workshops and philosophy for real-world transformation with Conor Byrnes.',
-  image = '/media/logo.png',
+  description = 'Conor Byrnes yoga — Agni Agama. Advanced Certified Jivamukti teacher offering classes, retreats, workshops, and nondual Śaiva Tantra philosophy from Paris and around the world.',
+  image = site.defaultOgImage,
   headerTheme = 'dark',
+  canonical,
+  ogType = 'website',
+  jsonLd,
+  noindex = false,
 } = Astro.props;
-const fullTitle = title ? `${title} — ${site.name}` : `${site.name} — the fire of revelation`;
+
+const origin = Astro.site?.origin ?? site.url;
+const fullTitle = title
+  ? `${title} — ${site.name}`
+  : `Conor Byrnes Yoga — ${site.name} | Jivamukti, Retreats & Philosophy`;
+const canonicalUrl = canonical
+  ? new URL(canonical, origin).href
+  : new URL(Astro.url.pathname, origin).href;
+const ogImage = image.startsWith('http') ? image : new URL(image, origin).href;
+const sameAs = Object.values(site.socials).filter(Boolean);
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: site.person.name,
+  url: new URL('/about', origin).href,
+  image: new URL(site.person.image, origin).href,
+  email: site.email,
+  jobTitle: site.person.jobTitle,
+  description: site.person.description,
+  knowsAbout: site.person.knowsAbout,
+  alumniOf: {
+    '@type': 'CollegeOrUniversity',
+    name: 'Humboldt-Universität zu Berlin',
+  },
+  worksFor: {
+    '@type': 'Organization',
+    name: site.name,
+    url: site.url,
+  },
+  sameAs,
+};
+
+const orgJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: site.name,
+  alternateName: ['Agni Yoga', 'Conor Byrnes Yoga'],
+  url: site.url,
+  logo: new URL('/media/logo.png', origin).href,
+  image: ogImage,
+  description,
+  email: site.email,
+  founder: {
+    '@type': 'Person',
+    name: site.person.name,
+    url: new URL('/about', origin).href,
+  },
+  sameAs,
+};
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: site.name,
+  alternateName: 'Conor Byrnes Yoga',
+  url: site.url,
+  description,
+  publisher: {
+    '@type': 'Organization',
+    name: site.name,
+    url: site.url,
+  },
+};
+
+const extraJsonLd = jsonLd
+  ? Array.isArray(jsonLd)
+    ? jsonLd
+    : [jsonLd]
+  : [];
 ---
 <!doctype html>
 <html lang="en">
@@ -25,12 +106,35 @@ const fullTitle = title ? `${title} — ${site.name}` : `${site.name} — the fi
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="canonical" href={canonicalUrl} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta name="author" content={site.person.name} />
+    <meta name="theme-color" content="#344734" />
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={`${site.person.name} — ${site.name}`} />
+
+    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="icon" href="/favicon.ico" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(personJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(orgJsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
+    {extraJsonLd.map((block) => (
+      <script type="application/ld+json" set:html={JSON.stringify(block)} />
+    ))}
   </head>
   <body>
     <Header theme={headerTheme} />

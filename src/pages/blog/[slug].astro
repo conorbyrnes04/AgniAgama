@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Blocks from '../../components/Blocks.astro';
 import posts from '../../data/blog.json';
+import { site } from '../../data/site';
 
 export function getStaticPaths() {
   return posts.map((p, i) => ({
@@ -13,14 +14,54 @@ export function getStaticPaths() {
 const { post, prev, next } = Astro.props;
 const fmt = (d: string) =>
   new Date(d + 'T00:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+const origin = Astro.site?.origin ?? site.url;
+const postUrl = new URL(`/blog/${post.slug}`, origin).href;
+const heroPath = post.hero ? `/media/${post.hero}` : site.defaultOgImage;
+const description =
+  post.excerpt?.trim() ||
+  `${post.title} — an essay by Conor Byrnes on yoga and philosophy at Agni Agama.`;
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.title,
+  description,
+  datePublished: post.date,
+  dateModified: post.date,
+  author: {
+    '@type': 'Person',
+    name: site.person.name,
+    url: new URL('/about', origin).href,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: site.name,
+    logo: {
+      '@type': 'ImageObject',
+      url: new URL('/media/logo.png', origin).href,
+    },
+  },
+  image: new URL(heroPath, origin).href,
+  mainEntityOfPage: postUrl,
+  url: postUrl,
+};
 ---
-<Base title={post.title} description={post.excerpt || undefined} image={post.hero ? `/media/${post.hero}` : undefined} headerTheme="light">
+<Base
+  title={post.title}
+  description={description}
+  image={heroPath}
+  ogType="article"
+  jsonLd={articleJsonLd}
+  headerTheme="light"
+>
   <section class="post-hero" style={post.hero ? `background-image:url(/media/${post.hero})` : undefined}>
     <div class="post-hero-overlay"></div>
     <div class="container post-hero-inner">
       <a href="/blog" class="back">← PRĀMAṆA</a>
       <h1>{post.title}</h1>
       <div class="post-meta">
+        <span>By <a href="/about">{site.person.name}</a></span>
         <span>{fmt(post.date)}</span>
         {post.tags && post.tags.length > 0 && (
           <span class="post-tags">{post.tags.map((t) => <span class="tag">{t}</span>)}</span>
@@ -57,6 +98,7 @@ const fmt = (d: string) =>
   .back { display: inline-block; margin-bottom: 1rem; font-family: var(--display); font-weight: 500; letter-spacing: 0.06em; color: var(--amber); }
   .post-hero h1 { color: #fff; max-width: 22ch; }
   .post-meta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; font-family: var(--display); font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.9; }
+  .post-meta a { color: inherit; text-decoration: underline; text-underline-offset: 0.15em; }
   .post-tags { display: flex; gap: 0.4rem; }
   .tag { background: rgba(255,255,255,0.16); padding: 0.2em 0.7em; border-radius: 999px; font-size: 0.72rem; }
 

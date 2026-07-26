@@ -15,7 +15,11 @@ const offerings = [
   { img: '2c0a7663.jpeg', title: 'Private Classes', copy: 'A personal diagnostic, simultaneously physical and mental, that allows us to together approach the unbinding of knots in order to allow evolution towards luminosity.' },
 ];
 ---
-<Base headerTheme="dark">
+<Base
+  headerTheme="dark"
+  description="Conor Byrnes yoga at Agni Agama — Advanced Certified Jivamukti teacher offering open classes, private sessions, workshops, and retreats. Nondual Śaiva Tantra and philosophy for real-world transformation."
+  image="/media/dsc01432-copy.jpeg"
+>
   <!-- Hero: green-duotone forest, black left text + Will/Know/Act accordion -->
   <section class="hero">
     <div class="hero-media" style="background-image:url(/media/unsplash-image-2hzmz15wgik.jpg)"></div>
@@ -24,6 +28,7 @@ const offerings = [
       <div class="hero-copy">
         <h1><span class="brandline">Agni Agama</span> <span class="tagline">– the fire of revelation</span></h1>
         <h2 class="hero-sub">Brilliant awareness for material transformation</h2>
+        <p class="hero-byline">Yoga, retreats &amp; philosophy with Conor Byrnes</p>
       </div>
       <div class="accordion">
         {practices.map((p) => (
@@ -68,7 +73,7 @@ const offerings = [
   <section class="awaken sec-green">
     <div class="container-narrow text-center">
       <h2>Evolve and Awaken</h2>
-      <p class="lead">If you're interested in collaborating to design a unique workshop, event, retreat, or private class tailored to your vision and journey of transformation, I'd love to hear from you. Reach out and let's explore how we can bring your vision to life.</p>
+      <p class="lead">Conor Byrnes teaches yoga as a path of embodied clarity — from open classes and private sessions to international retreats. If you're interested in collaborating on a workshop, event, or practice tailored to your journey, I'd love to hear from you.</p>
       <a href="/contact" class="btn btn-amber">Get in touch</a>
     </div>
   </section>
@@ -85,6 +90,11 @@ const offerings = [
   .hero h1 .brandline { display: block; white-space: nowrap; }
   .hero h1 .tagline { display: block; max-width: 16ch; }
   .hero-sub { color: #fdfbf5; font-size: clamp(1.7rem, 3.8vw, 2.8rem); max-width: 20rem; text-shadow: 0 2px 18px rgba(18,24,14,0.6); }
+  .hero-byline {
+    margin-top: 1.1rem; color: #fdfbf5; font-family: var(--display); font-weight: 500;
+    font-size: 0.95rem; letter-spacing: 0.04em; opacity: 0.92;
+    text-shadow: 0 1px 12px rgba(18,24,14,0.55);
+  }
 
   /* Accordion */
   .accordion { display: flex; flex-direction: column; gap: 0.4rem; align-self: center; }
