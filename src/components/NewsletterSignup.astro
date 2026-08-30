@@ -11,7 +11,7 @@ interface Props {
 }
 const { variant = 'inline', compact = false } = Astro.props;
 
-const BUTTONDOWN_USER = import.meta.env.PUBLIC_BUTTONDOWN_USERNAME ?? '';
+const BUTTONDOWN_USER = import.meta.env.PUBLIC_BUTTONDOWN_USERNAME ?? 'byrnes';
 const isConfigured = !!BUTTONDOWN_USER && !BUTTONDOWN_USER.startsWith('REPLACE_');
 ---
 

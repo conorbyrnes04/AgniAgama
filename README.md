@@ -61,22 +61,17 @@ Until it's set, the form shows a "not configured" notice.
 ## Newsletter signup (Buttondown)
 
 The site includes newsletter signup forms in the footer (all pages), home page, and blog listing.
-Backend: [Buttondown](https://buttondown.email) (free tier supports up to 100 subscribers, clean email tool for writers).
+Backend: [Buttondown](https://buttondown.email) — newsletter at [buttondown.email/byrnes](https://buttondown.email/byrnes).
 
-### Setup
+The form is configured with username `byrnes` by default and works out of the box.
 
-1. **Create a Buttondown account** at [buttondown.email](https://buttondown.email).
-   - Sign up (free for small lists).
-   - Your username becomes your public subscribe endpoint.
+### Optional override
 
-2. **Set the env var** `PUBLIC_BUTTONDOWN_USERNAME` in your host's dashboard (e.g., Cloudflare Pages → Settings → Environment variables, or Netlify → Site settings → Environment variables).
-   - Value: your Buttondown username (e.g., `conorbyrnes` if your newsletter is `buttondown.email/conorbyrnes`).
-
-Until configured, the signup form shows "Coming soon" and is disabled.
+To use a different Buttondown username (e.g., for testing or a different newsletter), set the env var `PUBLIC_BUTTONDOWN_USERNAME` in your host's dashboard (Cloudflare Pages → Settings → Environment variables, or Netlify → Site settings → Environment variables).
 
 ### Importing existing subscribers
 
-To migrate the ~63 existing subscribers from Squarespace Campaigns:
+To migrate the ~63 existing subscribers from Squarespace Campaigns to Buttondown (`byrnes`):
 
 1. **Export from Squarespace:**
    - Log into Squarespace (if billing is still active, or use the grace period).
@@ -84,7 +79,7 @@ To migrate the ~63 existing subscribers from Squarespace Campaigns:
    - The CSV should have at minimum: `email`, optionally `name`, `created_date`.
 
 2. **Import to Buttondown:**
-   - Log into Buttondown → Settings → Importing.
+   - Log into [buttondown.email/byrnes](https://buttondown.email/byrnes) → Settings → Importing.
    - Upload the CSV file.
    - Map columns: `email` → Email, `name` → Name (if present).
    - Review and confirm import.
