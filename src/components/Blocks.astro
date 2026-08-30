@@ -64,5 +64,5 @@ for (let i = 0; i < nodes.length; i++) {
   if (n.type === 'verse') return <div class="verse">{n.lines.map((l) => <p>{l}</p>)}</div>;
   if (n.type === 'img') return <img src={`/media/${n.src}`} alt={n.alt} loading="lazy" />;
   if (n.href) return <p><a href={n.href} target="_blank" rel="noopener" class="inline-link">{n.text}</a></p>;
-  return <p>{n.text}</p>;
+  return <p set:html={n.text} />;
 })}
