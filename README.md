@@ -58,6 +58,42 @@ The form uses [Web3Forms](https://web3forms.com) (free, no backend):
 
 Until it's set, the form shows a "not configured" notice.
 
+## Newsletter signup (Buttondown)
+
+The site includes newsletter signup forms in the footer (all pages), home page, and blog listing.
+Backend: [Buttondown](https://buttondown.email) (free tier supports up to 100 subscribers, clean email tool for writers).
+
+### Setup
+
+1. **Create a Buttondown account** at [buttondown.email](https://buttondown.email).
+   - Sign up (free for small lists).
+   - Your username becomes your public subscribe endpoint.
+
+2. **Set the env var** `PUBLIC_BUTTONDOWN_USERNAME` in your host's dashboard (e.g., Cloudflare Pages → Settings → Environment variables, or Netlify → Site settings → Environment variables).
+   - Value: your Buttondown username (e.g., `conorbyrnes` if your newsletter is `buttondown.email/conorbyrnes`).
+
+Until configured, the signup form shows "Coming soon" and is disabled.
+
+### Importing existing subscribers
+
+To migrate the ~63 existing subscribers from Squarespace Campaigns:
+
+1. **Export from Squarespace:**
+   - Log into Squarespace (if billing is still active, or use the grace period).
+   - Marketing → Email Campaigns → Mailing Lists → Export as CSV.
+   - The CSV should have at minimum: `email`, optionally `name`, `created_date`.
+
+2. **Import to Buttondown:**
+   - Log into Buttondown → Settings → Importing.
+   - Upload the CSV file.
+   - Map columns: `email` → Email, `name` → Name (if present).
+   - Review and confirm import.
+   - Buttondown will skip duplicates and validate addresses.
+
+3. **Send a re-engagement email** (recommended):
+   - Let existing subscribers know the list has moved.
+   - Confirm they're still interested (this maintains list health and GDPR compliance).
+
 ## Deploy (free static hosting)
 
 ### Cloudflare Pages

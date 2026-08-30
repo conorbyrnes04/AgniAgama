@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Wave from '../components/Wave.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
 import posts from '../data/blog.json';
 
 const fmt = (d: string) => {
@@ -22,6 +23,9 @@ const fmt = (d: string) => {
 
   <section class="blog-list sec-green">
     <div class="container">
+      <div class="blog-newsletter">
+        <NewsletterSignup variant="inline" />
+      </div>
       {posts.map((p, i) => (
         <article class:list={['post-row reveal', { flip: i % 2 === 1 }]}>
           <a class="post-thumb" href={`/blog/${p.slug}`}>
@@ -53,6 +57,7 @@ const fmt = (d: string) => {
   }
 
   .blog-list { padding-top: 2rem; }
+  .blog-newsletter { max-width: 680px; margin: 0 auto 3rem; }
   .post-row { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; padding-block: 2.5rem; }
   .post-row.flip .post-thumb { order: 2; }
   .post-thumb { display: block; overflow: hidden; border-radius: 4px; aspect-ratio: 4/3; background: rgba(255,255,255,0.05); }

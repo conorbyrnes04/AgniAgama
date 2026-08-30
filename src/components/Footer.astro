@@ -1,5 +1,6 @@
 ---
 import { site } from '../data/site';
+import NewsletterSignup from './NewsletterSignup.astro';
 
 const socialLabels: Record<string, string> = {
   linkedin: 'LinkedIn',
@@ -29,6 +30,10 @@ const socialEntries = Object.entries(site.socials);
         <a href={url} target="_blank" rel="noopener">{socialLabels[name] ?? name}</a>
       ))}
     </div>
+
+    <div class="footer-col footer-newsletter">
+      <NewsletterSignup variant="footer" compact />
+    </div>
   </div>
 
   <div class="container footer-legal">
@@ -41,7 +46,7 @@ const socialEntries = Object.entries(site.socials);
   .site-footer { position: relative; z-index: 1; background: var(--green-deep); color: #fff; padding-block: 3.5rem 2rem; }
   .footer-grid {
     display: grid;
-    grid-template-columns: 1.6fr 1fr 1fr;
+    grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
     gap: 2.5rem;
     padding-bottom: 2.5rem;
     border-bottom: 1px solid rgba(255,255,255,0.16);
@@ -63,5 +68,6 @@ const socialEntries = Object.entries(site.socials);
   .footer-legal p { margin: 0; }
   .om { font-size: 1.4rem; opacity: 0.7; }
   .om:hover { opacity: 1; color: var(--amber); }
-  @media (max-width: 720px) { .footer-grid { grid-template-columns: 1fr; gap: 2rem; } }
+  @media (max-width: 920px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+  @media (max-width: 520px) { .footer-grid { grid-template-columns: 1fr; gap: 2rem; } }
 </style>
