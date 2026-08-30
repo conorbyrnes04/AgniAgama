@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Wave from '../components/Wave.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
 
 const practices = [
   { title: 'Will it', copy: "Inner vision is the starting point. If you feel dissatisfied with life that means the power of your will wants to more fully awaken. Recognize your ideal, and let your thirst for its taste guide. Clarity turns desire into intention, aligning orientation and purpose." },
@@ -66,6 +67,9 @@ const offerings = [
         <a href="/blog" class="btn btn-green">Read PRĀMAṆA</a>
       </div>
     </div>
+    <div class="container newsletter-home">
+      <NewsletterSignup variant="inline" />
+    </div>
   </section>
 
   <Wave color="var(--green-deep)" />
@@ -125,6 +129,7 @@ const offerings = [
   .pramana-img img { width: 100%; border-radius: 6px; aspect-ratio: 4/3; object-fit: cover; }
   .pramana-copy p { font-size: 1.15rem; }
   .amber-strong { color: var(--amber-dark); }
+  .newsletter-home { margin-top: 3.5rem; max-width: 680px; }
 
   /* Awaken */
   .awaken .lead { color: rgba(255,255,255,0.85); margin-bottom: 2rem; }
@@ -134,6 +139,7 @@ const offerings = [
     .hero-copy { max-width: none; }
     .offer-grid { grid-template-columns: 1fr 1fr; }
     .pramana-grid { grid-template-columns: 1fr; }
+    .newsletter-home { margin-top: 2.5rem; }
   }
   @media (max-width: 520px) { .offer-grid { grid-template-columns: 1fr; } }
 </style>
