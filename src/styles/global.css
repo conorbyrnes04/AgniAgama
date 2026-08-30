@@ -3,12 +3,41 @@
    Inter = body: chosen for complete IAST coverage (ṛ ṇ ṭ ḍ ṣ ṃ ḥ ṅ …) so
    transliterated Sanskrit renders coherently rather than falling back per-glyph.
    Noto Sans Devanagari renders the actual देवनागरी script. */
-@import '@fontsource-variable/jost';
+
+/* All @import statements must precede other rules per CSS spec */
 @import '@fontsource-variable/noto-sans-devanagari';
 @import '@fontsource/inter/300.css';
 @import '@fontsource/inter/400.css';
 @import '@fontsource/inter/500.css';
 @import '@fontsource/inter/600.css';
+
+/* Jost Variable: explicit subset loading to fix IAST macron rendering.
+   Chrome decomposes ā (U+0101) → a + combining macron (U+0304). The default
+   @fontsource-variable/jost loads a 'latin' face whose unicode-range includes
+   U+0304/U+0308/U+0329 but whose glyphs have no GPOS mark attachment, causing
+   the macron to render as a detached spacing bar. We load latin-ext FIRST
+   (which has correct precomposed ā ī ū glyphs), then load latin with those
+   combining marks REMOVED from its unicode-range so Chrome won't use it for U+0304. */
+
+/* jost-latin-ext-wght-normal — covers precomposed IAST: ā ī ū Ā ṇ etc. */
+@font-face {
+  font-family: 'Jost Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('@fontsource-variable/jost/files/jost-latin-ext-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* jost-latin-wght-normal — basic latin EXCLUDING U+0304, U+0308, U+0329 */
+@font-face {
+  font-family: 'Jost Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('@fontsource-variable/jost/files/jost-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
 
 :root {
   /* Palette sampled from agniagama.com's Squarespace theme */
