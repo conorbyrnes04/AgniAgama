@@ -65,7 +65,8 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
+body { overflow-x: clip; }
 
 body {
   margin: 0;
@@ -158,7 +159,13 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
 .wave svg { display: block; width: 100%; height: 100%; }
 
 /* Prose (article / blog body) */
-.prose { max-width: 720px; margin-inline: auto; }
+.prose {
+  max-width: min(720px, 100%);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
 .prose p { font-size: 1.08rem; line-height: 1.85; }
 .prose h2 { margin-top: 1.8em; line-height: 1.18; padding-top: 0.08em; }
 .prose h3 { margin-top: 1.5em; color: var(--green); line-height: 1.18; padding-top: 0.08em; }
