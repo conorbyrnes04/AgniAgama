@@ -34,8 +34,14 @@ for (const b of blocks) {
 // Many posts were scraped as one <p> per line — collapse runs of short,
 // link-free paragraphs into a single tightly-spaced verse block so poems and
 // śloka read as poetry rather than loosely-spaced prose.
+const isMetaLine = (text: string) =>
+  /three-part series on love|dharma talk transcript/i.test(text);
 const isShort = (n: Node) =>
-  n.type === 'para' && !n.href && n.text.length <= 64 && n.text.split(/\s+/).length <= 11;
+  n.type === 'para' &&
+  !n.href &&
+  !isMetaLine(n.text) &&
+  n.text.replace(/<[^>]+>/g, '').length <= 64 &&
+  n.text.replace(/<[^>]+>/g, '').split(/\s+/).length <= 11;
 const grouped: Node[] = [];
 for (let i = 0; i < nodes.length; i++) {
   if (isShort(nodes[i])) {
