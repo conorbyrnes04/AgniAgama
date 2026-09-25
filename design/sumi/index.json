@@ -1725,7 +1725,8 @@
         "lila"
       ],
       "filter": "standard",
-      "status": "ok",
+      "status": "excluded",
+      "excluded_reason": "Conor: never use the play button",
       "used_in": []
     },
     {
@@ -2279,7 +2280,13 @@
       ],
       "filter": "standard",
       "status": "ok",
-      "used_in": []
+      "used_in": [
+        {
+          "post": "making-peace-with-time",
+          "tone": "plum",
+          "file": "public/media/sumi/wc/tides-plum.svg"
+        }
+      ]
     },
     {
       "name": "tiger",
