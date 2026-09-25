@@ -1,0 +1,2706 @@
+{
+  "about": "Pratibha sumi glyph library for the PRAMANA blog. Masters are cleaned monochrome potrace SVGs (seals, signatures and stray calligraphy removed), cropped to a square viewBox around the ink. They live outside public/ and src/, so Astro never serves or builds them. Watercolor variants are generated only for placed marks, into public/media/sumi/wc/<glyph>-<tone>.svg. Pick unused glyphs first (used_in empty) so each glyph appears once across the blog, never twice in one post.",
+  "source": "conorbyrnes04/pratibha web/public/sumi/*.svg (113 glyphs)",
+  "tones": {
+    "amber": {
+      "light": "#e3a655",
+      "deep": "#b87a2c"
+    },
+    "ochre": {
+      "light": "#d6ab55",
+      "deep": "#a07a2e"
+    },
+    "terracotta": {
+      "light": "#d4825f",
+      "deep": "#a2563c"
+    },
+    "dusty-rose": {
+      "light": "#d3949b",
+      "deep": "#a6646f"
+    },
+    "sage": {
+      "light": "#a3b492",
+      "deep": "#6c8560"
+    },
+    "moss": {
+      "light": "#95a463",
+      "deep": "#5e6f39"
+    },
+    "indigo": {
+      "light": "#7b89b8",
+      "deep": "#4b578a"
+    },
+    "slate": {
+      "light": "#8199b0",
+      "deep": "#52708d"
+    },
+    "plum": {
+      "light": "#a57c9f",
+      "deep": "#6f4c6c"
+    },
+    "warm-grey": {
+      "light": "#aaa194",
+      "deep": "#766c61"
+    }
+  },
+  "filters": {
+    "standard": "feTurbulence + feDisplacementMap scale 0.016W, blur 0.0022W, rim spread 0.022W",
+    "thin": "feMorphology dilate (radius per glyph, default 0.0035W) before displacement scale 0.006W, blur 0.0012W, rim spread 0.012W"
+  },
+  "count": 113,
+  "placeable": 112,
+  "glyphs": [
+    {
+      "name": "air",
+      "master": "design/sumi/masters/air.svg",
+      "kind": "nature",
+      "tags": [
+        "breath",
+        "wind",
+        "prana",
+        "spirit",
+        "movement",
+        "element"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "you-are-not-just-a-body",
+          "tone": "indigo",
+          "file": "public/media/sumi/wc/air-indigo.svg"
+        }
+      ]
+    },
+    {
+      "name": "anubis",
+      "master": "design/sumi/masters/anubis.svg",
+      "kind": "deity",
+      "tags": [
+        "death",
+        "underworld",
+        "guide of souls",
+        "threshold",
+        "protection",
+        "jackal"
+      ],
+      "traditions": [
+        "Egyptian"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "apollo",
+      "master": "design/sumi/masters/apollo.svg",
+      "kind": "deity",
+      "tags": [
+        "lyre",
+        "music",
+        "sun",
+        "oracle",
+        "harmony",
+        "reason",
+        "poetry",
+        "Delphi"
+      ],
+      "traditions": [
+        "Greek"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "the-three-sisters",
+          "tone": "dusty-rose",
+          "file": "public/media/sumi/wc/apollo-dusty-rose.svg"
+        }
+      ]
+    },
+    {
+      "name": "artemis",
+      "master": "design/sumi/masters/artemis.svg",
+      "kind": "deity",
+      "tags": [
+        "bow",
+        "arrow",
+        "moon",
+        "hunt",
+        "wilderness",
+        "focus",
+        "aim"
+      ],
+      "traditions": [
+        "Greek"
+      ],
+      "filter": "thin",
+      "thin_dilate": 0.0035,
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "athena",
+      "master": "design/sumi/masters/athena.svg",
+      "kind": "deity",
+      "tags": [
+        "wisdom",
+        "strategy",
+        "protection",
+        "the city",
+        "owl",
+        "craft"
+      ],
+      "traditions": [
+        "Greek"
+      ],
+      "filter": "standard",
+      "cleaning": "seal or calligraphy removed by subpath drop boxes",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "while-the-devil-is-in-the-details-the-divine-is-in-the-principle-",
+          "tone": "dusty-rose",
+          "file": "public/media/sumi/wc/athena-dusty-rose.svg"
+        }
+      ]
+    },
+    {
+      "name": "bear",
+      "master": "design/sumi/masters/bear.svg",
+      "kind": "animal",
+      "tags": [
+        "strength",
+        "solitude",
+        "hibernation",
+        "earth",
+        "mother protection"
+      ],
+      "traditions": [
+        "Norse",
+        "Indigenous American"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "bee",
+      "master": "design/sumi/masters/bee.svg",
+      "kind": "animal",
+      "tags": [
+        "sweetness",
+        "work",
+        "community",
+        "hive intelligence",
+        "nature",
+        "pollination"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "free-will-determinism-and-cosmic-consciousness-our-place-in-the-universe",
+          "tone": "ochre",
+          "file": "public/media/sumi/wc/bee-ochre.svg"
+        }
+      ]
+    },
+    {
+      "name": "book",
+      "master": "design/sumi/masters/book.svg",
+      "kind": "symbol",
+      "tags": [
+        "book",
+        "study",
+        "scripture",
+        "knowledge"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "cleaning": "seal or calligraphy removed by subpath drop boxes",
+      "status": "excluded",
+      "reason": "The trace is a solid black page frame from the scan background with only a tiny interior stroke; it reads as a picture frame, not a book, in watercolor. Kept for reference, do not place.",
+      "used_in": []
+    },
+    {
+      "name": "brahma",
+      "master": "design/sumi/masters/brahma.svg",
+      "kind": "deity",
+      "tags": [
+        "creation",
+        "trinity",
+        "three",
+        "source",
+        "cosmos",
+        "Brahman"
+      ],
+      "traditions": [
+        "Hindu"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "maps-and-territories",
+          "tone": "terracotta",
+          "file": "public/media/sumi/wc/brahma-terracotta.svg"
+        }
+      ]
+    },
+    {
+      "name": "brush",
+      "master": "design/sumi/masters/brush.svg",
+      "kind": "symbol",
+      "tags": [
+        "ink",
+        "writing",
+        "craft",
+        "calligraphy",
+        "practice",
+        "art"
+      ],
+      "traditions": [
+        "Zen",
+        "East Asian"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "butterfly",
+      "master": "design/sumi/masters/butterfly.svg",
+      "kind": "animal",
+      "tags": [
+        "transformation",
+        "lightness",
+        "love",
+        "soul",
+        "dream",
+        "impermanence"
+      ],
+      "traditions": [
+        "universal",
+        "Greek psyche"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "the-ocean-of-love",
+          "tone": "moss",
+          "file": "public/media/sumi/wc/butterfly-moss.svg"
+        }
+      ]
+    },
+    {
+      "name": "celtic_key",
+      "master": "design/sumi/masters/celtic_key.svg",
+      "kind": "symbol",
+      "tags": [
+        "key",
+        "mystery",
+        "opening",
+        "access",
+        "secret",
+        "initiation"
+      ],
+      "traditions": [
+        "Celtic"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "celtic_star",
+      "master": "design/sumi/masters/celtic_star.svg",
+      "kind": "symbol",
+      "tags": [
+        "star",
+        "jewel",
+        "pattern",
+        "interconnection",
+        "net",
+        "sacred geometry"
+      ],
+      "traditions": [
+        "Celtic"
+      ],
+      "filter": "thin",
+      "thin_dilate": 0.0,
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "free-will-determinism-and-cosmic-consciousness-our-place-in-the-universe",
+          "tone": "dusty-rose",
+          "file": "public/media/sumi/wc/celtic_star-dusty-rose.svg"
+        }
+      ]
+    },
+    {
+      "name": "chalice",
+      "master": "design/sumi/masters/chalice.svg",
+      "kind": "symbol",
+      "tags": [
+        "cup",
+        "offering",
+        "receiving",
+        "grail",
+        "abundance",
+        "sharing",
+        "heart"
+      ],
+      "traditions": [
+        "Christian",
+        "Grail",
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "you-are-not-just-a-body",
+          "tone": "moss",
+          "file": "public/media/sumi/wc/chalice-moss.svg"
+        }
+      ]
+    },
+    {
+      "name": "circle",
+      "master": "design/sumi/masters/circle.svg",
+      "kind": "symbol",
+      "tags": [
+        "enso",
+        "wholeness",
+        "emptiness",
+        "presence",
+        "completion",
+        "breath",
+        "time"
+      ],
+      "traditions": [
+        "Zen"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "making-peace-with-time",
+          "tone": "ochre",
+          "file": "public/media/sumi/wc/circle-ochre.svg"
+        }
+      ]
+    },
+    {
+      "name": "comet",
+      "master": "design/sumi/masters/comet.svg",
+      "kind": "nature",
+      "tags": [
+        "flash",
+        "insight",
+        "intelligence",
+        "omen",
+        "speed",
+        "brilliance"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "the-three-sisters",
+          "tone": "amber",
+          "file": "public/media/sumi/wc/comet-amber.svg"
+        }
+      ]
+    },
+    {
+      "name": "constellation",
+      "master": "design/sumi/masters/constellation.svg",
+      "kind": "nature",
+      "tags": [
+        "stars",
+        "cosmos",
+        "universe",
+        "night sky",
+        "scatter",
+        "cosmic order"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "cleaning": "artist signature or stray mark removed",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "free-will-determinism-and-cosmic-consciousness-our-place-in-the-universe",
+          "tone": "warm-grey",
+          "file": "public/media/sumi/wc/constellation-warm-grey.svg"
+        }
+      ]
+    },
+    {
+      "name": "crane",
+      "master": "design/sumi/masters/crane.svg",
+      "kind": "animal",
+      "tags": [
+        "longevity",
+        "grace",
+        "patience",
+        "stillness",
+        "Zen",
+        "balance"
+      ],
+      "traditions": [
+        "Japanese",
+        "Chinese"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "cross",
+      "master": "design/sumi/masters/cross.svg",
+      "kind": "symbol",
+      "tags": [
+        "Christ",
+        "sacrifice",
+        "crossing",
+        "faith",
+        "the four directions"
+      ],
+      "traditions": [
+        "Christian"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "a-crack-in-the-darkness",
+          "tone": "warm-grey",
+          "file": "public/media/sumi/wc/cross-warm-grey.svg"
+        }
+      ]
+    },
+    {
+      "name": "crow",
+      "master": "design/sumi/masters/crow.svg",
+      "kind": "animal",
+      "tags": [
+        "trickster",
+        "messenger",
+        "intelligence",
+        "mimicry",
+        "omen"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "deer",
+      "master": "design/sumi/masters/deer.svg",
+      "kind": "animal",
+      "tags": [
+        "gentleness",
+        "dharma",
+        "the Buddha deer park",
+        "grace",
+        "vulnerability"
+      ],
+      "traditions": [
+        "Buddhist",
+        "Celtic"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "desert",
+      "master": "design/sumi/masters/desert.svg",
+      "kind": "nature",
+      "tags": [
+        "emptiness",
+        "journey",
+        "dunes",
+        "solitude",
+        "trial",
+        "landscape"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "dionysus",
+      "master": "design/sumi/masters/dionysus.svg",
+      "kind": "deity",
+      "tags": [
+        "grapes",
+        "vine",
+        "celebration",
+        "wine",
+        "ecstasy",
+        "life"
+      ],
+      "traditions": [
+        "Greek"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "a-crack-in-the-darkness",
+          "tone": "ochre",
+          "file": "public/media/sumi/wc/dionysus-ochre.svg"
+        }
+      ]
+    },
+    {
+      "name": "dolphin",
+      "master": "design/sumi/masters/dolphin.svg",
+      "kind": "animal",
+      "tags": [
+        "play",
+        "joy",
+        "ocean",
+        "intelligence",
+        "guidance",
+        "water"
+      ],
+      "traditions": [
+        "Greek",
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "dragon",
+      "master": "design/sumi/masters/dragon.svg",
+      "kind": "animal",
+      "tags": [
+        "power",
+        "transformation",
+        "fire",
+        "sky",
+        "strength",
+        "cosmic energy"
+      ],
+      "traditions": [
+        "Chinese",
+        "East Asian"
+      ],
+      "filter": "standard",
+      "cleaning": "seal or calligraphy removed by subpath drop boxes",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "durga",
+      "master": "design/sumi/masters/durga.svg",
+      "kind": "deity",
+      "tags": [
+        "Shakti",
+        "power",
+        "energy",
+        "goddess",
+        "protection",
+        "lion mount",
+        "courage"
+      ],
+      "traditions": [
+        "Hindu",
+        "Shakta"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "you-are-not-just-a-body",
+          "tone": "sage",
+          "file": "public/media/sumi/wc/durga-sage.svg"
+        }
+      ]
+    },
+    {
+      "name": "eagle",
+      "master": "design/sumi/masters/eagle.svg",
+      "kind": "animal",
+      "tags": [
+        "freedom",
+        "height",
+        "vision",
+        "sovereignty",
+        "spirit",
+        "courage"
+      ],
+      "traditions": [
+        "universal",
+        "Greek",
+        "Indigenous American"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "free-will-determinism-and-cosmic-consciousness-our-place-in-the-universe",
+          "tone": "terracotta",
+          "file": "public/media/sumi/wc/eagle-terracotta.svg"
+        }
+      ]
+    },
+    {
+      "name": "earth",
+      "master": "design/sumi/masters/earth.svg",
+      "kind": "nature",
+      "tags": [
+        "planet",
+        "body",
+        "ground",
+        "matter",
+        "element",
+        "humanity",
+        "world"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "you-are-not-just-a-body",
+          "tone": "dusty-rose",
+          "file": "public/media/sumi/wc/earth-dusty-rose.svg"
+        }
+      ]
+    },
+    {
+      "name": "elephant",
+      "master": "design/sumi/masters/elephant.svg",
+      "kind": "animal",
+      "tags": [
+        "memory",
+        "strength",
+        "wisdom",
+        "Ganesha",
+        "steadiness"
+      ],
+      "traditions": [
+        "Hindu",
+        "Buddhist"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "eros",
+      "master": "design/sumi/masters/eros.svg",
+      "kind": "deity",
+      "tags": [
+        "love",
+        "desire",
+        "attraction",
+        "polarity",
+        "arrow",
+        "union"
+      ],
+      "traditions": [
+        "Greek"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "the-ocean-of-love",
+          "tone": "sage",
+          "file": "public/media/sumi/wc/eros-sage.svg"
+        }
+      ]
+    },
+    {
+      "name": "eye",
+      "master": "design/sumi/masters/eye.svg",
+      "kind": "symbol",
+      "tags": [
+        "seeing",
+        "awareness",
+        "witness",
+        "perception",
+        "consciousness",
+        "insight"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "three-lights-one-light-",
+          "tone": "indigo",
+          "file": "public/media/sumi/wc/eye-indigo.svg"
+        }
+      ]
+    },
+    {
+      "name": "feather",
+      "master": "design/sumi/masters/feather.svg",
+      "kind": "symbol",
+      "tags": [
+        "lightness",
+        "release",
+        "freedom",
+        "truth",
+        "letting go"
+      ],
+      "traditions": [
+        "Egyptian Maat",
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "free-will-determinism-and-cosmic-consciousness-our-place-in-the-universe",
+          "tone": "warm-grey",
+          "file": "public/media/sumi/wc/feather-warm-grey.svg"
+        }
+      ]
+    },
+    {
+      "name": "fire",
+      "master": "design/sumi/masters/fire.svg",
+      "kind": "nature",
+      "tags": [
+        "agni",
+        "flame",
+        "transformation",
+        "heat",
+        "tapas",
+        "purification",
+        "element"
+      ],
+      "traditions": [
+        "Vedic",
+        "Hindu",
+        "universal"
+      ],
+      "filter": "standard",
+      "cleaning": "artist signature or stray mark removed",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "three-lights-one-light-",
+          "tone": "warm-grey",
+          "file": "public/media/sumi/wc/fire-warm-grey.svg"
+        }
+      ]
+    },
+    {
+      "name": "fish",
+      "master": "design/sumi/masters/fish.svg",
+      "kind": "animal",
+      "tags": [
+        "flow",
+        "current",
+        "nature",
+        "abundance",
+        "Matsya",
+        "going with life"
+      ],
+      "traditions": [
+        "Hindu",
+        "Christian",
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "fool",
+      "master": "design/sumi/masters/fool.svg",
+      "kind": "figure",
+      "tags": [
+        "beginner",
+        "innocence",
+        "naivete",
+        "play",
+        "leap",
+        "archetype"
+      ],
+      "traditions": [
+        "Tarot",
+        "archetype"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "the-three-sisters",
+          "tone": "terracotta",
+          "file": "public/media/sumi/wc/fool-terracotta.svg"
+        }
+      ]
+    },
+    {
+      "name": "fox",
+      "master": "design/sumi/masters/fox.svg",
+      "kind": "animal",
+      "tags": [
+        "cunning",
+        "adaptability",
+        "trickster",
+        "cleverness"
+      ],
+      "traditions": [
+        "universal",
+        "Japanese kitsune"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "freyja",
+      "master": "design/sumi/masters/freyja.svg",
+      "kind": "deity",
+      "tags": [
+        "love",
+        "desire",
+        "beauty",
+        "will",
+        "necklace",
+        "seidr",
+        "goddess"
+      ],
+      "traditions": [
+        "Norse"
+      ],
+      "filter": "standard",
+      "cleaning": "seal or calligraphy removed by subpath drop boxes",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "the-three-sisters",
+          "tone": "indigo",
+          "file": "public/media/sumi/wc/freyja-indigo.svg"
+        }
+      ]
+    },
+    {
+      "name": "ganesha",
+      "master": "design/sumi/masters/ganesha.svg",
+      "kind": "deity",
+      "tags": [
+        "obstacles",
+        "beginnings",
+        "remover of obstacles",
+        "bliss",
+        "play",
+        "elephant"
+      ],
+      "traditions": [
+        "Hindu"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "ananda-and-the-obstacle",
+          "tone": "ochre",
+          "file": "public/media/sumi/wc/ganesha-ochre.svg"
+        }
+      ]
+    },
+    {
+      "name": "hades",
+      "master": "design/sumi/masters/hades.svg",
+      "kind": "deity",
+      "tags": [
+        "underworld",
+        "death",
+        "depth",
+        "hidden wealth",
+        "calligraphy"
+      ],
+      "traditions": [
+        "Greek"
+      ],
+      "filter": "thin",
+      "thin_dilate": 0.0035,
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "hawk",
+      "master": "design/sumi/masters/hawk.svg",
+      "kind": "animal",
+      "tags": [
+        "vision",
+        "focus",
+        "messenger",
+        "height",
+        "clarity"
+      ],
+      "traditions": [
+        "Egyptian",
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "heart",
+      "master": "design/sumi/masters/heart.svg",
+      "kind": "symbol",
+      "tags": [
+        "heart",
+        "love",
+        "compassion",
+        "anahata",
+        "refuge",
+        "feeling"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "taking-refuge-in-the-heart",
+          "tone": "sage",
+          "file": "public/media/sumi/wc/heart-sage.svg"
+        }
+      ]
+    },
+    {
+      "name": "hera",
+      "master": "design/sumi/masters/hera.svg",
+      "kind": "deity",
+      "tags": [
+        "marriage",
+        "commitment",
+        "queen",
+        "sovereignty",
+        "eye of the peacock"
+      ],
+      "traditions": [
+        "Greek"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "hermit",
+      "master": "design/sumi/masters/hermit.svg",
+      "kind": "figure",
+      "tags": [
+        "solitude",
+        "lantern",
+        "inner light",
+        "contemplation",
+        "monk",
+        "mystic",
+        "archetype"
+      ],
+      "traditions": [
+        "Tarot",
+        "Christian mystic",
+        "archetype"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "horse",
+      "master": "design/sumi/masters/horse.svg",
+      "kind": "animal",
+      "tags": [
+        "speed",
+        "rushing",
+        "vitality",
+        "freedom",
+        "the mind",
+        "forward motion"
+      ],
+      "traditions": [
+        "universal",
+        "Vedic"
+      ],
+      "filter": "standard",
+      "cleaning": "artist signature or stray mark removed",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "making-peace-with-time",
+          "tone": "moss",
+          "file": "public/media/sumi/wc/horse-moss.svg"
+        }
+      ]
+    },
+    {
+      "name": "horus",
+      "master": "design/sumi/masters/horus.svg",
+      "kind": "deity",
+      "tags": [
+        "sky",
+        "falcon",
+        "the eye",
+        "kingship",
+        "protection",
+        "crescent"
+      ],
+      "traditions": [
+        "Egyptian"
+      ],
+      "filter": "thin",
+      "thin_dilate": 0.003,
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "infinity",
+      "master": "design/sumi/masters/infinity.svg",
+      "kind": "symbol",
+      "tags": [
+        "infinity",
+        "eternity",
+        "endlessness",
+        "timelessness",
+        "union"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "isis",
+      "master": "design/sumi/masters/isis.svg",
+      "kind": "deity",
+      "tags": [
+        "protection",
+        "wings",
+        "mother",
+        "magic",
+        "compassion",
+        "restoration"
+      ],
+      "traditions": [
+        "Egyptian"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "taking-refuge-in-the-heart",
+          "tone": "warm-grey",
+          "file": "public/media/sumi/wc/isis-warm-grey.svg"
+        }
+      ]
+    },
+    {
+      "name": "kali",
+      "master": "design/sumi/masters/kali.svg",
+      "kind": "deity",
+      "tags": [
+        "time",
+        "death",
+        "the sword",
+        "fierce mother",
+        "dissolution",
+        "liberation"
+      ],
+      "traditions": [
+        "Hindu",
+        "Shakta",
+        "Tantra"
+      ],
+      "filter": "thin",
+      "thin_dilate": 0.0035,
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "making-peace-with-time",
+          "tone": "moss",
+          "file": "public/media/sumi/wc/kali-moss.svg"
+        }
+      ]
+    },
+    {
+      "name": "king",
+      "master": "design/sumi/masters/king.svg",
+      "kind": "figure",
+      "tags": [
+        "sovereignty",
+        "rule",
+        "power",
+        "authority",
+        "empire",
+        "dictator"
+      ],
+      "traditions": [
+        "universal",
+        "archetype"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "while-the-devil-is-in-the-details-the-divine-is-in-the-principle-",
+          "tone": "terracotta",
+          "file": "public/media/sumi/wc/king-terracotta.svg"
+        }
+      ]
+    },
+    {
+      "name": "labyrinth",
+      "master": "design/sumi/masters/labyrinth.svg",
+      "kind": "symbol",
+      "tags": [
+        "path",
+        "maze",
+        "journey",
+        "questioning",
+        "pilgrimage",
+        "complexity"
+      ],
+      "traditions": [
+        "Greek",
+        "Christian"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "free-will-determinism-and-cosmic-consciousness-our-place-in-the-universe",
+          "tone": "moss",
+          "file": "public/media/sumi/wc/labyrinth-moss.svg"
+        }
+      ]
+    },
+    {
+      "name": "lakshmi",
+      "master": "design/sumi/masters/lakshmi.svg",
+      "kind": "deity",
+      "tags": [
+        "abundance",
+        "prosperity",
+        "beauty",
+        "grace",
+        "nourishment",
+        "lotus"
+      ],
+      "traditions": [
+        "Hindu"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "lightning",
+      "master": "design/sumi/masters/lightning.svg",
+      "kind": "nature",
+      "tags": [
+        "flash",
+        "power",
+        "sudden insight",
+        "energy",
+        "storm",
+        "thunderbolt"
+      ],
+      "traditions": [
+        "universal",
+        "Vedic vajra"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "lion",
+      "master": "design/sumi/masters/lion.svg",
+      "kind": "animal",
+      "tags": [
+        "courage",
+        "strength",
+        "royalty",
+        "bravery",
+        "hunger",
+        "Rome"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "free-will-determinism-and-cosmic-consciousness-our-place-in-the-universe",
+          "tone": "indigo",
+          "file": "public/media/sumi/wc/lion-indigo.svg"
+        }
+      ]
+    },
+    {
+      "name": "loki",
+      "master": "design/sumi/masters/loki.svg",
+      "kind": "deity",
+      "tags": [
+        "trickster",
+        "chaos",
+        "deception",
+        "change",
+        "demagogue",
+        "serpent"
+      ],
+      "traditions": [
+        "Norse"
+      ],
+      "filter": "thin",
+      "thin_dilate": 0.0035,
+      "cleaning": "artist signature or stray mark removed; seal fused to the stroke erased with a mask rect (see <mask id=\"erase\">)",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "lotus",
+      "master": "design/sumi/masters/lotus.svg",
+      "kind": "nature",
+      "tags": [
+        "purity",
+        "awakening",
+        "heart",
+        "rising from mud",
+        "cakras",
+        "blossoming"
+      ],
+      "traditions": [
+        "Hindu",
+        "Buddhist"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "the-three-sisters",
+          "tone": "sage",
+          "file": "public/media/sumi/wc/lotus-sage.svg"
+        }
+      ]
+    },
+    {
+      "name": "maiden",
+      "master": "design/sumi/masters/maiden.svg",
+      "kind": "figure",
+      "tags": [
+        "youth",
+        "beginning",
+        "spring",
+        "feminine",
+        "triple goddess"
+      ],
+      "traditions": [
+        "Greek",
+        "archetype"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "mandala",
+      "master": "design/sumi/masters/mandala.svg",
+      "kind": "symbol",
+      "tags": [
+        "wholeness",
+        "center",
+        "wheel",
+        "spokes",
+        "cosmos",
+        "meditation"
+      ],
+      "traditions": [
+        "Hindu",
+        "Buddhist"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "mind-the-gap-z3827",
+          "tone": "amber",
+          "file": "public/media/sumi/wc/mandala-amber.svg"
+        }
+      ]
+    },
+    {
+      "name": "mirror",
+      "master": "design/sumi/masters/mirror.svg",
+      "kind": "symbol",
+      "tags": [
+        "reflection",
+        "image",
+        "self-image",
+        "mimesis",
+        "illusion",
+        "clarity"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "you-are-not-just-a-body",
+          "tone": "dusty-rose",
+          "file": "public/media/sumi/wc/mirror-dusty-rose.svg"
+        }
+      ]
+    },
+    {
+      "name": "moon",
+      "master": "design/sumi/masters/moon.svg",
+      "kind": "nature",
+      "tags": [
+        "soma",
+        "calm",
+        "night",
+        "cycles",
+        "exhale",
+        "soothing light",
+        "feminine"
+      ],
+      "traditions": [
+        "Vedic",
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "three-lights-one-light-",
+          "tone": "warm-grey",
+          "file": "public/media/sumi/wc/moon-warm-grey.svg"
+        }
+      ]
+    },
+    {
+      "name": "mother",
+      "master": "design/sumi/masters/mother.svg",
+      "kind": "figure",
+      "tags": [
+        "mother",
+        "the Goddess",
+        "nurture",
+        "family",
+        "lineage"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "mountain",
+      "master": "design/sumi/masters/mountain.svg",
+      "kind": "nature",
+      "tags": [
+        "stability",
+        "height",
+        "parama",
+        "the highest",
+        "obstacle",
+        "landmark",
+        "ground"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "maps-and-territories",
+          "tone": "amber",
+          "file": "public/media/sumi/wc/mountain-amber.svg"
+        }
+      ]
+    },
+    {
+      "name": "mushroom",
+      "master": "design/sumi/masters/mushroom.svg",
+      "kind": "nature",
+      "tags": [
+        "dream",
+        "underground",
+        "network",
+        "surreal",
+        "growth",
+        "decay"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "nuwa",
+      "master": "design/sumi/masters/nuwa.svg",
+      "kind": "deity",
+      "tags": [
+        "creation",
+        "creator goddess",
+        "making bodies",
+        "mending the sky",
+        "spiral"
+      ],
+      "traditions": [
+        "Chinese"
+      ],
+      "filter": "standard",
+      "cleaning": "artist signature or stray mark removed",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "you-are-not-just-a-body",
+          "tone": "indigo",
+          "file": "public/media/sumi/wc/nuwa-indigo.svg"
+        }
+      ]
+    },
+    {
+      "name": "oak",
+      "master": "design/sumi/masters/oak.svg",
+      "kind": "nature",
+      "tags": [
+        "rootedness",
+        "strength",
+        "endurance",
+        "grounding",
+        "seasons"
+      ],
+      "traditions": [
+        "Celtic",
+        "Norse",
+        "Greek"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "making-peace-with-time",
+          "tone": "dusty-rose",
+          "file": "public/media/sumi/wc/oak-dusty-rose.svg"
+        }
+      ]
+    },
+    {
+      "name": "ocean",
+      "master": "design/sumi/masters/ocean.svg",
+      "kind": "nature",
+      "tags": [
+        "ocean",
+        "wave",
+        "vastness",
+        "consciousness",
+        "water",
+        "dissolving"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "blog-post-three-rn39y-xnk7c-88fs4-9s2ee-emnl8",
+          "tone": "plum",
+          "file": "public/media/sumi/wc/ocean-plum.svg"
+        }
+      ]
+    },
+    {
+      "name": "odin",
+      "master": "design/sumi/masters/odin.svg",
+      "kind": "deity",
+      "tags": [
+        "knowledge",
+        "wisdom",
+        "ravens",
+        "seeing",
+        "sacrifice for insight"
+      ],
+      "traditions": [
+        "Norse"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "the-three-sisters",
+          "tone": "moss",
+          "file": "public/media/sumi/wc/odin-moss.svg"
+        }
+      ]
+    },
+    {
+      "name": "oshun",
+      "master": "design/sumi/masters/oshun.svg",
+      "kind": "deity",
+      "tags": [
+        "love",
+        "sweetness",
+        "rivers",
+        "beauty",
+        "fertility",
+        "attraction"
+      ],
+      "traditions": [
+        "Yoruba"
+      ],
+      "filter": "standard",
+      "cleaning": "seal or calligraphy removed by subpath drop boxes",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "taking-refuge-in-the-heart",
+          "tone": "ochre",
+          "file": "public/media/sumi/wc/oshun-ochre.svg"
+        }
+      ]
+    },
+    {
+      "name": "osiris",
+      "master": "design/sumi/masters/osiris.svg",
+      "kind": "deity",
+      "tags": [
+        "death and rebirth",
+        "eternal life",
+        "afterlife",
+        "resurrection"
+      ],
+      "traditions": [
+        "Egyptian"
+      ],
+      "filter": "standard",
+      "cleaning": "seal or calligraphy removed by subpath drop boxes",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "blog-post-three-rn39y-xnk7c-88fs4-9s2ee-emnl8",
+          "tone": "amber",
+          "file": "public/media/sumi/wc/osiris-amber.svg"
+        }
+      ]
+    },
+    {
+      "name": "owl",
+      "master": "design/sumi/masters/owl.svg",
+      "kind": "animal",
+      "tags": [
+        "wisdom",
+        "night",
+        "philosophy",
+        "Minerva",
+        "seeing in the dark"
+      ],
+      "traditions": [
+        "Greek",
+        "Hegelian"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "blog-post-one-h47gf-33c6t-ghr4c-dphzj-z5nms",
+          "tone": "slate",
+          "file": "public/media/sumi/wc/owl-slate.svg"
+        }
+      ]
+    },
+    {
+      "name": "ox",
+      "master": "design/sumi/masters/ox.svg",
+      "kind": "animal",
+      "tags": [
+        "pasu",
+        "bound animal",
+        "patience",
+        "strength",
+        "labor",
+        "sacrifice"
+      ],
+      "traditions": [
+        "Hindu",
+        "Buddhist ox-herding",
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "free-will-determinism-and-cosmic-consciousness-our-place-in-the-universe",
+          "tone": "sage",
+          "file": "public/media/sumi/wc/ox-sage.svg"
+        }
+      ]
+    },
+    {
+      "name": "persephone",
+      "master": "design/sumi/masters/persephone.svg",
+      "kind": "deity",
+      "tags": [
+        "seasons",
+        "descent and return",
+        "pomegranate",
+        "autumn",
+        "cycles"
+      ],
+      "traditions": [
+        "Greek"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "you-are-not-just-a-body",
+          "tone": "plum",
+          "file": "public/media/sumi/wc/persephone-plum.svg"
+        }
+      ]
+    },
+    {
+      "name": "play",
+      "master": "design/sumi/masters/play.svg",
+      "kind": "symbol",
+      "tags": [
+        "fast forward",
+        "play button",
+        "time",
+        "media",
+        "lila",
+        "pressing ahead"
+      ],
+      "traditions": [
+        "modern",
+        "lila"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "making-peace-with-time",
+          "tone": "plum",
+          "file": "public/media/sumi/wc/play-plum.svg"
+        }
+      ]
+    },
+    {
+      "name": "quetzalcoatl",
+      "master": "design/sumi/masters/quetzalcoatl.svg",
+      "kind": "deity",
+      "tags": [
+        "feathered serpent",
+        "wind",
+        "learning",
+        "renewal",
+        "sky and earth"
+      ],
+      "traditions": [
+        "Aztec",
+        "Mesoamerican"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "rainbow",
+      "master": "design/sumi/masters/rainbow.svg",
+      "kind": "nature",
+      "tags": [
+        "hues",
+        "spectrum",
+        "color",
+        "promise",
+        "bridge",
+        "clouds and sun"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "cleaning": "artist signature or stray mark removed",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "three-lights-one-light-",
+          "tone": "slate",
+          "file": "public/media/sumi/wc/rainbow-slate.svg"
+        }
+      ]
+    },
+    {
+      "name": "raven",
+      "master": "design/sumi/masters/raven.svg",
+      "kind": "animal",
+      "tags": [
+        "night",
+        "dark times",
+        "omen",
+        "messenger",
+        "memory",
+        "insomnia"
+      ],
+      "traditions": [
+        "Norse",
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "while-the-devil-is-in-the-details-the-divine-is-in-the-principle-",
+          "tone": "amber",
+          "file": "public/media/sumi/wc/raven-amber.svg"
+        }
+      ]
+    },
+    {
+      "name": "rose",
+      "master": "design/sumi/masters/rose.svg",
+      "kind": "nature",
+      "tags": [
+        "love",
+        "beauty",
+        "life",
+        "preciousness",
+        "blossoming",
+        "devotion"
+      ],
+      "traditions": [
+        "Sufi",
+        "Christian",
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "taking-refuge-in-the-heart",
+          "tone": "amber",
+          "file": "public/media/sumi/wc/rose-amber.svg"
+        }
+      ]
+    },
+    {
+      "name": "sage",
+      "master": "design/sumi/masters/sage.svg",
+      "kind": "figure",
+      "tags": [
+        "teacher",
+        "elder",
+        "wisdom",
+        "yogi",
+        "scholar",
+        "contemplation"
+      ],
+      "traditions": [
+        "universal",
+        "archetype"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "saraswati",
+      "master": "design/sumi/masters/saraswati.svg",
+      "kind": "deity",
+      "tags": [
+        "knowledge",
+        "music",
+        "speech",
+        "learning",
+        "veena",
+        "the arts",
+        "teacher lineage"
+      ],
+      "traditions": [
+        "Hindu"
+      ],
+      "filter": "standard",
+      "cleaning": "artist signature or stray mark removed",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "maps-and-territories",
+          "tone": "indigo",
+          "file": "public/media/sumi/wc/saraswati-indigo.svg"
+        }
+      ]
+    },
+    {
+      "name": "scroll",
+      "master": "design/sumi/masters/scroll.svg",
+      "kind": "symbol",
+      "tags": [
+        "text",
+        "scripture",
+        "verse",
+        "teaching",
+        "reading",
+        "manuscript"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "thin",
+      "thin_dilate": 0.003,
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "serpent",
+      "master": "design/sumi/masters/serpent.svg",
+      "kind": "animal",
+      "tags": [
+        "kundalini",
+        "renewal",
+        "shedding",
+        "cycles",
+        "death and rebirth",
+        "energy"
+      ],
+      "traditions": [
+        "Hindu",
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "making-peace-with-time",
+          "tone": "plum",
+          "file": "public/media/sumi/wc/serpent-plum.svg"
+        }
+      ]
+    },
+    {
+      "name": "shaman",
+      "master": "design/sumi/masters/shaman.svg",
+      "kind": "figure",
+      "tags": [
+        "healer",
+        "trance",
+        "spirit journey",
+        "ritual",
+        "medicine"
+      ],
+      "traditions": [
+        "Indigenous",
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "shango",
+      "master": "design/sumi/masters/shango.svg",
+      "kind": "deity",
+      "tags": [
+        "thunder",
+        "justice",
+        "double axe",
+        "power",
+        "fire"
+      ],
+      "traditions": [
+        "Yoruba"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "shiva",
+      "master": "design/sumi/masters/shiva.svg",
+      "kind": "deity",
+      "tags": [
+        "Shiva",
+        "trident",
+        "consciousness",
+        "stillness",
+        "I am Shiva",
+        "dance"
+      ],
+      "traditions": [
+        "Hindu",
+        "Shaiva"
+      ],
+      "filter": "thin",
+      "thin_dilate": 0.0035,
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "the-ocean-of-love",
+          "tone": "indigo",
+          "file": "public/media/sumi/wc/shiva-indigo.svg"
+        }
+      ]
+    },
+    {
+      "name": "spider",
+      "master": "design/sumi/masters/spider.svg",
+      "kind": "animal",
+      "tags": [
+        "weaving",
+        "web",
+        "tapestry",
+        "net",
+        "creation",
+        "pattern",
+        "Arachne"
+      ],
+      "traditions": [
+        "Greek",
+        "Indigenous American"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "blog-post-one-h47gf-33c6t-ghr4c-dphzj-z5nms",
+          "tone": "indigo",
+          "file": "public/media/sumi/wc/spider-indigo.svg"
+        }
+      ]
+    },
+    {
+      "name": "spiral",
+      "master": "design/sumi/masters/spiral.svg",
+      "kind": "symbol",
+      "tags": [
+        "unfolding",
+        "growth",
+        "cycles",
+        "evolution",
+        "vibration",
+        "reweaving"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "blog-post-one-h47gf-33c6t-ghr4c-dphzj-z5nms",
+          "tone": "dusty-rose",
+          "file": "public/media/sumi/wc/spiral-dusty-rose.svg"
+        }
+      ]
+    },
+    {
+      "name": "stag",
+      "master": "design/sumi/masters/stag.svg",
+      "kind": "animal",
+      "tags": [
+        "nobility",
+        "forest",
+        "renewal",
+        "antlers",
+        "the wild"
+      ],
+      "traditions": [
+        "Celtic"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "star",
+      "master": "design/sumi/masters/star.svg",
+      "kind": "nature",
+      "tags": [
+        "guidance",
+        "light in darkness",
+        "hope",
+        "the north star",
+        "radiance"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "a-crack-in-the-darkness",
+          "tone": "sage",
+          "file": "public/media/sumi/wc/star-sage.svg"
+        }
+      ]
+    },
+    {
+      "name": "storm",
+      "master": "design/sumi/masters/storm.svg",
+      "kind": "nature",
+      "tags": [
+        "clouds",
+        "turbulence",
+        "chaos",
+        "weather",
+        "obscuring the sun"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "ananda-and-the-obstacle",
+          "tone": "terracotta",
+          "file": "public/media/sumi/wc/storm-terracotta.svg"
+        }
+      ]
+    },
+    {
+      "name": "sun",
+      "master": "design/sumi/masters/sun.svg",
+      "kind": "nature",
+      "tags": [
+        "surya",
+        "clarity",
+        "realization",
+        "inhale",
+        "illumination",
+        "day"
+      ],
+      "traditions": [
+        "Vedic",
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "three-lights-one-light-",
+          "tone": "indigo",
+          "file": "public/media/sumi/wc/sun-indigo.svg"
+        }
+      ]
+    },
+    {
+      "name": "swan",
+      "master": "design/sumi/masters/swan.svg",
+      "kind": "animal",
+      "tags": [
+        "discernment",
+        "hamsa",
+        "grace",
+        "beauty",
+        "purity"
+      ],
+      "traditions": [
+        "Hindu",
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "tezcatlipoca",
+      "master": "design/sumi/masters/tezcatlipoca.svg",
+      "kind": "deity",
+      "tags": [
+        "smoking mirror",
+        "rivalry",
+        "conflict",
+        "fate",
+        "night",
+        "reflection"
+      ],
+      "traditions": [
+        "Aztec",
+        "Mesoamerican"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "while-the-devil-is-in-the-details-the-divine-is-in-the-principle-",
+          "tone": "ochre",
+          "file": "public/media/sumi/wc/tezcatlipoca-ochre.svg"
+        }
+      ]
+    },
+    {
+      "name": "thanatos",
+      "master": "design/sumi/masters/thanatos.svg",
+      "kind": "deity",
+      "tags": [
+        "death",
+        "mortality",
+        "ending",
+        "gentle death",
+        "the passing"
+      ],
+      "traditions": [
+        "Greek"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "blog-post-one-h47gf-33c6t-ghr4c-dphzj-z5nms",
+          "tone": "moss",
+          "file": "public/media/sumi/wc/thanatos-moss.svg"
+        }
+      ]
+    },
+    {
+      "name": "thor",
+      "master": "design/sumi/masters/thor.svg",
+      "kind": "deity",
+      "tags": [
+        "hammer",
+        "action",
+        "courage",
+        "thunder",
+        "protection",
+        "strength"
+      ],
+      "traditions": [
+        "Norse"
+      ],
+      "filter": "thin",
+      "thin_dilate": 0.0035,
+      "cleaning": "seal or calligraphy removed by subpath drop boxes",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "the-three-sisters",
+          "tone": "sage",
+          "file": "public/media/sumi/wc/thor-sage.svg"
+        }
+      ]
+    },
+    {
+      "name": "thoth",
+      "master": "design/sumi/masters/thoth.svg",
+      "kind": "deity",
+      "tags": [
+        "writing",
+        "knowledge",
+        "speech",
+        "science",
+        "scribe",
+        "moon",
+        "wisdom"
+      ],
+      "traditions": [
+        "Egyptian"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "thunderbird",
+      "master": "design/sumi/masters/thunderbird.svg",
+      "kind": "animal",
+      "tags": [
+        "thunder",
+        "power",
+        "sky",
+        "storm",
+        "spirit"
+      ],
+      "traditions": [
+        "Indigenous American"
+      ],
+      "filter": "standard",
+      "cleaning": "artist signature or stray mark removed",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "tides",
+      "master": "design/sumi/masters/tides.svg",
+      "kind": "nature",
+      "tags": [
+        "tides",
+        "cycles",
+        "ocean",
+        "rhythm",
+        "ebb and flow",
+        "equilibrium"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "tiger",
+      "master": "design/sumi/masters/tiger.svg",
+      "kind": "animal",
+      "tags": [
+        "jaguar",
+        "jungle",
+        "rainforest",
+        "power",
+        "instinct",
+        "wildness"
+      ],
+      "traditions": [
+        "universal",
+        "Asian",
+        "Amazon"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "maps-and-territories",
+          "tone": "dusty-rose",
+          "file": "public/media/sumi/wc/tiger-dusty-rose.svg"
+        }
+      ]
+    },
+    {
+      "name": "trail",
+      "master": "design/sumi/masters/trail.svg",
+      "kind": "symbol",
+      "tags": [
+        "path",
+        "journey",
+        "road",
+        "travel",
+        "direction",
+        "pilgrimage"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "maps-and-territories",
+          "tone": "dusty-rose",
+          "file": "public/media/sumi/wc/trail-dusty-rose.svg"
+        }
+      ]
+    },
+    {
+      "name": "tree",
+      "master": "design/sumi/masters/tree.svg",
+      "kind": "nature",
+      "tags": [
+        "bodhi tree",
+        "awakening",
+        "roots",
+        "life",
+        "growth",
+        "world tree"
+      ],
+      "traditions": [
+        "Buddhist",
+        "Norse",
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "maps-and-territories",
+          "tone": "moss",
+          "file": "public/media/sumi/wc/tree-moss.svg"
+        }
+      ]
+    },
+    {
+      "name": "triangle",
+      "master": "design/sumi/masters/triangle.svg",
+      "kind": "symbol",
+      "tags": [
+        "three",
+        "trinity",
+        "triad",
+        "the three sisters",
+        "stability",
+        "fire"
+      ],
+      "traditions": [
+        "universal",
+        "sacred geometry"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "the-three-sisters",
+          "tone": "warm-grey",
+          "file": "public/media/sumi/wc/triangle-warm-grey.svg"
+        }
+      ]
+    },
+    {
+      "name": "turtle",
+      "master": "design/sumi/masters/turtle.svg",
+      "kind": "animal",
+      "tags": [
+        "slowness",
+        "patience",
+        "shell",
+        "earth",
+        "longevity",
+        "Kurma"
+      ],
+      "traditions": [
+        "Hindu",
+        "Indigenous American",
+        "universal"
+      ],
+      "filter": "standard",
+      "cleaning": "artist signature or stray mark removed",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "ananda-and-the-obstacle",
+          "tone": "sage",
+          "file": "public/media/sumi/wc/turtle-sage.svg"
+        }
+      ]
+    },
+    {
+      "name": "vine",
+      "master": "design/sumi/masters/vine.svg",
+      "kind": "nature",
+      "tags": [
+        "growth",
+        "connection",
+        "invitation",
+        "climbing",
+        "life force"
+      ],
+      "traditions": [
+        "universal",
+        "Christian"
+      ],
+      "filter": "thin",
+      "thin_dilate": 0.0035,
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "ananda-and-the-obstacle",
+          "tone": "dusty-rose",
+          "file": "public/media/sumi/wc/vine-dusty-rose.svg"
+        }
+      ]
+    },
+    {
+      "name": "vishnu",
+      "master": "design/sumi/masters/vishnu.svg",
+      "kind": "deity",
+      "tags": [
+        "Vishnu",
+        "preservation",
+        "protection",
+        "sustaining life",
+        "sun disc",
+        "avatars"
+      ],
+      "traditions": [
+        "Hindu",
+        "Vaishnava"
+      ],
+      "filter": "standard",
+      "cleaning": "seal or calligraphy removed by subpath drop boxes",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "taking-refuge-in-the-heart",
+          "tone": "slate",
+          "file": "public/media/sumi/wc/vishnu-slate.svg"
+        }
+      ]
+    },
+    {
+      "name": "void",
+      "master": "design/sumi/masters/void.svg",
+      "kind": "symbol",
+      "tags": [
+        "emptiness",
+        "sunyata",
+        "open space",
+        "enso",
+        "nothingness",
+        "potential"
+      ],
+      "traditions": [
+        "Buddhist",
+        "Zen"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "while-the-devil-is-in-the-details-the-divine-is-in-the-principle-",
+          "tone": "plum",
+          "file": "public/media/sumi/wc/void-plum.svg"
+        }
+      ]
+    },
+    {
+      "name": "volcano",
+      "master": "design/sumi/masters/volcano.svg",
+      "kind": "nature",
+      "tags": [
+        "eruption",
+        "fire",
+        "earth",
+        "upheaval",
+        "raw power"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "warrior",
+      "master": "design/sumi/masters/warrior.svg",
+      "kind": "figure",
+      "tags": [
+        "courage",
+        "duty",
+        "Arjuna",
+        "battle",
+        "action",
+        "protection"
+      ],
+      "traditions": [
+        "Hindu Gita",
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "a-crack-in-the-darkness",
+          "tone": "moss",
+          "file": "public/media/sumi/wc/warrior-moss.svg"
+        }
+      ]
+    },
+    {
+      "name": "water",
+      "master": "design/sumi/masters/water.svg",
+      "kind": "nature",
+      "tags": [
+        "water",
+        "flow",
+        "ripple",
+        "pond",
+        "element",
+        "lotus-like splash"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "free-will-determinism-and-cosmic-consciousness-our-place-in-the-universe",
+          "tone": "plum",
+          "file": "public/media/sumi/wc/water-plum.svg"
+        }
+      ]
+    },
+    {
+      "name": "whale",
+      "master": "design/sumi/masters/whale.svg",
+      "kind": "animal",
+      "tags": [
+        "depth",
+        "ocean",
+        "vastness",
+        "song",
+        "the unconscious"
+      ],
+      "traditions": [
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "wolf",
+      "master": "design/sumi/masters/wolf.svg",
+      "kind": "animal",
+      "tags": [
+        "pack",
+        "instinct",
+        "competition",
+        "wildness",
+        "loyalty",
+        "hunger"
+      ],
+      "traditions": [
+        "Norse",
+        "universal"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    },
+    {
+      "name": "yantra",
+      "master": "design/sumi/masters/yantra.svg",
+      "kind": "symbol",
+      "tags": [
+        "tantra",
+        "sacred geometry",
+        "one light",
+        "bindu",
+        "star of triangles",
+        "meditation"
+      ],
+      "traditions": [
+        "Hindu",
+        "Tantra"
+      ],
+      "filter": "standard",
+      "cleaning": "seal or calligraphy removed by subpath drop boxes",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "three-lights-one-light-",
+          "tone": "ochre",
+          "file": "public/media/sumi/wc/yantra-ochre.svg"
+        }
+      ]
+    },
+    {
+      "name": "yemaya",
+      "master": "design/sumi/masters/yemaya.svg",
+      "kind": "deity",
+      "tags": [
+        "ocean mother",
+        "sea",
+        "motherhood",
+        "depths",
+        "protection"
+      ],
+      "traditions": [
+        "Yoruba",
+        "Afro-Caribbean"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "the-ocean-of-love",
+          "tone": "slate",
+          "file": "public/media/sumi/wc/yemaya-slate.svg"
+        }
+      ]
+    },
+    {
+      "name": "yin_yang",
+      "master": "design/sumi/masters/yin_yang.svg",
+      "kind": "symbol",
+      "tags": [
+        "polarity",
+        "balance",
+        "opposites",
+        "duality",
+        "masculine and feminine",
+        "Tao"
+      ],
+      "traditions": [
+        "Taoist",
+        "Chinese"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": [
+        {
+          "post": "the-ocean-of-love",
+          "tone": "indigo",
+          "file": "public/media/sumi/wc/yin_yang-indigo.svg"
+        }
+      ]
+    },
+    {
+      "name": "zeus",
+      "master": "design/sumi/masters/zeus.svg",
+      "kind": "deity",
+      "tags": [
+        "sky",
+        "thunder",
+        "sovereignty",
+        "calligraphy",
+        "father of gods"
+      ],
+      "traditions": [
+        "Greek"
+      ],
+      "filter": "standard",
+      "status": "ok",
+      "used_in": []
+    }
+  ]
+}
