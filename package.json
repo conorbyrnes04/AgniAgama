@@ -18,5 +18,9 @@
   },
   "volta": {
     "node": "22.22.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "typescript": "^5.9.3"
   }
 }

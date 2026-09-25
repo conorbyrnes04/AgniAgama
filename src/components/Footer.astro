@@ -1,30 +1,29 @@
 ---
 import { site } from '../data/site';
+import { localize, useTranslations, type Locale } from '../i18n';
 
-const socialLabels: Record<string, string> = {
-  linkedin: 'LinkedIn',
-  jivamukti: 'Jivamukti Yoga (global)',
-  jivamuktiParis: 'Teacher profile — Paris',
-};
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const socialLabels = t.footer.socials as Record<string, string>;
 const socialEntries = Object.entries(site.socials);
 ---
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
       <img src="/media/logo-white.png" alt="Agni Agama — Conor Byrnes Yoga" width="52" height="52" />
-      <p class="footer-tag">{site.tagline}</p>
-      <p class="footer-person">Yoga with Conor Byrnes</p>
+      <p class="footer-tag">{t.footer.tagline}</p>
+      <p class="footer-person">{t.footer.person}</p>
     </div>
 
     <div class="footer-col">
-      <h4>Explore</h4>
-      {site.nav.map((item) => <a href={item.href}>{item.label}</a>)}
+      <h4>{t.footer.explore}</h4>
+      {site.nav.map((item) => <a href={localize(item.href, lang)}>{t.nav[item.key]}</a>)}
     </div>
 
     <div class="footer-col">
-      <h4>Connect</h4>
+      <h4>{t.footer.connect}</h4>
       <a href={`mailto:${site.email}`}>{site.email}</a>
-      <a href={site.external.jivamuktiParis} target="_blank" rel="noopener">Jivamukti Yoga Paris schedule</a>
       {socialEntries.map(([name, url]) => (
         <a href={url} target="_blank" rel="noopener">{socialLabels[name] ?? name}</a>
       ))}
@@ -32,8 +31,8 @@ const socialEntries = Object.entries(site.socials);
   </div>
 
   <div class="container footer-legal">
-    <p>© {new Date().getFullYear()} Agni Agama · Conor Byrnes Yoga. All rights reserved.</p>
-    <a href="/" class="om" aria-label="Home">ॐ</a>
+    <p>© {new Date().getFullYear()} {t.footer.rights}</p>
+    <a href={localize('/', lang)} class="om" aria-label={t.nav.home}>ॐ</a>
   </div>
 </footer>
 

@@ -1,13 +1,21 @@
 // Upcoming retreats, trainings & ceremonies.
 // Edit this list to update the schedule — the Events page renders it directly.
 // `image` is optional (a filename in /public/media). `link` is optional.
+//
+// Any text field may be a plain string (shown in every language) or a
+// per-language map — translate only what needs it, one event at a time:
+//
+//   dates: { en: 'Aug 29 – Sep 3, 2026', fr: '29 août – 3 sept. 2026' },
+//   copy:  { en: 'Six days above Rio…',  pt: 'Seis dias acima do Rio…' },
+
+import type { Translatable } from '../i18n';
 
 export interface EventItem {
-  title: string;
-  dates: string;
-  location: string;
-  copy: string;
-  link?: { label: string; href: string };
+  title: Translatable;
+  dates: Translatable;
+  location: Translatable;
+  copy: Translatable;
+  link?: { label: Translatable; href: string };
   image?: string;
 }
 

@@ -1,26 +1,54 @@
 ---
-import Base from '../../layouts/Base.astro';
-import Blocks from '../../components/Blocks.astro';
-import posts from '../../data/blog.json';
-import { site } from '../../data/site';
+import Base from '../../../layouts/Base.astro';
+import Blocks from '../../../components/Blocks.astro';
+import { site } from '../../../data/site';
+import { getPosts, isUntranslated, postLocales, type Post } from '../../../i18n/blog';
+import {
+  defaultLocale,
+  fill,
+  locales,
+  localeKeys,
+  localize,
+  useTranslations,
+  type Locale,
+} from '../../../i18n';
 
+// One page per (language × post).
 export function getStaticPaths() {
-  return posts.map((p, i) => ({
-    params: { slug: p.slug },
-    props: { post: p, prev: posts[i - 1], next: posts[i + 1] },
-  }));
+  return localeKeys.flatMap((lang) => {
+    const posts = getPosts(lang);
+    return posts.map((p, i) => ({
+      params: { lang: locales[lang].path || undefined, slug: p.slug },
+      props: { lang, post: p, prev: posts[i - 1], next: posts[i + 1] },
+    }));
+  });
 }
 
-const { post, prev, next } = Astro.props;
+const { lang, post, prev, next } = Astro.props as {
+  lang: Locale;
+  post: Post;
+  prev?: Post;
+  next?: Post;
+};
+const t = useTranslations(lang);
 const fmt = (d: string) =>
-  new Date(d + 'T00:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  new Date(d + 'T00:00:00').toLocaleDateString(locales[lang].code, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
 
 const origin = Astro.site?.origin ?? site.url;
-const postUrl = new URL(`/blog/${post.slug}`, origin).href;
+const postUrl = new URL(localize(`/blog/${post.slug}`, lang), origin).href;
 const heroPath = post.hero ? `/media/${post.hero}` : site.defaultOgImage;
 const description =
-  post.excerpt?.trim() ||
-  `${post.title} — an essay by Conor Byrnes on yoga and philosophy at Agni Agama.`;
+  post.excerpt?.trim() || fill(t.post.fallbackDescription, { title: post.title });
+// Only advertise the languages this essay actually exists in, and point an
+// untranslated copy at the English original so it isn't read as duplicate
+// content — the page still exists so navigation never dead-ends.
+const alternateLocales = postLocales(post.slug);
+const untranslated = isUntranslated(post.slug, lang);
+const canonical = untranslated ? localize(`/blog/${post.slug}`, defaultLocale) : undefined;
 
 const articleJsonLd = {
   '@context': 'https://schema.org',
@@ -32,7 +60,7 @@ const articleJsonLd = {
   author: {
     '@type': 'Person',
     name: site.person.name,
-    url: new URL('/about', origin).href,
+    url: new URL(localize('/about', lang), origin).href,
   },
   publisher: {
     '@type': 'Organization',
@@ -45,9 +73,13 @@ const articleJsonLd = {
   image: new URL(heroPath, origin).href,
   mainEntityOfPage: postUrl,
   url: postUrl,
+  inLanguage: locales[lang].code,
 };
 ---
 <Base
+  lang={lang}
+  alternateLocales={alternateLocales}
+  canonical={canonical}
   title={post.title}
   description={description}
   image={heroPath}
@@ -58,34 +90,37 @@ const articleJsonLd = {
   <section class="post-hero" style={post.hero ? `background-image:url(/media/${post.hero})` : undefined}>
     <div class="post-hero-overlay"></div>
     <div class="container post-hero-inner">
-      <a href="/blog" class="back">← PRĀMAṆA</a>
+      <a href={localize('/blog', lang)} class="back">{t.post.back}</a>
       <h1>{post.title}</h1>
       <div class="post-meta">
-        <span>By <a href="/about">{site.person.name}</a></span>
+        <span>{t.ui.by} <a href={localize('/about', lang)}>{site.person.name}</a></span>
         <span>{fmt(post.date)}</span>
         {post.tags && post.tags.length > 0 && (
-          <span class="post-tags">{post.tags.map((t) => <span class="tag">{t}</span>)}</span>
+          <span class="post-tags">{post.tags.map((tag) => <span class="tag">{tag}</span>)}</span>
         )}
       </div>
     </div>
   </section>
 
   <section class="post-body">
+    {untranslated && (
+      <p class="untranslated container-narrow" lang="en">{t.post.onlyInEnglish}</p>
+    )}
     <article class="prose">
       <Blocks blocks={post.blocks} />
     </article>
 
     <div class="container-narrow post-cta">
-      <a href="/events" class="btn btn-green">Practice with me</a>
-      <a href="/blog" class="btn btn-outline">More writing</a>
+      <a href={localize('/events', lang)} class="btn btn-green">{t.ui.practiceWithMe}</a>
+      <a href={localize('/blog', lang)} class="btn btn-outline">{t.ui.moreWriting}</a>
     </div>
 
     <nav class="project-nav container">
       {prev
-        ? <a href={`/blog/${prev.slug}`} class="pn prev"><span>← Previous</span><strong>{prev.title}</strong></a>
+        ? <a href={localize(`/blog/${prev.slug}`, lang)} class="pn prev"><span>{t.ui.previous}</span><strong>{prev.title}</strong></a>
         : <span></span>}
       {next
-        ? <a href={`/blog/${next.slug}`} class="pn next"><span>Next →</span><strong>{next.title}</strong></a>
+        ? <a href={localize(`/blog/${next.slug}`, lang)} class="pn next"><span>{t.ui.next}</span><strong>{next.title}</strong></a>
         : <span></span>}
     </nav>
   </section>
@@ -103,6 +138,10 @@ const articleJsonLd = {
   .tag { background: rgba(255,255,255,0.16); padding: 0.2em 0.7em; border-radius: 999px; font-size: 0.72rem; }
 
   .post-body { background: var(--cream); }
+  .untranslated {
+    margin: 0 auto; padding-top: 2.5rem; font-family: var(--display);
+    font-size: 0.85rem; letter-spacing: 0.04em; color: var(--green); opacity: 0.8;
+  }
   .post-cta { display: flex; gap: 1rem; margin-top: 3rem; flex-wrap: wrap; justify-content: center; }
   .project-nav { display: flex; justify-content: space-between; gap: 1rem; padding-block: 3rem 1rem; margin-top: 2rem; border-top: 1px solid var(--border); }
   .pn { display: flex; flex-direction: column; gap: 0.25rem; max-width: 45%; }

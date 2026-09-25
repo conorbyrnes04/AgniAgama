@@ -1,64 +1,56 @@
 ---
-import Base from '../layouts/Base.astro';
-import Wave from '../components/Wave.astro';
-import { site } from '../data/site';
+import Base from '../../layouts/Base.astro';
+import Wave from '../../components/Wave.astro';
+import { site } from '../../data/site';
+import { localePaths, useTranslations, type Locale } from '../../i18n';
 
+export const getStaticPaths = localePaths;
+
+const { lang } = Astro.props as { lang: Locale };
+const t = useTranslations(lang);
 const app = site.external.pratibha;
 
+// Copy comes from the dictionary; each layer's glyph lives here.
 const layers = [
-  {
-    glyph: 'fire',
-    title: 'Original',
-    copy: 'The canonical text in its own tongue — Sanskrit, Greek, Chinese — kept intact.',
-  },
-  {
-    glyph: 'air',
-    title: 'Translation',
-    copy: 'A faithful, readable rendering that stays close to the source.',
-  },
-  {
-    glyph: 'sage',
-    title: 'Commentary',
-    copy: 'Context and interpretation that open the passage without flattening it.',
-  },
-  {
-    glyph: 'celtic-key',
-    title: 'Key terms',
-    copy: 'The load-bearing words unpacked — the vocabulary a tradition thinks with.',
-  },
-  {
-    glyph: 'infinity',
-    title: 'Resonances',
-    copy: 'Cross-tradition echoes: where the Upaniṣads and Heraclitus rhyme.',
-  },
-  {
-    glyph: 'lotus',
-    title: 'Practice',
-    copy: 'How the passage lives off the page — the practice it points toward.',
-  },
+  { glyph: 'fire', ...t.pratibha.layers.original },
+  { glyph: 'air', ...t.pratibha.layers.translation },
+  { glyph: 'sage', ...t.pratibha.layers.commentary },
+  { glyph: 'celtic-key', ...t.pratibha.layers.terms },
+  { glyph: 'infinity', ...t.pratibha.layers.resonances },
+  { glyph: 'lotus', ...t.pratibha.layers.practice },
 ];
-
-const traditions = ['Upaniṣads', 'Tao Te Ching', 'Heraclitus', "Patañjali's Yoga Sūtras", 'Kashmir Śaivism', 'Buddhism', '…and more'];
+const features = Object.values(t.pratibha.features);
+// The text names stay as they are; only the trailing "and more" is translated.
+const traditions = [
+  'Upaniṣads',
+  'Tao Te Ching',
+  'Heraclitus',
+  "Patañjali's Yoga Sūtras",
+  'Kashmir Śaivism',
+  'Buddhism',
+  t.pratibha.tradMore,
+];
 ---
 <Base
-  title="Pratibha"
-  description="Pratibha by Conor Byrnes — a living manuscript of world wisdom. Layered canonical texts with translation, commentary, key terms, and practice."
+  lang={lang}
+  title={t.pratibha.seoTitle}
+  description={t.pratibha.seoDescription}
   headerTheme="light"
 >
   <!-- Hero -->
   <section class="pr-hero sec-green">
     <div class="container pr-hero-grid">
       <div class="pr-hero-copy">
-        <p class="eyebrow">A living manuscript of world wisdom</p>
-        <h1>Pratibha</h1>
-        <p class="lead">Study living wisdom, not just text. Move from source to translation, from commentary to practice — and from one tradition to another.</p>
+        <p class="eyebrow">{t.pratibha.eyebrow}</p>
+        <h1>{t.pratibha.heading}</h1>
+        <p class="lead">{t.pratibha.lead}</p>
         <div class="pr-actions">
-          <a href={app} target="_blank" rel="noopener" class="btn btn-amber">Open Pratibha</a>
-          <a href="#about-pratibha" class="btn btn-outline-light">What is it?</a>
+          <a href={app} target="_blank" rel="noopener" class="btn btn-amber">{t.pratibha.open}</a>
+          <a href="#about-pratibha" class="btn btn-outline-light">{t.pratibha.whatIsIt}</a>
         </div>
       </div>
-      <a href={app} target="_blank" rel="noopener" class="pr-preview reveal" aria-label="Open Pratibha">
-        <img src="/media/pratibha-preview.jpg" alt="The Pratibha reading interface" loading="eager" />
+      <a href={app} target="_blank" rel="noopener" class="pr-preview reveal" aria-label={t.pratibha.open}>
+        <img src="/media/pratibha-preview.jpg" alt={t.pratibha.previewAlt} loading="eager" />
       </a>
     </div>
   </section>
@@ -66,21 +58,17 @@ const traditions = ['Upaniṣads', 'Tao Te Ching', 'Heraclitus', "Patañjali's Y
   <!-- What it is -->
   <section id="about-pratibha" class="pr-intro sec-cream">
     <div class="container-narrow text-center">
-      <p class="eyebrow">प्रतिभा · Pratibha</p>
-      <h2>A contemplative library that speaks back</h2>
-      <p class="lead">
-        <em>Pratibha</em> — the flash of intuitive insight — is a study platform for the world's contemplative
-        texts. Each passage is layered so you can read it from every side, and a source-grounded companion is
-        always there to think it through with you.
-      </p>
+      <p class="eyebrow">{t.pratibha.introEyebrow}</p>
+      <h2>{t.pratibha.introTitle}</h2>
+      <p class="lead" set:html={t.pratibha.introLeadHtml} />
     </div>
   </section>
 
   <!-- Layered reading -->
   <section class="pr-layers sec-sand">
     <div class="container">
-      <p class="eyebrow text-center">Six layers, one passage</p>
-      <h2 class="text-center">Read from every side</h2>
+      <p class="eyebrow text-center">{t.pratibha.layersEyebrow}</p>
+      <h2 class="text-center">{t.pratibha.layersTitle}</h2>
       <div class="layer-grid">
         {layers.map((l, i) => (
           <div class="layer reveal">
@@ -104,11 +92,11 @@ const traditions = ['Upaniṣads', 'Tao Te Ching', 'Heraclitus', "Patañjali's Y
   <!-- Traditions -->
   <section class="pr-trad sec-cream">
     <div class="container-narrow text-center">
-      <p class="eyebrow">Many rivers, one ocean</p>
-      <h2>Across the traditions</h2>
-      <p class="lead">Pratibha draws canonical sources into one place, so their conversations become visible.</p>
+      <p class="eyebrow">{t.pratibha.tradEyebrow}</p>
+      <h2>{t.pratibha.tradTitle}</h2>
+      <p class="lead">{t.pratibha.tradLead}</p>
       <ul class="trad-list">
-        {traditions.map((t) => <li>{t}</li>)}
+        {traditions.map((name) => <li>{name}</li>)}
       </ul>
     </div>
   </section>
@@ -117,17 +105,12 @@ const traditions = ['Upaniṣads', 'Tao Te Ching', 'Heraclitus', "Patañjali's Y
   <section class="pr-companion sec-cream">
     <div class="container pr-comp-grid">
       <div>
-        <h2>A study companion, grounded in the sources</h2>
-        <p>Ask about any passage and get an answer rooted in the text itself — not a guess. Wander with <strong>Random</strong>, follow a curated <strong>Path</strong>, keep a <strong>Journal</strong> of what moves you, and trace every claim back to its <strong>Source</strong>.</p>
-        <a href={app} target="_blank" rel="noopener" class="btn btn-green">Start reading</a>
+        <h2>{t.pratibha.companionTitle}</h2>
+        <p set:html={t.pratibha.companionHtml} />
+        <a href={app} target="_blank" rel="noopener" class="btn btn-green">{t.pratibha.companionCta}</a>
       </div>
       <ul class="feat-list">
-        <li><strong>Read</strong> — layered passages, one screen</li>
-        <li><strong>Study Chat</strong> — a library that speaks back</li>
-        <li><strong>Paths</strong> — guided journeys through a theme</li>
-        <li><strong>Random</strong> — serendipity as a practice</li>
-        <li><strong>Journal</strong> — hold onto what lands</li>
-        <li><strong>Sources</strong> — every passage, traceable</li>
+        {features.map((f) => <li><strong>{f.strong}</strong>{f.rest}</li>)}
       </ul>
     </div>
   </section>
@@ -136,9 +119,9 @@ const traditions = ['Upaniṣads', 'Tao Te Ching', 'Heraclitus', "Patañjali's Y
   <!-- CTA -->
   <section class="pr-cta sec-green">
     <div class="container-narrow text-center">
-      <h2>Sit with the wisdom of the ages</h2>
-      <p class="lead">Pratibha is open and free to explore — a quiet room for the texts that have carried us.</p>
-      <a href={app} target="_blank" rel="noopener" class="btn btn-amber">Open Pratibha →</a>
+      <h2>{t.pratibha.ctaTitle}</h2>
+      <p class="lead">{t.pratibha.ctaLead}</p>
+      <a href={app} target="_blank" rel="noopener" class="btn btn-amber">{t.pratibha.ctaOpen}</a>
     </div>
   </section>
 </Base>

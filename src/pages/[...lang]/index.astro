@@ -1,23 +1,26 @@
 ---
-import Base from '../layouts/Base.astro';
-import Wave from '../components/Wave.astro';
+import Base from '../../layouts/Base.astro';
+import Wave from '../../components/Wave.astro';
+import { localePaths, localize, useTranslations, type Locale } from '../../i18n';
 
-const practices = [
-  { title: 'Will it', copy: "Inner vision is the starting point. If you feel dissatisfied with life that means the power of your will wants to more fully awaken. Recognize your ideal, and let your thirst for its taste guide. Clarity turns desire into intention, aligning orientation and purpose." },
-  { title: 'Know it', copy: "This life is constantly opening before your very eyes. You know more intimately than anyone else what this home called 'me' is like. By paying attention, steadily we unravel the mystery of this lifetime. Know your needs and fears to become master of your direction." },
-  { title: 'Act it', copy: 'Action is never without consequence. If we want to know why we taste sweet and bitter fruit in life we must simply look at the seeds we are habitually planting. If you want to architect beauty and bliss, then action in service to your vision will inevitably give you your result.' },
-];
+export const getStaticPaths = localePaths;
 
+const { lang } = Astro.props as { lang: Locale };
+const t = useTranslations(lang);
+
+// Copy comes from the dictionary; images and order live here.
+const practices = [t.home.practices.will, t.home.practices.know, t.home.practices.act];
 const offerings = [
-  { img: '2c0a7398.jpg', title: 'Open Classes', copy: 'Breath. Sweat. Music. Synchronicity. We open a sacred space to move together, until we collapse into one. This collective release encourages communion with All.' },
-  { img: '2c0a7758.jpg', title: 'Workshops', copy: 'From learning to stand on your hands to breathing pure light along your spine, we offer a variety of workshops that spark insight into our connection with the divine.' },
-  { img: '2c0a7454.jpg', title: 'Retreats', copy: 'Learning the art of living together. Amongst spectacular landscapes, we dig to the root of a conscious compassionate connection to life, finding freedom through discipline.' },
-  { img: '2c0a7663.jpeg', title: 'Private Classes', copy: 'A personal diagnostic, simultaneously physical and mental, that allows us to together approach the unbinding of knots in order to allow evolution towards luminosity.' },
+  { img: '2c0a7398.jpg', ...t.home.offerings.classes },
+  { img: '2c0a7758.jpg', ...t.home.offerings.workshops },
+  { img: '2c0a7454.jpg', ...t.home.offerings.retreats },
+  { img: '2c0a7663.jpeg', ...t.home.offerings.privates },
 ];
 ---
 <Base
+  lang={lang}
   headerTheme="dark"
-  description="Conor Byrnes yoga at Agni Agama — Advanced Certified Jivamukti teacher offering open classes, private sessions, workshops, and retreats. Nondual Śaiva Tantra and philosophy for real-world transformation."
+  description={t.home.seoDescription}
   image="/media/dsc01432-copy.jpeg"
 >
   <!-- Hero: green-duotone forest, black left text + Will/Know/Act accordion -->
@@ -26,9 +29,9 @@ const offerings = [
     <div class="hero-tint"></div>
     <div class="hero-inner container-wide">
       <div class="hero-copy">
-        <h1><span class="brandline">Agni Agama</span> <span class="tagline">– the fire of revelation</span></h1>
-        <h2 class="hero-sub">Brilliant awareness for material transformation</h2>
-        <p class="hero-byline">Yoga, retreats &amp; philosophy with Conor Byrnes</p>
+        <h1><span class="brandline">{t.home.heroBrand}</span> <span class="tagline">{t.home.heroTagline}</span></h1>
+        <h2 class="hero-sub">{t.home.heroSub}</h2>
+        <p class="hero-byline">{t.home.heroByline}</p>
       </div>
       <div class="accordion">
         {practices.map((p) => (
@@ -62,8 +65,8 @@ const offerings = [
     <div class="container pramana-grid">
       <div class="pramana-img reveal"><img src="/media/unsplash-image-lpj6e4wyg_0.jpg" alt="Fire at dusk" loading="lazy" /></div>
       <div class="pramana-copy">
-        <p><a href="/blog"><strong class="amber-strong">PRĀMAṆA</strong></a> is our written platform for discussing and elucidating philosophy for real-world transformation, both personal and collective. It invites us to challenge our deeply held notions, in the name of embodying a truth that is both truly felt and that truly empowers: living radically, directly and unapologetically.</p>
-        <a href="/blog" class="btn btn-green">Read PRĀMAṆA</a>
+        <p set:html={t.home.pramanaHtml} />
+        <a href={localize('/blog', lang)} class="btn btn-green">{t.ui.readPramana}</a>
       </div>
     </div>
   </section>
@@ -72,9 +75,9 @@ const offerings = [
   <!-- Evolve and Awaken -->
   <section class="awaken sec-green">
     <div class="container-narrow text-center">
-      <h2>Evolve and Awaken</h2>
-      <p class="lead">Conor Byrnes teaches yoga as a path of embodied clarity — from open classes and private sessions to international retreats. If you're interested in collaborating on a workshop, event, or practice tailored to your journey, I'd love to hear from you.</p>
-      <a href="/contact" class="btn btn-amber">Get in touch</a>
+      <h2>{t.home.awakenTitle}</h2>
+      <p class="lead">{t.home.awakenLead}</p>
+      <a href={localize('/contact', lang)} class="btn btn-amber">{t.ui.getInTouch}</a>
     </div>
   </section>
 </Base>

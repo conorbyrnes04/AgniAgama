@@ -25,22 +25,21 @@ export const site = {
   },
   socials: {
     linkedin: 'https://www.linkedin.com/in/conor-byrnes-bb17a0a0',
-    jivamukti: 'https://jivamuktiyoga.com/teachers-global/conor-byrnes/',
-    jivamuktiParis: 'https://www.jivamuktiyoga.fr/blog/team/01-conor-byrnes/',
   } as Record<string, string>,
   external: {
-    jivamuktiParis: 'https://www.jivamuktiyoga.fr/schedule/',
     jangoProject: 'https://jangoproject.com',
     pratibha: 'https://pratibha.agniagama.com',
   },
   // Order mirrors the original Squarespace nav (two rows, left-aligned).
+  // `key` indexes t.nav in the dictionaries (src/i18n/en.ts); `href` is the
+  // English path, run through localize() at render time.
   nav: [
-    { label: 'Events', href: '/events' },
-    { label: 'Contact', href: '/contact' },
-    { label: 'About', href: '/about' },
-    { label: 'Blog', href: '/blog' },
-    { label: 'Pratibha', href: '/pratibha' },
-    { label: 'Home', href: '/' },
-    { label: 'Jango Project', href: '/jango-project' },
-  ],
+    { key: 'events', href: '/events' },
+    { key: 'contact', href: '/contact' },
+    { key: 'about', href: '/about' },
+    { key: 'blog', href: '/blog' },
+    { key: 'pratibha', href: '/pratibha' },
+    { key: 'home', href: '/' },
+    { key: 'jango', href: '/jango-project' },
+  ] as const,
 };

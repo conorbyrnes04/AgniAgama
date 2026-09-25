@@ -1,19 +1,20 @@
 ---
-import Base from '../layouts/Base.astro';
-import { events } from '../data/events';
-import { site } from '../data/site';
+import Base from '../../layouts/Base.astro';
+import { events } from '../../data/events';
+import { localePaths, localize, tr, useTranslations, type Locale } from '../../i18n';
 
-const bookingOptions = [
-  ['Private or small group yoga classes', ' (online or in-person)'],
-  ['Breathwork journeys', ' to regulate, awaken, or release'],
-  ['Foundations of yoga', ': asana, bandha, and alignment training'],
-  ['Philosophical mentoring', ' rooted in nondual Śaiva Tantra and yogic texts'],
-  ['Spiritual coaching', ' to support your inner inquiry and integration'],
-];
+export const getStaticPaths = localePaths;
+
+const { lang } = Astro.props as { lang: Locale };
+const t = useTranslations(lang);
+const booking = Object.values(t.events.booking);
+// "…please {link}." — split so the link lands inside the translated sentence.
+const [outroBefore, outroAfter] = t.events.privateOutroHtml.split('{link}');
 ---
 <Base
-  title="Events & Retreats with Conor Byrnes"
-  description="Upcoming Conor Byrnes yoga retreats, teacher trainings, and ceremonies — Morocco, India, Sri Lanka, Oman, Marseille — plus regular classes at Jivamukti Yoga Paris."
+  lang={lang}
+  title={t.events.seoTitle}
+  description={t.events.seoDescription}
   image="/media/event-paris.jpg"
   headerTheme="light"
 >
@@ -21,19 +22,21 @@ const bookingOptions = [
     <div class="container events-grid">
       <!-- Left: heading + event cards -->
       <div class="events-left">
-        <h1 class="amber-head">Events</h1>
-        <h2 class="amber-head sub">Upcoming Retreats, Trainings &amp; Ceremonies with Conor Byrnes</h2>
+        <h1 class="amber-head">{t.events.heading}</h1>
+        <h2 class="amber-head sub">{t.events.subheading}</h2>
 
         <div class="cards">
           {events.map((e) => (
             <article class="ecard reveal">
-              {e.image && <div class="ecard-img"><img src={`/media/${e.image}`} alt={e.title} loading="lazy" /></div>}
+              {e.image && <div class="ecard-img"><img src={`/media/${e.image}`} alt={tr(e.title, lang)} loading="lazy" /></div>}
               <div class="ecard-body">
-                <h3>{e.title}</h3>
-                <p class="edate">{e.dates}</p>
-                <p class="eloc">{e.location}</p>
-                <p class="ecopy">{e.copy}</p>
-                {e.link && <a class="elink" href={e.link.href} target="_blank" rel="noopener">{e.link.label}</a>}
+                <h3>{tr(e.title, lang)}</h3>
+                <p class="edate">{tr(e.dates, lang)}</p>
+                <p class="eloc">{tr(e.location, lang)}</p>
+                <p class="ecopy">{tr(e.copy, lang)}</p>
+                {e.link && (
+                  <a class="elink" href={e.link.href} target="_blank" rel="noopener">{tr(e.link.label, lang)}</a>
+                )}
               </div>
             </article>
           ))}
@@ -43,23 +46,26 @@ const bookingOptions = [
       <!-- Right: image collage + regular classes + private sessions -->
       <div class="events-right">
         <div class="collage">
-          <img class="c1" src="/media/unsplash-image-a2iuoznmhs.jpg" alt="Forest path" loading="lazy" />
-          <img class="c2" src="/media/hd-0963_web.jpg" alt="Conor practicing" loading="lazy" />
+          <img class="c1" src="/media/unsplash-image-a2iuoznmhs.jpg" alt={t.events.collageAlt1} loading="lazy" />
+          <img class="c2" src="/media/hd-0963_web.jpg" alt={t.events.collageAlt2} loading="lazy" />
         </div>
 
         <div class="right-block">
-          <h2 class="amber-head underlined">Regular Classes at Jivamukti Yoga Paris</h2>
-          <p>In addition to these special events and guest teachings, I offer regular classes at Jivamukti Yoga Paris. These sessions are deeply rooted in the Jivamukti tradition, combining vigorous asana practice with spiritual teachings, chanting, and meditation. Whether you are a seasoned practitioner or new to yoga, my classes are designed to challenge, inspire, and uplift, helping you connect more deeply with yourself and the world around you.</p>
-          <a href={site.external.jivamuktiParis} target="_blank" rel="noopener" class="btn btn-amber">Paris schedule</a>
+          <h2 class="amber-head underlined">{t.events.regularTitle}</h2>
+          <p>{t.events.regularCopy}</p>
         </div>
 
         <div class="right-block">
-          <h2 class="amber-head">Private Sessions &amp; Tailored Guidance</h2>
-          <p>Whether you are seeking a more intimate container for transformation, beginning your journey with yoga, or deepening an existing practice, I offer personalized sessions that meet you where you are. You can book:</p>
+          <h2 class="amber-head">{t.events.privateTitle}</h2>
+          <p>{t.events.privateIntro}</p>
           <ul class="booking-list">
-            {bookingOptions.map(([b, rest]) => <li><strong>{b}</strong>{rest}</li>)}
+            {booking.map((b) => <li><strong>{b.strong}</strong>{b.rest}</li>)}
           </ul>
-          <p>To inquire about private sessions or to co-create a custom program, please <a href="/contact" class="inline-a">contact me directly</a>.</p>
+          <p>
+            {outroBefore}
+            <a href={localize('/contact', lang)} class="inline-a">{t.events.privateOutroLink}</a>
+            {outroAfter}
+          </p>
         </div>
       </div>
     </div>

@@ -1,51 +1,63 @@
 ---
-import Base from '../layouts/Base.astro';
-import { site } from '../data/site';
+import Base from '../../layouts/Base.astro';
+import { site } from '../../data/site';
+import { localePaths, useTranslations, type Locale } from '../../i18n';
+
+export const getStaticPaths = localePaths;
+
+const { lang } = Astro.props as { lang: Locale };
+const t = useTranslations(lang);
 
 // Web3Forms: free, no backend. Create a key at https://web3forms.com (enter conorbyrnesyoga@gmail.com)
 // and paste it below, or set PUBLIC_WEB3FORMS_KEY in your host's env vars.
 const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '3b715197-90e3-4acd-a40c-a158a34eff64';
 ---
 <Base
-  title="Contact Conor Byrnes"
-  description="Contact Conor Byrnes for yoga classes, private sessions, retreats, workshops, or questions about yoga philosophy. Based in Paris — replies personally."
+  lang={lang}
+  title={t.contact.seoTitle}
+  description={t.contact.seoDescription}
   image="/media/hd-0876_web.jpg"
   headerTheme="dark"
 >
   <section class="contact sec-sand">
     <div class="container contact-grid">
       <div class="contact-intro">
-        <h1>Let's create an experience</h1>
-        <p class="lead">
-          If you're curious about an upcoming event, or you want to deepen your practice, or
-          have a question about anything yoga philosophy related, write to me here. I love to
-          connect our ideas and learn from our shared process.
-        </p>
-        <p>
-          Feel free to tell a little about where you are and what you're drawn to, and perhaps
-          we'll find a way in together — a class, a workshop, a conversation.
-        </p>
+        <h1>{t.contact.heading}</h1>
+        <p class="lead">{t.contact.lead}</p>
+        <p>{t.contact.body}</p>
         <a href={`mailto:${site.email}`} class="email">{site.email}</a>
       </div>
 
       <div class="contact-photo">
-        <img src="/media/hd-0876_web.jpg" alt="Conor Byrnes by the Canal Saint-Martin, Paris" loading="eager" />
+        <img src="/media/hd-0876_web.jpg" alt={t.contact.photoAlt} loading="eager" />
       </div>
     </div>
 
     <div class="container form-wrap">
       <form id="contact-form" class="contact-form">
         <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
-        <input type="hidden" name="subject" value="New message from agniagama.com" />
+        <input type="hidden" name="subject" value={t.contact.form.subject} />
+        <input type="hidden" name="language" value={lang} />
         <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
         <div class="row">
-          <label>Name<input type="text" name="name" required /></label>
-          <label>Email<input type="email" name="email" required /></label>
+          <label>{t.contact.form.name}<input type="text" name="name" required /></label>
+          <label>{t.contact.form.email}<input type="email" name="email" required /></label>
         </div>
-        <label>What are you drawn to?<input type="text" name="interest" placeholder="A retreat, private practice, a question…" /></label>
-        <label>Your message<textarea name="message" rows="5" required></textarea></label>
-        <button type="submit" class="btn btn-dark">Send message</button>
-        <p id="form-status" class="form-status" role="status"></p>
+        <label>
+          {t.contact.form.interest}
+          <input type="text" name="interest" placeholder={t.contact.form.interestPlaceholder} />
+        </label>
+        <label>{t.contact.form.message}<textarea name="message" rows="5" required></textarea></label>
+        <button type="submit" class="btn btn-dark">{t.contact.form.send}</button>
+        <p
+          id="form-status"
+          class="form-status"
+          role="status"
+          data-sending={t.contact.form.sending}
+          data-ok={t.contact.form.ok}
+          data-error={t.contact.form.error}
+          data-unconfigured={t.contact.form.unconfigured}
+        ></p>
       </form>
     </div>
   </section>
@@ -90,16 +102,18 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '3b715197-90e3-4ac
 <script>
   const form = document.getElementById('contact-form') as HTMLFormElement;
   const status = document.getElementById('form-status')!;
+  // Messages are rendered into data-* by the server so they stay translated.
+  const say = (key: string) => status.dataset[key] ?? '';
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(form);
     if ((data.get('access_key') as string)?.startsWith('REPLACE_')) {
       status.className = 'form-status err';
-      status.textContent = 'Form not configured yet — add your Web3Forms access key.';
+      status.textContent = say('unconfigured');
       return;
     }
     status.className = 'form-status';
-    status.textContent = 'Sending…';
+    status.textContent = say('sending');
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -109,14 +123,14 @@ const WEB3FORMS_KEY = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '3b715197-90e3-4ac
       const json = await res.json();
       if (json.success) {
         status.className = 'form-status ok';
-        status.textContent = 'Thank you — your message is on its way. I will be in touch soon.';
+        status.textContent = say('ok');
         form.reset();
       } else {
         throw new Error(json.message || 'Failed');
       }
     } catch (err) {
       status.className = 'form-status err';
-      status.textContent = 'Something went wrong. Please email me directly.';
+      status.textContent = say('error');
     }
   });
 </script>

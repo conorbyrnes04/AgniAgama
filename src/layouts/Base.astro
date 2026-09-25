@@ -3,6 +3,15 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { site } from '../data/site';
+import {
+  alternates,
+  localeFromUrl,
+  locales,
+  localize,
+  localeKeys,
+  useTranslations,
+  type Locale,
+} from '../i18n';
 
 interface Props {
   title?: string;
@@ -17,22 +26,31 @@ interface Props {
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
   /** Set true for pages that should stay out of the index (rare). */
   noindex?: boolean;
+  /** Page language. Localized pages pass it from their [...lang] param. */
+  lang?: Locale;
+  /** Languages this page exists in — defaults to all (see blog posts). */
+  alternateLocales?: Locale[];
 }
 const {
   title,
-  description = 'Conor Byrnes yoga — Agni Agama. Advanced Certified Jivamukti teacher offering classes, retreats, workshops, and nondual Śaiva Tantra philosophy from Paris and around the world.',
   image = site.defaultOgImage,
   headerTheme = 'dark',
   canonical,
   ogType = 'website',
   jsonLd,
   noindex = false,
+  lang = localeFromUrl(Astro.url),
+  alternateLocales,
 } = Astro.props;
 
+const t = useTranslations(lang);
+const { description = t.seo.defaultDescription } = Astro.props;
+
 const origin = Astro.site?.origin ?? site.url;
-const fullTitle = title
-  ? `${title} — ${site.name}`
-  : `Conor Byrnes Yoga — ${site.name} | Jivamukti, Retreats & Philosophy`;
+const fullTitle = title ? `${title} — ${site.name}` : t.seo.defaultTitle;
+const aboutUrl = new URL(localize('/about', lang), origin).href;
+const hreflangs = alternates(Astro.url.pathname, origin, alternateLocales);
+const otherLocales = (alternateLocales ?? localeKeys).filter((l) => l !== lang);
 const canonicalUrl = canonical
   ? new URL(canonical, origin).href
   : new URL(Astro.url.pathname, origin).href;
@@ -43,7 +61,7 @@ const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: site.person.name,
-  url: new URL('/about', origin).href,
+  url: aboutUrl,
   image: new URL(site.person.image, origin).href,
   email: site.email,
   jobTitle: site.person.jobTitle,
@@ -74,7 +92,7 @@ const orgJsonLd = {
   founder: {
     '@type': 'Person',
     name: site.person.name,
-    url: new URL('/about', origin).href,
+    url: aboutUrl,
   },
   sameAs,
 };
@@ -100,20 +118,26 @@ const extraJsonLd = jsonLd
   : [];
 ---
 <!doctype html>
-<html lang="en">
+<html lang={locales[lang].code}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
+    {hreflangs.map((alt) => (
+      <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
+    ))}
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     <meta name="author" content={site.person.name} />
     <meta name="theme-color" content="#344734" />
 
     <!-- Open Graph -->
     <meta property="og:site_name" content={site.name} />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content={locales[lang].ogLocale} />
+    {otherLocales.map((l) => (
+      <meta property="og:locale:alternate" content={locales[l].ogLocale} />
+    ))}
     <meta property="og:type" content={ogType} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
@@ -137,11 +161,11 @@ const extraJsonLd = jsonLd
     ))}
   </head>
   <body>
-    <Header theme={headerTheme} />
+    <Header theme={headerTheme} lang={lang} />
     <main>
       <slot />
     </main>
-    <Footer />
+    <Footer lang={lang} />
 
     <script>
       // Reveal-on-scroll (mirrors the source's fade-in feel)

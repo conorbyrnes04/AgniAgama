@@ -1,16 +1,22 @@
 ---
 import Base from '../layouts/Base.astro';
+import { defaultLocale, localize, useTranslations } from '../i18n';
+
+// Static hosts serve one 404 for every path, so this page stays in the default
+// language (a localized /fr/404 would never actually be reached).
+const lang = defaultLocale;
+const t = useTranslations(lang);
 ---
-<Base title="Page not found" headerTheme="light">
+<Base lang={lang} title={t.notFound.seoTitle} headerTheme="light" noindex>
   <section class="notfound sec-green">
     <div class="container-narrow text-center">
       <img src="/media/logo-white.png" alt="" class="mark" aria-hidden="true" />
       <p class="four">404</p>
-      <h1>This path has gone quiet</h1>
-      <p class="lead">The page you're looking for isn't here — it may have moved, or the link led somewhere that no longer exists.</p>
+      <h1>{t.notFound.heading}</h1>
+      <p class="lead">{t.notFound.lead}</p>
       <div class="actions">
-        <a href="/" class="btn btn-amber">Return home</a>
-        <a href="/blog" class="btn btn-outline-light">Read PRĀMAṆA</a>
+        <a href={localize('/', lang)} class="btn btn-amber">{t.ui.returnHome}</a>
+        <a href={localize('/blog', lang)} class="btn btn-outline-light">{t.ui.readPramana}</a>
       </div>
     </div>
   </section>

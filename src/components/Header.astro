@@ -1,30 +1,63 @@
 ---
 import { site } from '../data/site';
+import { delocalize, languageSwitch, localize, useTranslations, type Locale } from '../i18n';
 // theme: 'dark' = dark text (over light sections), 'light' = light text (over dark sections)
-interface Props { theme?: 'dark' | 'light' }
-const { theme = 'dark' } = Astro.props;
-const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+interface Props { theme?: 'dark' | 'light'; lang: Locale }
+const { theme = 'dark', lang } = Astro.props;
+const t = useTranslations(lang);
+// Compare against the language-stripped path so /fr/blog highlights Blog too.
+const path = delocalize(Astro.url.pathname).replace(/\/$/, '') || '/';
 const isActive = (href: string) =>
   href === '/' ? path === '/' : path === href || (href === '/blog' && path.startsWith('/blog'));
 const logo = theme === 'light' ? '/media/logo-white.png' : '/media/logo.png';
+const languages = languageSwitch(Astro.url.pathname, lang);
 ---
 <header class:list={['site-header', theme]}>
   <div class="header-inner container-wide">
-    <nav class="nav" aria-label="Primary">
-      {site.nav.map((item) => (
-        <a href={item.href} class:list={['nav-link', { active: isActive(item.href) }]}>{item.label}</a>
-      ))}
-    </nav>
-    <a href="/" class="brand" aria-label="Agni Agama home">
+    <div class="nav-col">
+      <nav class="nav" aria-label="Primary">
+        {site.nav.map((item) => (
+          <a href={localize(item.href, lang)} class:list={['nav-link', { active: isActive(item.href) }]}>
+            {t.nav[item.key]}
+          </a>
+        ))}
+      </nav>
+      <nav class="lang" aria-label={t.ui.languageLabel}>
+        {languages.map((l) => (
+          <a
+            href={l.href}
+            hreflang={l.code}
+            lang={l.code}
+            class:list={['lang-link', { active: l.current }]}
+            aria-current={l.current ? 'true' : undefined}
+            title={l.label}
+          >{l.short}</a>
+        ))}
+      </nav>
+    </div>
+    <a href={localize('/', lang)} class="brand" aria-label="Agni Agama home">
       <img src={logo} alt="Agni Agama" width="40" height="40" />
     </a>
-    <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+    <button class="menu-toggle" aria-label={t.ui.menu} aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 
   <nav class="mobile-nav" aria-label="Mobile">
-    {site.nav.map((item) => <a href={item.href} class="nav-link">{item.label}</a>)}
+    {site.nav.map((item) => (
+      <a href={localize(item.href, lang)} class="nav-link">{t.nav[item.key]}</a>
+    ))}
+    <div class="mobile-lang">
+      {languages.map((l) => (
+        <a
+          href={l.href}
+          hreflang={l.code}
+          lang={l.code}
+          class:list={['lang-link', { active: l.current }]}
+          aria-current={l.current ? 'true' : undefined}
+        >{l.short}</a>
+      ))}
+    </div>
   </nav>
 </header>
 
@@ -34,7 +67,8 @@ const logo = theme === 'light' ? '/media/logo-white.png' : '/media/logo.png';
     display: grid; grid-template-columns: 1fr auto 1fr; align-items: start;
     padding-top: 1.5rem; min-height: 64px;
   }
-  /* left: two-row nav */
+  /* left: two-row nav with the language switcher beneath it */
+  .nav-col { grid-column: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 0.5rem; }
   .nav { display: flex; flex-wrap: wrap; max-width: 320px; gap: 0.35rem 1rem; }
   .nav-link {
     font-family: var(--body); font-weight: 400; font-size: 0.82rem;
@@ -49,19 +83,32 @@ const logo = theme === 'light' ? '/media/logo-white.png' : '/media/logo.png';
   .brand { grid-column: 2; justify-self: center; }
   .brand img { height: 34px; width: auto; }
 
+  /* language switcher — sits under the nav so it always shares its backdrop */
+  .lang { display: flex; gap: 0.6rem; align-items: center; }
+  .lang-link {
+    font-family: var(--body); font-size: 0.68rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--ink); opacity: 0.6;
+  }
+  .lang-link:hover { opacity: 1; }
+  .lang-link.active { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
+  .light .lang-link { color: #fff; }
+  .light .lang-link.active { color: var(--amber); text-decoration-color: var(--amber); }
+  .mobile-lang { display: flex; gap: 1rem; padding-top: 0.9rem; margin-top: 0.4rem; border-top: 1px solid rgba(255,255,255,0.18); }
+
   .menu-toggle { display: none; grid-column: 3; justify-self: end; background: none; border: 0; cursor: pointer; flex-direction: column; gap: 5px; padding: 8px; }
   .menu-toggle span { width: 24px; height: 2px; background: var(--ink); display: block; transition: 0.2s; }
   .light .menu-toggle span { background: #fff; }
   .mobile-nav { display: none; }
 
   @media (max-width: 720px) {
-    .nav { display: none; }
+    .nav-col { display: none; }
     .header-inner { grid-template-columns: auto 1fr auto; padding-top: 1rem; align-items: center; }
     .brand { grid-column: 1; justify-self: start; }
-    .menu-toggle { display: flex; }
+    .menu-toggle { grid-column: 3; display: flex; }
     .mobile-nav { display: none; flex-direction: column; gap: 0.3rem; padding: 0.5rem var(--gutter) 1.2rem; background: var(--green-deep); }
     .site-header.open .mobile-nav { display: flex; }
     .site-header.open .mobile-nav .nav-link { color: #fff; font-size: 1rem; padding: 0.5rem 0; }
+    .site-header.open .mobile-lang .lang-link { color: #fff; font-size: 0.8rem; }
     .site-header.open { background: var(--green-deep); }
     .site-header.open .menu-toggle span { background: #fff; }
     .site-header.open .menu-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
