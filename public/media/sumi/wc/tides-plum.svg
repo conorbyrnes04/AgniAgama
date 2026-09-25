@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 862.000000 862.000000" preserveAspectRatio="xMidYMid meet">
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="26.78 28.22 789.76 789.76" preserveAspectRatio="xMidYMid meet">
 <title>Sumi tides, plum watercolor</title>
 <defs>
-<linearGradient id="wash" gradientUnits="userSpaceOnUse" x1="766.239" y1="95.761" x2="95.761" y2="766.239">
+<linearGradient id="wash" gradientUnits="userSpaceOnUse" x1="728.805" y1="115.955" x2="114.515" y2="730.245">
 <stop offset="0" stop-color="#a57c9f"/>
 <stop offset="1" stop-color="#6f4c6c"/>
 </linearGradient>
-<mask id="ink" maskUnits="userSpaceOnUse" x="-51.72" y="-51.72" width="965.44" height="965.44">
+<mask id="ink" maskUnits="userSpaceOnUse" x="-20.606" y="-19.166" width="884.531" height="884.531">
 <g transform="translate(0.000000,862.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none">
 <path d="M 4138 7963 c7 -3 16 -2 19 1 c4 3 -2 6 -13 5 c-11 0 -14 -3 -6 -6 z"/>
 <path d="M 4768 7963 c7 -3 16 -2 19 1 c4 3 -2 6 -13 5 c-11 0 -14 -3 -6 -6 z"/>
@@ -473,22 +473,22 @@
 <path d="M 4158 803 c7 -3 16 -2 19 1 c4 3 -2 6 -13 5 c-11 0 -14 -3 -6 -6 z"/>
 </g>
 </mask>
-<filter id="wc" filterUnits="userSpaceOnUse" x="-51.72" y="-51.72" width="965.44" height="965.44" color-interpolation-filters="sRGB">
-<feTurbulence type="fractalNoise" baseFrequency="0.013" numOctaves="3" seed="270" result="flow"/>
-<feDisplacementMap in="SourceGraphic" in2="flow" scale="13.792" xChannelSelector="R" yChannelSelector="G" result="bled"/>
-<feGaussianBlur in="bled" stdDeviation="1.896" result="soft"/>
-<feGaussianBlur in="soft" stdDeviation="18.964" result="spread"/>
+<filter id="wc" filterUnits="userSpaceOnUse" x="-20.606" y="-19.166" width="884.531" height="884.531" color-interpolation-filters="sRGB">
+<feTurbulence type="fractalNoise" baseFrequency="0.014" numOctaves="3" seed="270" result="flow"/>
+<feDisplacementMap in="SourceGraphic" in2="flow" scale="12.636" xChannelSelector="R" yChannelSelector="G" result="bled"/>
+<feGaussianBlur in="bled" stdDeviation="1.737" result="soft"/>
+<feGaussianBlur in="soft" stdDeviation="17.375" result="spread"/>
 <feComposite in="soft" in2="spread" operator="out" result="rim"/>
 <feColorMatrix in="rim" type="matrix" values="0.78 0 0 0 0  0 0.78 0 0 0  0 0 0.78 0 0  0 0 0 0.85 0" result="rimDark"/>
 <feColorMatrix in="soft" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.72 0" result="body"/>
 <feMerge result="wet"><feMergeNode in="body"/><feMergeNode in="rimDark"/></feMerge>
-<feTurbulence type="fractalNoise" baseFrequency="0.005" numOctaves="2" seed="273" result="poolRaw"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.006" numOctaves="2" seed="273" result="poolRaw"/>
 <feColorMatrix in="poolRaw" type="matrix" values="1 0 0 0 0  1 0 0 0 0  1 0 0 0 0  0 0 0 0 1" result="pool"/>
 <feComposite in="wet" in2="pool" operator="arithmetic" k1="0.8" k2="0.6" k3="0" k4="0" result="pooled"/>
-<feTurbulence type="fractalNoise" baseFrequency="0.064" numOctaves="2" seed="277" result="grainRaw"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.07" numOctaves="2" seed="277" result="grainRaw"/>
 <feColorMatrix in="grainRaw" type="matrix" values="1 0 0 0 0  1 0 0 0 0  1 0 0 0 0  0 0 0 0 1" result="grain"/>
 <feComposite in="pooled" in2="grain" operator="arithmetic" k1="0.24" k2="0.88" k3="0" k4="0"/>
 </filter>
 </defs>
-<g filter="url(#wc)"><rect x="-51.72" y="-51.72" width="965.44" height="965.44" fill="url(#wash)" mask="url(#ink)"/></g>
+<g filter="url(#wc)"><rect x="-20.606" y="-19.166" width="884.531" height="884.531" fill="url(#wash)" mask="url(#ink)"/></g>
 </svg>

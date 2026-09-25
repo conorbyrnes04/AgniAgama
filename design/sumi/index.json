@@ -1725,14 +1725,9 @@
         "lila"
       ],
       "filter": "standard",
-      "status": "ok",
-      "used_in": [
-        {
-          "post": "making-peace-with-time",
-          "tone": "plum",
-          "file": "public/media/sumi/wc/play-plum.svg"
-        }
-      ]
+      "status": "excluded",
+      "excluded_reason": "Conor: never use the play button",
+      "used_in": []
     },
     {
       "name": "quetzalcoatl",
@@ -2285,7 +2280,13 @@
       ],
       "filter": "standard",
       "status": "ok",
-      "used_in": []
+      "used_in": [
+        {
+          "post": "making-peace-with-time",
+          "tone": "plum",
+          "file": "public/media/sumi/wc/tides-plum.svg"
+        }
+      ]
     },
     {
       "name": "tiger",
