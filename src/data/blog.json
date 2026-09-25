@@ -26,6 +26,13 @@
         "text": "We've almost made it to the end of the week, and you can feel the energy. At this moment in the city, it's very intense. Maybe it's difficult to ground down. Maybe it's difficult to feel relaxed. It can even be challenging to sleep at night. So it's nice that we can use our āsana practice to reconnect with the ground beneath us and, more importantly, to reconnect with our presence, which neutralizes this experience of rushing through time."
       },
       {
+        "tag": "img",
+        "src": "sumi/wc/horse-moss.svg",
+        "alt": "Sumi horse",
+        "layout": "break",
+        "size": 165
+      },
+      {
         "tag": "p",
         "text": "This idea of neutralizing the experience of rushing is very powerful and very important, because so often we project ourselves through our minds into an idealized version of the future in order to escape what we cannot be present for in this moment right now. And we practice this almost constantly. Thinking about how much I would love to be on the beach somewhere, how much I would love to finally get to the weekend, how much I would love to be done with this project, how much I would love to finally move to another city. All the time we're projecting our mind into the future."
       },
@@ -39,10 +46,10 @@
       },
       {
         "tag": "img",
-        "src": "sumi/wc/spiral-moss.svg",
-        "alt": "Sumi spiral",
-        "layout": "float-right",
-        "size": 140
+        "src": "sumi/wc/play-plum.svg",
+        "alt": "Sumi play",
+        "layout": "float-left",
+        "size": 170
       },
       {
         "tag": "p",
@@ -54,10 +61,10 @@
       },
       {
         "tag": "img",
-        "src": "sumi/wc/mother-plum.svg",
-        "alt": "Sumi mother",
-        "layout": "float-left",
-        "size": 170
+        "src": "sumi/wc/kali-moss.svg",
+        "alt": "Sumi kali",
+        "layout": "float-right",
+        "size": 175
       },
       {
         "tag": "p",
@@ -77,10 +84,10 @@
       },
       {
         "tag": "img",
-        "src": "sumi/wc/circle-moss.svg",
+        "src": "sumi/wc/circle-ochre.svg",
         "alt": "Sumi ensō",
         "layout": "break",
-        "size": 165
+        "size": 180
       },
       {
         "tag": "p",
@@ -89,6 +96,13 @@
       {
         "tag": "p",
         "text": "And when you stop fast forwarding, you notice something. Thoughts and emotions flow through you. <strong>Nothing can contain this presence. This presence contains it all.</strong>"
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/serpent-plum.svg",
+        "alt": "Sumi serpent",
+        "layout": "float-left",
+        "size": 170
       },
       {
         "tag": "p",
@@ -100,10 +114,10 @@
       },
       {
         "tag": "img",
-        "src": "sumi/wc/sun-ochre.svg",
-        "alt": "Sumi sun",
+        "src": "sumi/wc/oak-dusty-rose.svg",
+        "alt": "Sumi oak",
         "layout": "float-right",
-        "size": 145
+        "size": 130
       },
       {
         "tag": "p",
@@ -154,6 +168,13 @@
         "text": "Something rather alarming is happening. Many of us are not satisfied with the way our bodies are, how they look or the way we feel in them. This epidemic of dissatisfaction with our physical form stirs up a lot of frustration, fear, hatred and jealousy that ultimately doesn't help us on our spiritual path. And by spiritual path, I don't mean some path to an esoteric other world. I mean living well, living deeply, living beautifully in this world, in this body."
       },
       {
+        "tag": "img",
+        "src": "sumi/wc/mirror-dusty-rose.svg",
+        "alt": "Sumi mirror",
+        "layout": "float-left",
+        "size": 165
+      },
+      {
         "tag": "p",
         "text": "It's nobody's fault that we might feel dissatisfied with our bodies, because we're being bombarded every day with images of bodies that are unattainable. Women at forty years old are told to look like they have the body of someone who's sixteen, and guys are taught from the time they're seven years old that they should look like Superman or Goku. On top of that, we have endless images edited not only by Photoshop but by AI, to the point where we feel like we're not even qualified as human anymore. That we're just a shadow of the real thing."
       },
@@ -166,15 +187,15 @@
         "text": "The body, according to the yogis, is just something you wear, like a set of clothing, for a short period of time, be it forty or fifty or seventy-five years. Eventually, when the clothes have holes in them, without any worry, you throw them away and you take on a new set of garments. In the same vein, the yogi remains unattached to the way the body naturally changes over time. <strong>So we grow old. So we get wrinkles. So maybe we put on a little bit of belly fat. So what?</strong> This is just the way a human body progresses through time."
       },
       {
-        "tag": "p",
-        "text": "Our bodies are changing all the time. They're changing with the seasons. So take it as no surprise: over the next three months, now that we've entered autumn, as it gets colder, you'll want to eat more. And then one day you'll say, oh my God, I don't look as in shape as I did this summer. Don't panic."
+        "tag": "img",
+        "src": "sumi/wc/persephone-plum.svg",
+        "alt": "Sumi persephone",
+        "layout": "float-right",
+        "size": 185
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/earth-dusty-rose.svg",
-        "alt": "Sumi earth",
-        "layout": "float-left",
-        "size": 165
+        "tag": "p",
+        "text": "Our bodies are changing all the time. They're changing with the seasons. So take it as no surprise: over the next three months, now that we've entered autumn, as it gets colder, you'll want to eat more. And then one day you'll say, oh my God, I don't look as in shape as I did this summer. Don't panic."
       },
       {
         "tag": "p",
@@ -183,6 +204,13 @@
       {
         "tag": "blockquote",
         "text": "<em>Śakti-sandhāne śarīrotpattiḥ</em>"
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/durga-sage.svg",
+        "alt": "Sumi durga",
+        "layout": "break",
+        "size": 150
       },
       {
         "tag": "p",
@@ -199,6 +227,13 @@
       {
         "tag": "blockquote",
         "text": "\"When he unites with that power and becomes firmly absorbed in it, then, through its force, a body arises for him as he wills.\""
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/nuwa-indigo.svg",
+        "alt": "Sumi nuwa",
+        "layout": "break",
+        "size": 200
       },
       {
         "tag": "p",
@@ -218,9 +253,9 @@
       },
       {
         "tag": "img",
-        "src": "sumi/wc/sun-plum.svg",
-        "alt": "Sumi sun",
-        "layout": "float-right",
+        "src": "sumi/wc/earth-dusty-rose.svg",
+        "alt": "Sumi earth",
+        "layout": "float-left",
         "size": 185
       },
       {
@@ -236,15 +271,15 @@
         "text": "So start by repeating a mantra from your center that is made out of love. You could repeat <em>Oṃ Namaḥ Śivāya</em>. You could repeat <em>Māmbā Lalitā Devī Parāśakti Sundarī</em>. Or you could even start in English, or in French: <em>je m'aime, je m'aime, je m'aime</em>. Whatever aligns with the experience of love for your core."
       },
       {
-        "tag": "p",
-        "text": "Overcoming all the noise from the world requires you to cut through with the sword of the breath. With each exhalation, you can cut through the noise, not pushing it away, not arguing with it, but merging breath with mantra. That's the sword. It's as simple as this: inhale, repeat the mantra in your mind. Exhale, repeat the mantra in your mind. Try it during practice today. As you notice noise coming up in the mind, cut through over and again."
+        "tag": "img",
+        "src": "sumi/wc/air-indigo.svg",
+        "alt": "Sumi air",
+        "layout": "float-right",
+        "size": 160
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/tree-sage.svg",
-        "alt": "Sumi tree",
-        "layout": "break",
-        "size": 150
+        "tag": "p",
+        "text": "Overcoming all the noise from the world requires you to cut through with the sword of the breath. With each exhalation, you can cut through the noise, not pushing it away, not arguing with it, but merging breath with mantra. That's the sword. It's as simple as this: inhale, repeat the mantra in your mind. Exhale, repeat the mantra in your mind. Try it during practice today. As you notice noise coming up in the mind, cut through over and again."
       },
       {
         "tag": "p",
@@ -267,15 +302,15 @@
         "text": "This body is manifesting anew through the mantra you're repeating in your mind."
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/lotus-indigo.svg",
-        "alt": "Sumi lotus",
-        "layout": "float-left",
-        "size": 190
-      },
-      {
         "tag": "p",
         "text": "Draw your hands together in front of your heart center. Before you give it any thought, allow the mantra to bring forth there that which you most deeply desire, that beauty that you naturally cherish. Allow it to rest like a seed, rooted deeply there, now blossoming out into the light, like a flower opening to the sky. Allow this body to manifest in the higher way, in the spiritual way, aligned with the pure pulsation of life."
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/chalice-moss.svg",
+        "alt": "Sumi chalice",
+        "layout": "float-left",
+        "size": 150
       },
       {
         "tag": "p",
@@ -342,19 +377,26 @@
         "text": "<strong>According to the yogis, this state of ānanda, which is not a state, this experience of love, which is not an experience, doesn't have an opposite.</strong> It's not that there's love on one end and hate on the other. Love is the ground of our being. It is the rasa, the flavor, of our being. The Taittirīya Upaniṣad (2.7) says it simply: raso vai saḥ, \"that is rasa,\" and whoever tastes it becomes blissful."
       },
       {
+        "tag": "img",
+        "src": "sumi/wc/storm-terracotta.svg",
+        "alt": "Sumi storm",
+        "layout": "float-right",
+        "size": 185
+      },
+      {
         "tag": "p",
         "text": "But what happens is like clouds in the sky. To our eyes, it can seem as if there's no sun up there. Of course, the sun is as present as ever. Something in our perception is blocking the recognition of what is eternally there, eternally constant, eternally present: this stateless state of love."
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/sun-terracotta.svg",
-        "alt": "Sumi sun",
-        "layout": "break",
-        "size": 195
-      },
-      {
         "tag": "p",
         "text": "So what blocks that experience of love? <strong>We put conditions onto the unconditional.</strong> We're not doing this consciously. It's happening subconsciously, all the time."
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/turtle-sage.svg",
+        "alt": "Sumi turtle",
+        "layout": "break",
+        "size": 165
       },
       {
         "tag": "p",
@@ -374,10 +416,10 @@
       },
       {
         "tag": "img",
-        "src": "sumi/wc/trail-sage.svg",
-        "alt": "Sumi trail",
-        "layout": "float-right",
-        "size": 145
+        "src": "sumi/wc/vine-dusty-rose.svg",
+        "alt": "Sumi vine",
+        "layout": "float-left",
+        "size": 150
       },
       {
         "tag": "p",
@@ -393,10 +435,10 @@
       },
       {
         "tag": "img",
-        "src": "sumi/wc/ganesha-dusty-rose.svg",
+        "src": "sumi/wc/ganesha-ochre.svg",
         "alt": "Sumi ganesha",
-        "layout": "float-left",
-        "size": 150
+        "layout": "float-right",
+        "size": 165
       },
       {
         "tag": "p",
@@ -443,6 +485,13 @@
         "text": "Let's deepen our understanding of, or better yet our experience of, this very mysterious word called love. We throw it around all the time: I love pizza, I love my cat, I love you. But it's very difficult for us to understand the immensity of the force that is love itself."
       },
       {
+        "tag": "img",
+        "src": "sumi/wc/eros-sage.svg",
+        "alt": "Sumi eros",
+        "layout": "float-left",
+        "size": 170
+      },
+      {
         "tag": "p",
         "text": "Maybe the first thing that comes to mind is attraction between the masculine and the feminine. But love works as a force that transcends polarities. It doesn't matter if you're a man or a woman, with a man or with a woman, or anything in between. There's a pull between what seem like opposites. <strong>This is the mysterious power of love: it bridges the gap between seeming pairs of opposites.</strong>"
       },
@@ -455,15 +504,15 @@
         "text": "Love also transcends the boundary between internal and external. When we love someone, our circle of concern expands beyond our own body and mind."
       },
       {
-        "tag": "p",
-        "text": "And most profoundly, love transcends the duality of consciousness and energy. We experience this awareness in here and this world full of energy out there. <strong>According to the teachings of Tantra, love is the binding force between consciousness and experience, Śiva and Śakti.</strong> Love can transcend every concept of duality we place onto our lives. It's here all the time, regardless of the state we're in, concentrated or distracted."
+        "tag": "img",
+        "src": "sumi/wc/yin_yang-indigo.svg",
+        "alt": "Sumi yin-yang",
+        "layout": "float-right",
+        "size": 165
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/yin_yang-sage.svg",
-        "alt": "Sumi yin_yang",
-        "layout": "break",
-        "size": 215
+        "tag": "p",
+        "text": "And most profoundly, love transcends the duality of consciousness and energy. We experience this awareness in here and this world full of energy out there. <strong>According to the teachings of Tantra, love is the binding force between consciousness and experience, Śiva and Śakti.</strong> Love can transcend every concept of duality we place onto our lives. It's here all the time, regardless of the state we're in, concentrated or distracted."
       },
       {
         "tag": "p",
@@ -474,30 +523,30 @@
         "text": "Maybe this has only happened to me."
       },
       {
-        "tag": "p",
-        "text": "<strong>Love has a way of finding us when we learn how to relax.</strong> It's like what's always said about a butterfly. The more you chase it, the less likely it is to come and stay with you. But if you can relax and be calm, it might just come and alight on your shoulder for a little while."
+        "tag": "img",
+        "src": "sumi/wc/butterfly-moss.svg",
+        "alt": "Sumi butterfly",
+        "layout": "break",
+        "size": 220
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/butterfly-indigo.svg",
-        "alt": "Sumi butterfly",
-        "layout": "float-right",
-        "size": 165
+        "tag": "p",
+        "text": "<strong>Love has a way of finding us when we learn how to relax.</strong> It's like what's always said about a butterfly. The more you chase it, the less likely it is to come and stay with you. But if you can relax and be calm, it might just come and alight on your shoulder for a little while."
       },
       {
         "tag": "p",
         "text": "Love is like that, but even more so. Love is the ocean of our awareness, the ocean of our existence that we inhabit all the time. You can swing your hands around in the water as much as you like. The water slides through your fingers, but you are never without this immersion in love."
       },
       {
-        "tag": "p",
-        "text": "Even saying we are in the ocean keeps a duality between inner and outer. Better said: <strong>we are the ocean of consciousness, the ocean of light, the ocean of love, embodying this wave-like form called \"me\" for a short period of time.</strong> As the wave rises and the wave crashes, for the ocean there's no drama at all. It's just the passing expression of its love for creation, for play, for dynamism."
+        "tag": "img",
+        "src": "sumi/wc/yemaya-slate.svg",
+        "alt": "Sumi yemaya",
+        "layout": "float-left",
+        "size": 175
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/tides-moss.svg",
-        "alt": "Sumi tides",
-        "layout": "float-left",
-        "size": 135
+        "tag": "p",
+        "text": "Even saying we are in the ocean keeps a duality between inner and outer. Better said: <strong>we are the ocean of consciousness, the ocean of light, the ocean of love, embodying this wave-like form called \"me\" for a short period of time.</strong> As the wave rises and the wave crashes, for the ocean there's no drama at all. It's just the passing expression of its love for creation, for play, for dynamism."
       },
       {
         "tag": "p",
@@ -510,6 +559,13 @@
       {
         "tag": "blockquote",
         "text": "Sacarācara-paripūrṇaṃ śivo'ham\n\nCidānanda-svarūpaḥ śivo'ham\n\nI am Śiva, filling all that moves and all that does not move. I am Śiva, whose very nature is consciousness and bliss.\" The refrain echoes Śaṅkara's Nirvāṇa Ṣaṭkam."
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/shiva-indigo.svg",
+        "alt": "Sumi shiva",
+        "layout": "break",
+        "size": 150
       },
       {
         "tag": "p",
@@ -552,6 +608,13 @@
         "text": "When we practice together, we're in a relationship of trust. We're working together not only to go further in our physical practice, but to feel that we're supporting one another on the path of awakening. That means awakening to the meaning of a very mysterious yet often-used word: love. Most spiritual traditions, in one way or another, point toward the experience of love."
       },
       {
+        "tag": "img",
+        "src": "sumi/wc/oshun-ochre.svg",
+        "alt": "Sumi oshun",
+        "layout": "float-right",
+        "size": 165
+      },
+      {
         "tag": "p",
         "text": "That word gets tangled up with our contemporary layer of concepts like dating, commitment, responsibility, and even ownership. These ideas don't necessarily refer back to the ancient idea of love, yet in many ways they rhyme with it. Wherever there is love, that love rests on the experience of trust. <strong>Trust is one of the main ingredients for the sensation of being loved and being able to love.</strong>"
       },
@@ -560,15 +623,15 @@
         "text": "On the spiritual path, we learn to give ourselves the same trust we usually give to somebody else, and perhaps a much deeper trust. Trusting ourselves is not easy. Since we were very little, we've been given every indication that we need to be told to stay quiet, to follow the rules, to always be clean, to always attend to whatever we're told is important. We learn to trust the rules over our own inner signals. Over time, we start to abandon the idea that we're someone worthy of love, because we don't have a deep trust in who we are."
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/heart-ochre.svg",
-        "alt": "Sumi heart",
-        "layout": "float-right",
-        "size": 165
-      },
-      {
         "tag": "p",
         "text": "<strong>The path of yoga, in its shortest summation, could be described as learning how to relax your mind into your heart.</strong> In your heart there is an intuitive sense of kindness and compassion that doesn't know any bounds. It comes before any mental justification can come into play: \"these people started it,\" or \"somehow these people deserve it.\""
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/heart-sage.svg",
+        "alt": "Sumi heart",
+        "layout": "break",
+        "size": 155
       },
       {
         "tag": "p",
@@ -584,9 +647,9 @@
       },
       {
         "tag": "img",
-        "src": "sumi/wc/rose-sage.svg",
+        "src": "sumi/wc/rose-amber.svg",
         "alt": "Sumi rose",
-        "layout": "break",
+        "layout": "float-left",
         "size": 155
       },
       {
@@ -598,15 +661,15 @@
         "text": "<strong>The mind is very good at making walls. The heart is very good at flooding the experience with deep understanding.</strong>"
       },
       {
-        "tag": "p",
-        "text": "When we talk about nourishing, protecting, and honoring life, we often invoke Viṣṇu. In the Bhagavad Gītā (4.7–8), Kṛṣṇa says that whenever dharma declines, he takes form again, age after age, to restore it. Viṣṇu comes in his many avatars to restore balance: to bring love, the experience of the heart, back into the center."
+        "tag": "img",
+        "src": "sumi/wc/vishnu-slate.svg",
+        "alt": "Sumi vishnu",
+        "layout": "float-right",
+        "size": 165
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/lotus-amber.svg",
-        "alt": "Sumi lotus",
-        "layout": "float-left",
-        "size": 155
+        "tag": "p",
+        "text": "When we talk about nourishing, protecting, and honoring life, we often invoke Viṣṇu. In the Bhagavad Gītā (4.7–8), Kṛṣṇa says that whenever dharma declines, he takes form again, age after age, to restore it. Viṣṇu comes in his many avatars to restore balance: to bring love, the experience of the heart, back into the center."
       },
       {
         "tag": "p",
@@ -619,6 +682,13 @@
       {
         "tag": "blockquote",
         "text": "Śrī Kṛṣṇaḥ śaraṇaṃ mama\n\nLiterally, \"Śrī Kṛṣṇa is my refuge.\" Freely, and in light of the Gītā: <strong>\"I take refuge in my heart.\"</strong>"
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/isis-warm-grey.svg",
+        "alt": "Sumi isis",
+        "layout": "break",
+        "size": 220
       },
       {
         "tag": "p",
@@ -661,6 +731,13 @@
         "text": "One pulse. Three faces."
       },
       {
+        "tag": "img",
+        "src": "sumi/wc/triangle-warm-grey.svg",
+        "alt": "Sumi triangle",
+        "layout": "break",
+        "size": 205
+      },
+      {
         "tag": "p",
         "text": "If you have landed on Agni Agama before, you have already met them in English: Will it. Know it. Act it. This is that teaching elaborated from its source."
       },
@@ -669,15 +746,15 @@
         "text": "Most of us do not fail for lack of information. We fail because the three sisters have been divorced."
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/triangle-warm-grey.svg",
-        "alt": "Sumi triangle",
-        "layout": "float-left",
-        "size": 185
-      },
-      {
         "tag": "p",
         "text": "We want without knowing. We know without daring. We act without having first seen what we actually desire. The culture then sells us a counterfeit of each: want becomes algorithm, knowledge becomes opinion, action becomes grind. Paranoia is simply icchā turned against itself: imagination employed as a factory of threat. The nervous system is very good at this. It will staff an entire inner ministry of worst-case scenarios and call that realism."
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/fool-terracotta.svg",
+        "alt": "Sumi fool",
+        "layout": "float-left",
+        "size": 135
       },
       {
         "tag": "p",
@@ -704,6 +781,13 @@
         "text": "Icchā is not preference. Preference is the menu. Icchā is hunger that has recognized itself. In the body it feels like a lean, a heat, a refusal to go numb. The work is to make it conscious. Most desire is borrowed: family, market, the last person who frightened us. Conscious will asks a more intimate question: what do I actually want this life to taste like? Then it uses imagination as a ritual instrument. See it. Taste it. Let the image be specific enough that the nervous system has something true to organize around."
       },
       {
+        "tag": "img",
+        "src": "sumi/wc/freyja-indigo.svg",
+        "alt": "Sumi freyja",
+        "layout": "break",
+        "size": 150
+      },
+      {
         "tag": "p",
         "text": "Pronoia begins here. Not \"everything is fine.\" Rather: I will not spend my one wild faculty of seeing on catastrophe rehearsals. I will spend it on the form I am here to serve. If that sounds like magic, good. In this tradition, imagination is a śakti, not a hobby."
       },
@@ -714,6 +798,13 @@
       {
         "tag": "p",
         "text": "Will without knowledge is fever. Jñāna is the sister who will not let you lie. Where are you, actually? What is the shape of this money, this body, this city, this love, this limitation? That refusal to blur has a name: viveka. Discrimination, not as coldness, but as the cut between the real and the borrowed, the shining and the merely shiny. Without viveka, jñāna collapses into opinion."
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/odin-moss.svg",
+        "alt": "Sumi odin",
+        "layout": "break",
+        "size": 170
       },
       {
         "tag": "p",
@@ -732,6 +823,13 @@
         "text": "The third sister is the one Western spirituality most likes to skip, having confused stillness with virtue. Kriyā is the universe as verb. A will that never leaves the cushion is still paranoia: the image protected from contact. Action is how icchā tests whether it was true. You do not need a complete map. You need the next honest motion."
       },
       {
+        "tag": "img",
+        "src": "sumi/wc/thor-sage.svg",
+        "alt": "Sumi thor",
+        "layout": "break",
+        "size": 165
+      },
+      {
         "tag": "p",
         "text": "The Gītā has already said it, and it will say it again until we live it:"
       },
@@ -744,19 +842,19 @@
         "text": "That is not quietism. That is kriyā stripped of the bargain. You act because the three sisters, together, have already moved. The fruit is not your department."
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/water-terracotta.svg",
-        "alt": "Sumi water",
-        "layout": "break",
-        "size": 195
-      },
-      {
         "tag": "p",
         "text": "Other rivers say the same thing in other tongues. This is the point of <a href=\"https://pratibha.agniagama.com\" target=\"_blank\" rel=\"noopener\">Pratibha</a>: not to flatten the traditions into one slogan, but to let them sit in one room until you hear the rhyme."
       },
       {
         "tag": "p",
         "text": "Epictetus, on the first page of the Enchiridion: some things are up to us, and some are not. The whole Stoic path is jñāna of that cut, then kriyā inside it. You can open it as a living passage in the library, not as a quote on a mug."
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/apollo-dusty-rose.svg",
+        "alt": "Sumi apollo",
+        "layout": "break",
+        "size": 160
       },
       {
         "tag": "p",
@@ -776,10 +874,10 @@
       },
       {
         "tag": "img",
-        "src": "sumi/wc/lightning-indigo.svg",
-        "alt": "Sumi lightning",
+        "src": "sumi/wc/comet-amber.svg",
+        "alt": "Sumi comet",
         "layout": "float-right",
-        "size": 145
+        "size": 175
       },
       {
         "tag": "p",
@@ -788,13 +886,6 @@
       {
         "tag": "p",
         "text": "The three sisters are not content to be admired. They want a room. Pratibha is one."
-      },
-      {
-        "tag": "img",
-        "src": "sumi/wc/fire-moss.svg",
-        "alt": "Sumi fire",
-        "layout": "break",
-        "size": 170
       },
       {
         "tag": "p",
@@ -815,6 +906,13 @@
       {
         "tag": "p",
         "text": "The three prongs are the sisters: icchā, jñāna, kriyā, rising from one lotus. At the crown, sauḥ, the heart-bīja of Parā in Trika, the Goddess as the whole sound. Oṃ hauṃ and hrīṃ oṃ are seed-sounds of Bhairava and of Śakti. In the blue lotus at the fork: oṃ namaḥ śivāya. Śivo'ham: I am Śiva. Hara hara mahādeva. Īśāna, the upward face. At the left foot, Tryambaka's mṛtyuñjaya, the prayer that loosens the bond of death. At the right, Paśupati, lord of the bound. The skulls are time. The lamps are the offering. The sisters are not three gods. They are one pulse, named three times."
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/lotus-sage.svg",
+        "alt": "Sumi lotus",
+        "layout": "break",
+        "size": 170
       },
       {
         "tag": "p",
@@ -851,19 +949,26 @@
         "text": "We can no longer pretend the foundations are intact. Arms contracts and political debts are the forces that guide. The system requires endless war while healthcare, education, and feeding the poor have become preposterous propositions. More insane still: the religious fantasy on all sides, covenants that seem to prefer apocalypse over communication. We hold tight onto the worn-out blanket of these bedtime stories told by our ancestors, who had never imagined electricity, AI, climate change, or universal human rights. All this childish hubris. The chosen. The right. Anything rather than humbly admitting that we all wish to continue breathing."
       },
       {
-        "tag": "p",
-        "text": "The shock of what I see today glues my jaw to the floor. I listened well in Sunday School. There seemed to be a refrain when it came to the teachings of Christ: charity, forgiveness, love, and healing. How could any interpretation of love ever be more farcical than that which we see now masquerading in American flags?"
-      },
-      {
         "tag": "img",
-        "src": "sumi/wc/star-warm-grey.svg",
-        "alt": "Sumi star",
+        "src": "sumi/wc/cross-warm-grey.svg",
+        "alt": "Sumi cross",
         "layout": "break",
         "size": 195
       },
       {
         "tag": "p",
+        "text": "The shock of what I see today glues my jaw to the floor. I listened well in Sunday School. There seemed to be a refrain when it came to the teachings of Christ: charity, forgiveness, love, and healing. How could any interpretation of love ever be more farcical than that which we see now masquerading in American flags?"
+      },
+      {
+        "tag": "p",
         "text": "It’s enough insanity to make a person want to say that everything is lost. And yet, how can we live, how can we resist? In the face of such a pernicious, illogical, and all-consuming beast, what tactics are most adaptive? Firstly, we must not rest complicit in our silence bought cheaply with comfort: endless sports spectacles or season twelve of another meaningless show, likes on socials for doing socially safe things while we scroll in climate-controlled rooms. What are all these worth when our minds reel and our hearts seethe with the injustice that we desperately try to ignore and avoid? Anesthetized in stimulation, until we don’t even respond when the missiles finally start to fly over our own heads. Resistance is medicine in a sick world."
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/dionysus-ochre.svg",
+        "alt": "Sumi dionysus",
+        "layout": "float-right",
+        "size": 150
       },
       {
         "tag": "p",
@@ -879,10 +984,10 @@
       },
       {
         "tag": "img",
-        "src": "sumi/wc/moon-ochre.svg",
-        "alt": "Sumi moon",
-        "layout": "float-right",
-        "size": 150
+        "src": "sumi/wc/star-sage.svg",
+        "alt": "Sumi star",
+        "layout": "float-left",
+        "size": 160
       },
       {
         "tag": "p",
@@ -894,10 +999,10 @@
       },
       {
         "tag": "img",
-        "src": "sumi/wc/lotus-sage.svg",
-        "alt": "Sumi lotus",
-        "layout": "float-left",
-        "size": 160
+        "src": "sumi/wc/warrior-moss.svg",
+        "alt": "Sumi warrior",
+        "layout": "float-right",
+        "size": 155
       },
       {
         "tag": "p",
@@ -982,15 +1087,15 @@
         "text": "There is a verse I came across in the Tantralokā yesterday, and it struck me with its metaphorical depth and potency. It speaks of the three primary forms of light the ancients knew and that illuminated their lives: soma, sūrya, agni — moon, sun, and fire."
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/eye-slate.svg",
-        "alt": "Sumi eye",
-        "layout": "float-left",
-        "size": 150
-      },
-      {
         "tag": "p",
         "text": "Its easy to muse on these wondrous lights: the rays of sun that catch heavy eyelids early in the morning; the billowing glow of a full autumn moon; the single candle at the center of an altar, bringing golden visages and deities to life. By these lights are revealed ten thousand textures and countless hues. Yet when all those varieties seem to speak of difference and divison, we must recall their singular essence. Like following the rays of color back through a prism, we find their source; one shade remains: pure light. This is the essential tantric insight."
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/rainbow-slate.svg",
+        "alt": "Sumi rainbow",
+        "layout": "float-left",
+        "size": 150
       },
       {
         "tag": "p",
@@ -1017,15 +1122,15 @@
         "text": "the fire: the pulsing focus of emails, lunch, workouts, relations, difficult conversations."
       },
       {
-        "tag": "p",
-        "text": "And yet all these experience occur in the same eye, like these three lights harken back to the single source. In spiritual practice, these lights illuminate different steps on the path, different stages of the breath."
-      },
-      {
         "tag": "img",
-        "src": "sumi/wc/moon-indigo.svg",
-        "alt": "Sumi moon",
+        "src": "sumi/wc/eye-indigo.svg",
+        "alt": "Sumi eye",
         "layout": "break",
         "size": 165
+      },
+      {
+        "tag": "p",
+        "text": "And yet all these experience occur in the same eye, like these three lights harken back to the single source. In spiritual practice, these lights illuminate different steps on the path, different stages of the breath."
       },
       {
         "tag": "h4",
@@ -1034,6 +1139,13 @@
       {
         "tag": "p",
         "text": "There is that moment of cool, nourishing calm when the weight of embodiment and responsibility begins to fall off. Through the meditative impulse to let go, we loosen the grip on everything that held us, tied as it were to the whipping post of our own ego’s expectations."
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/moon-warm-grey.svg",
+        "alt": "Sumi moon",
+        "layout": "break",
+        "size": 160
       },
       {
         "tag": "p",
@@ -1049,7 +1161,7 @@
       },
       {
         "tag": "img",
-        "src": "sumi/wc/sun-warm-grey.svg",
+        "src": "sumi/wc/sun-indigo.svg",
         "alt": "Sumi sun",
         "layout": "float-right",
         "size": 145
@@ -1068,7 +1180,7 @@
       },
       {
         "tag": "img",
-        "src": "sumi/wc/fire-indigo.svg",
+        "src": "sumi/wc/fire-warm-grey.svg",
         "alt": "Sumi fire",
         "layout": "float-left",
         "size": 170
@@ -1092,6 +1204,13 @@
       {
         "tag": "p",
         "text": "Just as all phases of the breath compose one breath, so too do the various lights of spiritual life compose one single process: awakening to the all-pervading, all-consuming radiance."
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/yantra-ochre.svg",
+        "alt": "Sumi yantra",
+        "layout": "break",
+        "size": 205
       },
       {
         "tag": "p",
@@ -1120,15 +1239,15 @@
         "text": "I write this at 2 a.m., unable to clear my mind of the cloudy impressions of an apparently darker time. Perhaps, as someone who has lived outside of the U.S. for a long time, I’m not qualified to write on domestic topics—maybe my finger is further from the pulse. Perhaps, given my profession as a yoga instructor, I might seem unqualified to espouse political philosophy and political science. Yet perhaps it is this distance that better allows me to see shapes on the horizon, like icebergs threatening imminent danger. As a student of yoga and psychology, I am familiar with the human mind’s ability to mislead itself, with the ego’s tendency to concretize illusions at every step, providing a sense of justification, security, and superiority. Perhaps a yogi is imagined as someone beyond the purview of preference and politics. But when it comes to an opportunity to help manifest wisdom and compassion, a person who claims to have character cannot ignore the invitation to act. This election, appearing monumental and posing questions of human goodnes, gives me the impetus to challenge the ways in which we might be seeing our situation."
       },
       {
-        "tag": "p",
-        "text": "Cognitive dissonance is one of the first concepts students learn in psychology. It’s the tension we experience when our beliefs, values, and actions don’t align, which eventually results in changing one of them to feel whole again. Think back to 2001: how many people truly believed the Iraqi government was involved in September 11th? But somehow the vast majority of voters and elected officials could do the cognitive gymnastics to equate any Middle Eastern Muslims to enemies. A persistent belief in fantastically destructive weapons was used as justification, until the awkward truth finally had to be shown, none could be found."
-      },
-      {
         "tag": "img",
-        "src": "sumi/wc/eye-indigo.svg",
-        "alt": "Sumi eye",
+        "src": "sumi/wc/raven-amber.svg",
+        "alt": "Sumi raven",
         "layout": "break",
         "size": 200
+      },
+      {
+        "tag": "p",
+        "text": "Cognitive dissonance is one of the first concepts students learn in psychology. It’s the tension we experience when our beliefs, values, and actions don’t align, which eventually results in changing one of them to feel whole again. Think back to 2001: how many people truly believed the Iraqi government was involved in September 11th? But somehow the vast majority of voters and elected officials could do the cognitive gymnastics to equate any Middle Eastern Muslims to enemies. A persistent belief in fantastically destructive weapons was used as justification, until the awkward truth finally had to be shown, none could be found."
       },
       {
         "tag": "p",
@@ -1139,19 +1258,26 @@
         "text": "And how is this week’s election any different? We are comfortably lining up to vote with our cognitive dissonance glasses on, unable to perceive the shades of cruelty, narcissism, incompetence, and malevolence right before our very eyes. And yet, if you don’t realize you are wearing these glasses, you might ask where any of these elements can be found. But would you be willing to take a step back from your deeply held views? Would you be willing to see an underlying unity amidst the diversity?"
       },
       {
-        "tag": "p",
-        "text": "The realities we hide from when lost in our dissonance are as follows: threats of jailing political opponents (imagine being sent to jail for a piece like this), promises to deport millions of people who want to experience the same well-being that we all do (inevitably separating families and wreaking havoc on multinational stability), the clear and willful maneuvers to subvert the results of a presidential election (for the first time in American history), evidence of drives towards concentrated and total power, lack of concern about conflicts of interest (having elected leaders and their cronies making massive financial gains from public power), giving control of one of the world’s largest nuclear arsenals to someone who has shown themselves to be capricious and incompetent, giving control of the world’s largest economy to someone who is a climate change denier, along with a staggering list of racist, sexist, and other xenophobic claims. Because these facts are so inherently insidious, we find more and more fantastic justifications, as if by magic, to shield our eyes from them. This threat of an American demagogue is not one we can take lightly."
-      },
-      {
         "tag": "img",
-        "src": "sumi/wc/mirror-amber.svg",
-        "alt": "Sumi mirror",
+        "src": "sumi/wc/king-terracotta.svg",
+        "alt": "Sumi king",
         "layout": "float-left",
         "size": 150
       },
       {
         "tag": "p",
+        "text": "The realities we hide from when lost in our dissonance are as follows: threats of jailing political opponents (imagine being sent to jail for a piece like this), promises to deport millions of people who want to experience the same well-being that we all do (inevitably separating families and wreaking havoc on multinational stability), the clear and willful maneuvers to subvert the results of a presidential election (for the first time in American history), evidence of drives towards concentrated and total power, lack of concern about conflicts of interest (having elected leaders and their cronies making massive financial gains from public power), giving control of one of the world’s largest nuclear arsenals to someone who has shown themselves to be capricious and incompetent, giving control of the world’s largest economy to someone who is a climate change denier, along with a staggering list of racist, sexist, and other xenophobic claims. Because these facts are so inherently insidious, we find more and more fantastic justifications, as if by magic, to shield our eyes from them. This threat of an American demagogue is not one we can take lightly."
+      },
+      {
+        "tag": "p",
         "text": "Demagoguery is no new phenomenon. From Caesar’s consolidation of Rome’s republic and coronation as dictator (his official title) to Nero’s voracious and vicious vanity, from Hitler’s to Stalin’s scapegoating of millions of people in their ideological brutality. Haven’t we seen this type of rhetoric and thinking repeat too often? It’s the same rhetoric that was being laughed at and cheered for last week in Madison Square Garden last week. Will we laugh and cheer if we become the cosigners of moral devastation and mass human suffering?"
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/tezcatlipoca-ochre.svg",
+        "alt": "Sumi tezcatlipoca",
+        "layout": "float-right",
+        "size": 185
       },
       {
         "tag": "p",
@@ -1162,30 +1288,30 @@
         "text": "Reading this, dear friend, you might say, while I am aware of all those threats, I have good reason to neglect or disbelieve them. Perhaps you think: my vote is simply guided by potential personal gain, or as an act of rebellion against a system that props up one puppet politician after another, or the belief that all this talk is unnecessarily alarmist, or that I can’t agree with the details of her policies. Finally, you might say my vote is a necessary evil to attain a virtuous end. But where is the virtue in a world where you have a bigger slice of a rotting pie? With mass deportation, we’re discussing dissolving the vital roles played by millions of individuals. Will you pick the fruit in the fields? Will you quit your air-conditioned office job to build houses in the Arizona sun? Will you leave work early to care of your kid when there is a sudden shortage of childcare? And this doesn’t yet factor the human experience of so many individuals and families who we see so scapegoated at rally after rally."
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/sun-terracotta.svg",
-        "alt": "Sumi sun",
-        "layout": "float-right",
-        "size": 185
-      },
-      {
         "tag": "p",
         "text": "You might not think Kamala Harris is qualified, you may think she is thrust undemocratically upon you, you might think the details of her platform are sparse. But while the devil is in the details, the divine is in the principle. This is a choice between a vision of unity versus one of division. If I may even wax emotional, it is a decision between love and fear, between kindness and hate. I am supporting Kamala Harris because it is a clear and obvious choice of someone who is earnestly speaking of unity. We as the people must drive her to that collective good, but unlike her alternative, she is someone who is not beyond reproach. Compare that to someone who is cynically beyond all criticism, who treats truth and the government like his plaything. The choice is abundantly clear."
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/athena-dusty-rose.svg",
+        "alt": "Sumi athena",
+        "layout": "break",
+        "size": 160
       },
       {
         "tag": "p",
         "text": "In an ideal sense, government plays the role of protecting and fostering the growth of its people. But we, as people, must be wise enough to see beyond borders and passports to recognize that all people want the same things we do: health, happiness, and security. These are natural principles, genetically embedded and expressed by all conscious beings. When we honor these needs in others, we’re not just upholding their well-being; we’re reinforcing our own. True wisdom lies in shedding the illusion of separateness and recognizing that if we wish something for ourselves, we must support it for all."
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/circle-ochre.svg",
-        "alt": "Sumi circle",
-        "layout": "float-left",
-        "size": 170
-      },
-      {
         "tag": "p",
         "text": "In Buddhist teachings, this is called the realization of \"emptiness\" (śūnyatā), the understanding that all beings are interconnected, all of us are made of everything else. We’ve heard the myth of the self-made man for so long that our cognitive dissonance makes this teaching difficult to realize. But we can dissolve the painful illusion of a separate self by meditating on the truth that every breath we take, every sip of water we drink, every morsel of food we eat, even the language we think in, was not made by us. We are all the fluid manifestation of the same source, the vast universe of causes and conditions. We can also call this emptiness oneness. Sūnyatā-karuṇā-garbha: Oneness is the womb of compassion. From the view of interconnectedness, compassion (karuṇā) naturally arises, as one cannot truly harm others without ultimately harming oneself. Look at the truth of this operating in historical examples of cruelty that one group has inflicted upon another. Isn’t it the case that inevitably both groups suffer as one? If we’re brave enough to look at the survivors of war, we would see that the victors continue to suffer the pain of the vanquished. Emptiness shows us that we cannot escape the global environment that we collectively create. So now the question is: which kind of world do we want to live in?"
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/void-plum.svg",
+        "alt": "Sumi void",
+        "layout": "float-left",
+        "size": 165
       },
       {
         "tag": "p",
@@ -1256,6 +1382,13 @@
         "href": "https://encyclopediaofbuddhism.org/wiki/An%C4%81tman"
       },
       {
+        "tag": "img",
+        "src": "sumi/wc/water-plum.svg",
+        "alt": "Sumi water",
+        "layout": "float-left",
+        "size": 135
+      },
+      {
         "tag": "p",
         "text": "Imagine a ripple in a pond. It has a certain shape and speed, we could call this its character. Now the ripple doesn’t decide it’s character; rather it’s caused by a stone dropped into the water. Similarly, our selves and behaviors are ripples interacting in a cosmic pond of causality. Each neuron firing, each thought we have, is the result of previous causes, all beyond our personal control, all linked to the infinity of action which has come before. We may feel as though agency, but this is a byproduct of the intricate web of causes and effects. Harris uses the metaphor of wetness and a water molecule. A water molecule in and of itself doesn’t have the property of wetness, rather wetness is an emergent property of millions of water molecules coalescing. So to does a single neuron not contain agency, it simply fires or doesn’t, but across billions of neurons coalescing the feeling of being free to choose emerges, but can this ghost actually be found in the machine?"
       },
@@ -1275,10 +1408,10 @@
       },
       {
         "tag": "img",
-        "src": "sumi/wc/eye-plum.svg",
-        "alt": "Sumi eye",
-        "layout": "float-left",
-        "size": 135
+        "src": "sumi/wc/lion-indigo.svg",
+        "alt": "Sumi lion",
+        "layout": "float-right",
+        "size": 180
       },
       {
         "tag": "p",
@@ -1301,6 +1434,13 @@
         "text": "Śuddha-tattva-sandhānād vā apaśuśaktiḥ\n शुद्धतत्त्वसन्धानाद्वापशुशक्तिः\n \"Or by constant awareness of the Pure Priniciple, he becomes like one in whom the binding power existing in the limited self is absent.\" -Trans. Jaideva Singh"
       },
       {
+        "tag": "img",
+        "src": "sumi/wc/ox-sage.svg",
+        "alt": "Sumi ox",
+        "layout": "float-left",
+        "size": 170
+      },
+      {
         "tag": "p",
         "text": "The verse points to the illusion of individuality: our sense of being separate entities, literally here as animals or paśu, with our own sense of power, śakti. In the non-dual Śiva Tantra freedom belongs not to the apparent individual but to the Universal Consciousness itself. It is this śuddha-tattva, the Pure Principle, that is both the original cause and the all-pervasive substance. It is both the rock thrown in the water and the interacting dance of ripples. When we recognize the śuddha-tattva as everything we observe, from our cells to the sunset, we transcend then illusion of being a self-determined and individual being, and realize ourselves to be what we truly are: the comic essence itself."
       },
@@ -1309,16 +1449,16 @@
         "text": "Just as modern science shows that our decisions are shaped by biological process, so to do the Śiva Sūtras that all our thoughts and actions are the direct expressions of universal consciousness. There is no room for real separate agents, only one unified essence, experiencing itself in and through its infinite modifications."
       },
       {
+        "tag": "img",
+        "src": "sumi/wc/eagle-terracotta.svg",
+        "alt": "Sumi eagle",
+        "layout": "float-right",
+        "size": 180
+      },
+      {
         "tag": "p",
         "text": "In fact, the highest principle in this non-dual Śiva Tantra is free-will, or svātantrya. This is not the free-will of some limited or contracted ‘I’, rather this is the cosmic freedom that is the force that put the infinitude of causes in motion, that is the cause that led you to be reading these very words right now. We attain true freedom not through by determining our desires and decisions, but by realizing that we are identical to the force that determined and desired all of this.  At the absolute level, we are one with the free, creative consciousness that is the source of all.",
         "href": "https://en.wikipedia.org/wiki/Svatantrya"
-      },
-      {
-        "tag": "img",
-        "src": "sumi/wc/feather-indigo.svg",
-        "alt": "Sumi feather",
-        "layout": "break",
-        "size": 185
       },
       {
         "tag": "p",
@@ -1327,6 +1467,13 @@
       {
         "tag": "p",
         "text": "At first, the idea that we don’t have free will may feel unsettling. If we aren’t in control, then what’s the point? Why bother trying to be good or striving to achieve anything? The answer lies in a profound shift in perspective—one that is the dawning of an authentic spiritual life."
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/feather-warm-grey.svg",
+        "alt": "Sumi feather",
+        "layout": "break",
+        "size": 180
       },
       {
         "tag": "li",
@@ -1350,10 +1497,10 @@
       },
       {
         "tag": "img",
-        "src": "sumi/wc/water-sage.svg",
-        "alt": "Sumi water",
-        "layout": "float-right",
-        "size": 170
+        "src": "sumi/wc/bee-ochre.svg",
+        "alt": "Sumi bee",
+        "layout": "break",
+        "size": 205
       },
       {
         "tag": "p",
@@ -1368,6 +1515,13 @@
         "text": "How might it be helpful to apply this refined position of freedom to our lives? Here are a few possibilities:"
       },
       {
+        "tag": "img",
+        "src": "sumi/wc/celtic_star-dusty-rose.svg",
+        "alt": "Sumi Celtic star",
+        "layout": "break",
+        "size": 205
+      },
+      {
         "tag": "li",
         "text": "Let Go of Perfectionism: Realizing that you are not the sole author of your actions releases the pressure to always get things right. You are already and always enough as you are—a pure expression of Nature or Śuddha Tattva."
       },
@@ -1380,19 +1534,19 @@
         "text": "Celebrate Your Place in the Universe: Rather than feeling like a small, isolated being, reframe your existence as a wave in the ocean or a jewel in Indra’s Net. Every thought, action, and experience is part of a great interconnected process, you reflect everything else, and everything else reflects you. See the beauty that you are the universal expressed in dynamic, infinite uniqueness."
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/star-terracotta.svg",
-        "alt": "Sumi star",
-        "layout": "break",
-        "size": 185
-      },
-      {
         "tag": "p",
         "text": "8. Conclusion: The Beauty of Being a Cosmic Manifestation"
       },
       {
         "tag": "p",
         "text": "In both the scientific and spiritual logic, we find a profound message: we are not isolated beings, struggling for control in a chaotic world. Instead, we are part of a larger, interconnected flow—whether you call it the laws of nature or Śuddha Tattva. This recognition frees us from guilt, blame, and the burden of regret."
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/constellation-warm-grey.svg",
+        "alt": "Sumi constellation",
+        "layout": "float-left",
+        "size": 140
       },
       {
         "tag": "p",
@@ -1446,6 +1600,13 @@
         "text": "We are fortunate to have great spirtual cartographers who have charted various territories of the inner depths for us. Their work is here to guide us, especially when we feel without direction. A spiritual map ingeniously charted by a modern guru in an ancient tongue is found in Sri Brahmanda Saraswati’s Sanskrit verse. This verse, filled with deep wisdom, guides us on our inner journey: Oṁ bodhi-rūpaṁ bodhi-sattvaṁ bodhi-gamyam anāmayam | parama-satyaṁ parama-śāntaṁ parama-brahma parāt-param||"
       },
       {
+        "tag": "img",
+        "src": "sumi/wc/saraswati-indigo.svg",
+        "alt": "Sumi saraswati",
+        "layout": "break",
+        "size": 175
+      },
+      {
         "tag": "p",
         "text": "With a good quality map, it’s much easier to know where we are and where we are going. And all good maps contain clear landmarks that help to orient us when we have lost our way. Maps of the spirtual sort are filled with words rather than images, symbols rather than coordinates; and when these blaze clear for us we can aim ourselves in the direction that we desire to go."
       },
@@ -1454,19 +1615,26 @@
         "text": "We would be foolish however to think the map is itself the territoriy. Just as a verbal description of the Amazon Rainforest cannot replace the experience of being there, spiritual teachings are guides, not the final experience."
       },
       {
+        "tag": "img",
+        "src": "sumi/wc/tiger-dusty-rose.svg",
+        "alt": "Sumi tiger",
+        "layout": "float-right",
+        "size": 130
+      },
+      {
         "tag": "p",
         "text": "Imagine you recently visited the Amazon. Your description could certainly help me understand what that place is like. But it would be a cheap substitute for the experience of the rainforest itself. Still your description would be valuable for me to hear. You explain it is a place that is teeming with life, full of animals and plants of all kinds, richly moist and fragrant, and drenched in an infinity of shades of green. So that if I find myself on a parched piece of land without any life in sight, I wouldn’t mistakenly assume that I was in the Amazon. I can’t be sure of what the rainforest is like from your map of words, but based on what you shared I can be certain when I’m not there."
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/eye-indigo.svg",
-        "alt": "Sumi eye",
-        "layout": "break",
-        "size": 175
-      },
-      {
         "tag": "p",
         "text": "This great teacher, Sri Brahmananda, traversed depths and dimensions of being to come back with his depiction of the landscape. Here is a possible rendtion of his verse of the experience of union, of yoga: “It is of the form of awakening, awakening harmony, awakening that is possible to reach, a state that is free from all disease and pain. It is the supreme truth, the supreme peace, the supreme divinity, transcending our conception of the supreme.” It sounds wonderful, but perhaps all these words can’t fully resonate at first glance. Simpiler would be to start with the parts of the map we can relate to."
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/tree-moss.svg",
+        "alt": "Sumi tree",
+        "layout": "float-left",
+        "size": 185
       },
       {
         "tag": "p",
@@ -1483,10 +1651,10 @@
       },
       {
         "tag": "img",
-        "src": "sumi/wc/mountain-dusty-rose.svg",
+        "src": "sumi/wc/mountain-amber.svg",
         "alt": "Sumi mountain",
         "layout": "float-right",
-        "size": 130
+        "size": 145
       },
       {
         "tag": "p",
@@ -1504,10 +1672,10 @@
       },
       {
         "tag": "img",
-        "src": "sumi/wc/trail-moss.svg",
+        "src": "sumi/wc/trail-dusty-rose.svg",
         "alt": "Sumi trail",
         "layout": "float-left",
-        "size": 185
+        "size": 180
       },
       {
         "tag": "p",
@@ -1550,6 +1718,13 @@
         "text": "Śāntaṁ (शान्तम्): Peaceful, calm, or tranquil, describing inner peace."
       },
       {
+        "tag": "img",
+        "src": "sumi/wc/brahma-terracotta.svg",
+        "alt": "Sumi brahma",
+        "layout": "break",
+        "size": 155
+      },
+      {
         "tag": "p",
         "text": "Brahma (ब्रह्म): The ultimate reality or cosmic spirit in Hinduism (Brahman), the creator god in the universe (Brahma)."
       },
@@ -1589,19 +1764,26 @@
         "text": "Fundamental ignorance is believing that \"me\" is real, independent from the world, and is the Self. This attachment to body-mind formation is the basis of the 'myth of me', asmita or egotism. Ego thinks it knows. Therefore, it believes it knows what is best to chase and what is best to reject. In doing so, ego operates in a mode that is in opposition to existence, finally feeling that death is the extinguishing of the Self."
       },
       {
+        "tag": "img",
+        "src": "sumi/wc/ocean-plum.svg",
+        "alt": "Sumi ocean",
+        "layout": "break",
+        "size": 180
+      },
+      {
         "tag": "p",
         "text": "We are each like a wave, trying to construct a barrier between ourselves and the ocean, hoping to never be drowned, to never be reabsorbed. Not recognizing the whole time that this wave is the ocean! Thus, we live in insanity, always trying to gather momentum and mass, resisting other waves and the process of time, continually chasing and rejecting in more complicated ways to avoid the inevitable merging back into the Sea, the Source. In running from merging, the wave does not realize that it is resisting its own Self, fulfillment, bliss, freedom, eternality. This is ignorance, thinking that \"I am this me here\" in opposition to the life that is out there."
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/tides-plum.svg",
-        "alt": "Sumi tides",
-        "layout": "float-left",
-        "size": 145
-      },
-      {
         "tag": "p",
         "text": "Body-mind will always have their waveform. But the wave remains forever the ocean. We will always have our frequencies of color that express, but all those colors never cease to be light. Realizing that is Buddhi, awakening intelligence, which finds light as the basis of all experience, which feels equilibrium in the changing tides. Buddhi contrasts to asmita. And vidya to avidya. Knowing this thinking \"me\" knows nothing truly, but still being centered in the ineffable light of I AM. Our practice is to orient body-mind to the light like a sunflower following the sun, yet trusting at the same time we are being naturally pulled towards that light (abhyasa/vairagya). Being in the light is vidya, remembering and resting in the ever-present, the now, the light of awareness."
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/osiris-amber.svg",
+        "alt": "Sumi osiris",
+        "layout": "float-left",
+        "size": 190
       },
       {
         "tag": "p",
@@ -1783,6 +1965,13 @@
         "text": "lābhaḥ - acquisition, realization"
       },
       {
+        "tag": "img",
+        "src": "sumi/wc/mandala-amber.svg",
+        "alt": "Sumi mandala",
+        "layout": "break",
+        "size": 220
+      },
+      {
         "tag": "p",
         "text": "From the expansion of the middle, the attainment of consciousness-bliss."
       }
@@ -1805,6 +1994,13 @@
         "text": "This self-weaving tapestry acts as an epic poem, a grand narrative of tumult. It is a story in constant flux, where the threads of the tapestry intertwine into evolution, creating a ceaseless movement of creation and destruction. This self-weaving chimera transcends notions of beautiful and ugly, right and wrong, yet somehow contains all of it – even our human life: struggles, conflicts, and moments of harmony and resolution. It also echoes the cyclical nature of existence, where patterns repeat and transform, illustrating the interplay between creation and destruction."
       },
       {
+        "tag": "img",
+        "src": "sumi/wc/spider-indigo.svg",
+        "alt": "Sumi spider",
+        "layout": "float-left",
+        "size": 175
+      },
+      {
         "tag": "p",
         "text": "The image could go further to suggest that this tapestry exists beyond the confines of space and time. It is not limited by linear progression or the constraints of a fixed narrative. Rather, it is a tapestry of infinite threads, infinite story lines that diverge and converge to shape the universe. The story being written within this tapestry is one that defies conventional notions of beginning, middle, and end. It is a story that is constantly being written, revised, and rewritten, transcending the linear march of time. \"The whole is the true; but the whole is nothing other than the essence consummating itself through its development. Of all the moments, only one is the beginning, and this beginning is the actuality of the whole. The beginning is therefore the essence moving itself, and thus it is the self-producing.\"[1]",
         "href": "#_ftn1"
@@ -1815,10 +2011,10 @@
       },
       {
         "tag": "img",
-        "src": "sumi/wc/infinity-indigo.svg",
-        "alt": "Sumi infinity",
-        "layout": "float-left",
-        "size": 175
+        "src": "sumi/wc/owl-slate.svg",
+        "alt": "Sumi owl",
+        "layout": "float-right",
+        "size": 135
       },
       {
         "tag": "p",
@@ -1830,30 +2026,30 @@
         "href": "#_ftn2"
       },
       {
-        "tag": "p",
-        "text": "If we perceive ourselves as an expression of the universe, continuously unraveling and reweaving, the fear of annihilation dissipates. We realize that our essence is not confined to this particular lifetime. We give up the vampires in our minds of total annihilation, or a redundant afterlife of any various heaven or hell, where we still are subsumed by memory, longing, and neurosis. This recognition of deathlessness, or amṛta in Sanskrit, empowers us to live fearlessly, embracing the creative impulse within us and expressing it authentically."
+        "tag": "img",
+        "src": "sumi/wc/spiral-dusty-rose.svg",
+        "alt": "Sumi spiral",
+        "layout": "float-left",
+        "size": 155
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/spiral-slate.svg",
-        "alt": "Sumi spiral",
-        "layout": "float-right",
-        "size": 135
+        "tag": "p",
+        "text": "If we perceive ourselves as an expression of the universe, continuously unraveling and reweaving, the fear of annihilation dissipates. We realize that our essence is not confined to this particular lifetime. We give up the vampires in our minds of total annihilation, or a redundant afterlife of any various heaven or hell, where we still are subsumed by memory, longing, and neurosis. This recognition of deathlessness, or amṛta in Sanskrit, empowers us to live fearlessly, embracing the creative impulse within us and expressing it authentically."
       },
       {
         "tag": "p",
         "text": "Moreover, this perspective invites us to rest in the inherent intelligence and harmony of the universe. We can let go of the need to control every aspect of our lives and trust in the natural flow of existence. It could allow us to find deeper peace and acceptance, knowing that everything is unfolding exactly as it should, guided by the innate intelligence of the weaver-woven-weaving (we can see why the term God becomes convenient over time)."
       },
       {
-        "tag": "p",
-        "text": "Finally, this understanding also brings a profound shift in our relationship with mortality, naturally a feeling of interconnectedness encourages us to engage with others in a spirit of compassion, generosity, and unity. We recognize that the energy we share with others is ultimately the energy of the universe itself. By offering our insights, time, and energy, we contribute to the beautification of the tapestry where we are, here and now, enriching the lives of those around us and our own, fostering a collective sense of interconnectedness and well-being. Furthermore, interconnectedness ignites a circle of compassion to see that suffering is shared by all. We could sense a mutually responsibility for this here-now, this loka, that we are weaving as the universe in ecstatic motion. We could gravitate more easily towards non-violence, as we have an arguably innate preference for beautiful and peaceful patterns. And most importantly, a respect for all life would more easily emerge, one that recognizes the inherent dignity of all beings and things, as infinitely equal (and yet infinitely unique!) expressions of the whole."
+        "tag": "img",
+        "src": "sumi/wc/thanatos-moss.svg",
+        "alt": "Sumi thanatos",
+        "layout": "break",
+        "size": 160
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/mandala-dusty-rose.svg",
-        "alt": "Sumi mandala",
-        "layout": "break",
-        "size": 180
+        "tag": "p",
+        "text": "Finally, this understanding also brings a profound shift in our relationship with mortality, naturally a feeling of interconnectedness encourages us to engage with others in a spirit of compassion, generosity, and unity. We recognize that the energy we share with others is ultimately the energy of the universe itself. By offering our insights, time, and energy, we contribute to the beautification of the tapestry where we are, here and now, enriching the lives of those around us and our own, fostering a collective sense of interconnectedness and well-being. Furthermore, interconnectedness ignites a circle of compassion to see that suffering is shared by all. We could sense a mutually responsibility for this here-now, this loka, that we are weaving as the universe in ecstatic motion. We could gravitate more easily towards non-violence, as we have an arguably innate preference for beautiful and peaceful patterns. And most importantly, a respect for all life would more easily emerge, one that recognizes the inherent dignity of all beings and things, as infinitely equal (and yet infinitely unique!) expressions of the whole."
       },
       {
         "tag": "p",
