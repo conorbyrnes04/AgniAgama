@@ -1726,13 +1726,7 @@
       ],
       "filter": "standard",
       "status": "ok",
-      "used_in": [
-        {
-          "post": "making-peace-with-time",
-          "tone": "plum",
-          "file": "public/media/sumi/wc/play-plum.svg"
-        }
-      ]
+      "used_in": []
     },
     {
       "name": "quetzalcoatl",
