@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Wave from '../../components/Wave.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
 import { getPosts } from '../../i18n/blog';
 import { locales, localePaths, localize, useTranslations, type Locale } from '../../i18n';
 
@@ -33,6 +34,9 @@ const fmt = (d: string) => dateFmt.format(new Date(d + 'T00:00:00'));
 
   <section class="blog-list sec-green">
     <div class="container">
+      <div class="blog-newsletter">
+        <NewsletterSignup variant="inline" />
+      </div>
       {posts.map((p, i) => (
         <article class:list={['post-row reveal', { flip: i % 2 === 1 }]}>
           <a class="post-thumb" href={localize(`/blog/${p.slug}`, lang)}>
@@ -61,19 +65,21 @@ const fmt = (d: string) => dateFmt.format(new Date(d + 'T00:00:00'));
   .blog-hero h1 {
     color: #fff; font-size: clamp(2.2rem, 5.5vw, 4rem); max-width: 20ch;
     text-shadow: 0 2px 20px rgba(0,0,0,0.35);
+    line-height: 1.18; padding-top: 0.08em;
   }
 
   .blog-list { padding-top: 2rem; }
+  .blog-newsletter { max-width: 680px; margin: 0 auto 3rem; }
   .post-row { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; padding-block: 2.5rem; }
   .post-row.flip .post-thumb { order: 2; }
   .post-thumb { display: block; overflow: hidden; border-radius: 4px; aspect-ratio: 4/3; background: rgba(255,255,255,0.05); }
   .post-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
   .post-thumb:hover img { transform: scale(1.04); }
   .post-date { font-family: var(--display); font-size: 0.85rem; color: rgba(255,255,255,0.7); margin: 0 0 0.6rem; }
-  .post-info h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 0.8rem; line-height: 1.05; }
+  .post-info h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 0.8rem; line-height: 1.18; padding-top: 0.08em; }
   .post-info h2 a:hover { color: var(--amber-dark); }
   .post-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.9rem; }
-  .tag { font-family: var(--display); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; background: rgba(255,255,255,0.14); color: #fff; padding: 0.25em 0.7em; border-radius: 999px; }
+  .tag { font-family: var(--display); font-size: 0.68rem; text-transform: none; letter-spacing: 0; background: rgba(255,255,255,0.14); color: #fff; padding: 0.25em 0.7em; border-radius: 999px; }
   .read-more { font-family: var(--display); font-weight: 500; color: var(--amber); text-decoration: underline; text-underline-offset: 4px; }
   .read-more:hover { color: #fff; }
 

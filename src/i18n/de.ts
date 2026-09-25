@@ -28,6 +28,18 @@ export const de: Translation = {
     by: 'Von',
   },
 
+  newsletter: {
+    title: 'Briefe vom Weg',
+    intro:
+      'Gelegentliche Nachrichten zu Terminen, Texten und dem, was sich in der Praxis entfaltet. Kein Marketing, nur Präsenz — jederzeit abbestellbar.',
+    compactTitle: 'In Verbindung bleiben',
+    emailPlaceholder: 'Deine E-Mail',
+    emailLabel: 'E-Mail-Adresse für den Newsletter',
+    subscribe: 'Abonnieren',
+    notice: 'Bald verfügbar — die Anmeldung wird in Kürze aktiv.',
+    privacy: 'Wir senden nur das, wofür du dich angemeldet hast. Jederzeit abbestellbar.',
+  },
+
   footer: {
     tagline: 'Das Feuer der Offenbarung — strahlendes Bewusstsein für materielle Transformation.',
     person: 'Yoga mit Conor Byrnes',

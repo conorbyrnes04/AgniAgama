@@ -3,12 +3,41 @@
    Inter = body: chosen for complete IAST coverage (ṛ ṇ ṭ ḍ ṣ ṃ ḥ ṅ …) so
    transliterated Sanskrit renders coherently rather than falling back per-glyph.
    Noto Sans Devanagari renders the actual देवनागरी script. */
-@import '@fontsource-variable/jost';
+
+/* All @import statements must precede other rules per CSS spec */
 @import '@fontsource-variable/noto-sans-devanagari';
 @import '@fontsource/inter/300.css';
 @import '@fontsource/inter/400.css';
 @import '@fontsource/inter/500.css';
 @import '@fontsource/inter/600.css';
+
+/* Jost Variable: explicit subset loading to fix IAST macron rendering.
+   Chrome decomposes ā (U+0101) → a + combining macron (U+0304). The default
+   @fontsource-variable/jost loads a 'latin' face whose unicode-range includes
+   U+0304/U+0308/U+0329 but whose glyphs have no GPOS mark attachment, causing
+   the macron to render as a detached spacing bar. We load latin-ext FIRST
+   (which has correct precomposed ā ī ū glyphs), then load latin with those
+   combining marks REMOVED from its unicode-range so Chrome won't use it for U+0304. */
+
+/* jost-latin-ext-wght-normal — covers precomposed IAST: ā ī ū Ā ṇ etc. */
+@font-face {
+  font-family: 'Jost Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('@fontsource-variable/jost/files/jost-latin-ext-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
+}
+
+/* jost-latin-wght-normal — basic latin EXCLUDING U+0304, U+0308, U+0329 */
+@font-face {
+  font-family: 'Jost Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('@fontsource-variable/jost/files/jost-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
 
 :root {
   /* Palette sampled from agniagama.com's Squarespace theme */
@@ -27,7 +56,7 @@
 
   /* Devanagari fallback is appended so देवनागरी glyphs use Noto Sans Devanagari
      while all Latin + IAST stays in the primary face. */
-  --display: 'Jost Variable', 'Noto Sans Devanagari Variable', 'Inter', system-ui, sans-serif;
+  --display: 'Jost Variable', 'Inter', 'Noto Sans Devanagari Variable', system-ui, sans-serif;
   --body: 'Inter', 'Noto Sans Devanagari Variable', system-ui, -apple-system, sans-serif;
 
   --maxw: 1180px;
@@ -36,7 +65,8 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
+body { overflow-x: clip; }
 
 body {
   margin: 0;
@@ -52,9 +82,10 @@ body {
 h1, h2, h3, h4 {
   font-family: var(--display);
   font-weight: 700;
-  line-height: 1.06;
+  line-height: 1.18;
   letter-spacing: -0.005em;
   margin: 0 0 0.5em;
+  padding-top: 0.08em;
 }
 h1 { font-size: clamp(2.8rem, 7.5vw, 5.5rem); }
 h2 { font-size: clamp(2rem, 5vw, 3.4rem); }
@@ -128,11 +159,23 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
 .wave svg { display: block; width: 100%; height: 100%; }
 
 /* Prose (article / blog body) */
-.prose { max-width: 720px; margin-inline: auto; }
-.prose p { font-size: 1.08rem; line-height: 1.85; }
-.prose h2 { margin-top: 1.8em; }
-.prose h3 { margin-top: 1.5em; color: var(--green); }
-.prose h4 { margin-top: 1.4em; letter-spacing: 0.02em; }
+.prose {
+  max-width: min(720px, 100%);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.prose p { font-size: 1.08rem; line-height: 1.85; font-weight: 400; }
+.prose strong {
+  font-family: var(--display);
+  font-weight: 600;
+  color: var(--green-deep, var(--green));
+  letter-spacing: 0.01em;
+}
+.prose h2 { margin-top: 1.8em; line-height: 1.18; padding-top: 0.08em; }
+.prose h3 { margin-top: 1.5em; color: var(--green); line-height: 1.18; padding-top: 0.08em; }
+.prose h4 { margin-top: 1.4em; letter-spacing: 0.02em; line-height: 1.18; padding-top: 0.08em; }
 .prose ul { padding-left: 1.2em; }
 .prose li { margin-bottom: 0.6em; }
 .prose blockquote {
@@ -141,6 +184,7 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
   border-left: 3px solid var(--amber);
   font-style: italic;
   color: var(--green);
+  white-space: pre-line;
 }
 .prose img { border-radius: var(--radius); margin: 2em auto; }
 /* Verse: consecutive short lines are grouped into .verse (see Blocks.astro) and
@@ -148,6 +192,34 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
 .prose .verse { margin: 1.8em 0; }
 .prose .verse p { margin: 0 0 0.1em; line-height: 1.55; font-size: 1.05rem; }
 .prose .verse p:empty { height: 0.7em; }
+
+/* Pratibha sumi marks (see Blocks.astro): watercolor glyphs that either float
+   inline with the text (text hugs the silhouette via shape-outside) or sit
+   centered as a paragraph break. --s is the desktop width set per mark. */
+.prose { display: flow-root; } /* the last float always clears before the article ends */
+.prose img.sumi { border-radius: 0; height: auto; aspect-ratio: 1 / 1; }
+.prose img.sumi-break { width: var(--s, 180px); max-width: 60%; margin: 2.2em auto; clear: both; }
+.prose img.sumi-float {
+  width: var(--s, 160px);
+  max-width: 42%;
+  margin-top: 0.4em;
+  margin-bottom: 0.7em;
+  shape-margin: 0.9em;
+  shape-image-threshold: 0.1;
+}
+.prose img.sumi-left { float: left; margin-left: 0; margin-right: 1.1em; }
+.prose img.sumi-right { float: right; margin-right: 0; margin-left: 1.1em; }
+.prose h2, .prose h3, .prose h4, .prose blockquote, .prose .verse,
+.prose ul, .prose li, .prose img:not(.sumi) { clear: both; }
+@media (max-width: 640px) {
+  .prose img.sumi-float { width: calc(84px + (var(--s, 160px) - 130px) / 3); margin-top: 0.3em; shape-margin: 0.7em; }
+  .prose img.sumi-left { margin-right: 0.9em; }
+  .prose img.sumi-right { margin-left: 0.9em; }
+  .prose img.sumi-break { width: 120px; margin: 1.8em auto; }
+}
+@media (max-width: 379px) {
+  .prose img.sumi-float { width: calc(78px + (var(--s, 160px) - 130px) / 3.5); }
+}
 
 /* Reveal-on-scroll */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }

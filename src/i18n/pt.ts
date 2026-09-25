@@ -28,6 +28,18 @@ export const pt: Translation = {
     by: 'Por',
   },
 
+  newsletter: {
+    title: 'Cartas do caminho',
+    intro:
+      'Mensagens ocasionais sobre eventos, textos e o que vai se revelando na prática. Sem marketing, só presença — cancele quando quiser.',
+    compactTitle: 'Fique por perto',
+    emailPlaceholder: 'Seu e-mail',
+    emailLabel: 'Endereço de e-mail para a newsletter',
+    subscribe: 'Inscrever-se',
+    notice: 'Em breve — a inscrição estará ativa em breve.',
+    privacy: 'Enviamos apenas o que você pediu. Cancele quando quiser.',
+  },
+
   footer: {
     tagline: 'O fogo da revelação — consciência brilhante para a transformação material.',
     person: 'Yoga com Conor Byrnes',

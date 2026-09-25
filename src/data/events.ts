@@ -21,22 +21,6 @@ export interface EventItem {
 
 export const events: EventItem[] = [
   {
-    title: 'Origem Retreat',
-    dates: 'Aug 29 – Sep 3, 2026',
-    location: 'Rio de Janeiro, Brazil',
-    copy: 'Origem — a return to the source. Six days above Rio where breath, movement, and the wild pulse of Brazil draw us back toward what we already are. We practice, we sweat, we soften, and we remember.',
-    link: { label: 'Retreat Details', href: 'https://www.retreatscollective.com/origem-retreat' },
-    image: 'event-rio.jpg',
-  },
-  {
-    title: 'Jivamukti 75-Hour Teacher Training — Paris',
-    dates: 'Sep 11 – 20, 2026',
-    location: 'Paris, France · or online',
-    copy: 'A 75-hour immersion into the Jivamukti method — asana, chanting, meditation, and the philosophy that binds them. Ten days in Paris (or online) with Ian Szydlowski, Sonia Gabriel and me, learning to teach from a place that is truly felt. To register, write to contact@jivamuktiyoga.fr.',
-    link: { label: 'Details & Register', href: 'https://www.instagram.com/p/DaLMxlfMuCO/' },
-    image: 'event-paris.jpg',
-  },
-  {
     title: 'Himalayan Pilgrimage Retreat',
     dates: 'Oct 10 – 17, 2026',
     location: 'Pokhara & Annapurna, Nepal',
@@ -46,7 +30,7 @@ export const events: EventItem[] = [
   },
   {
     title: 'Jivamukti 75-Hour Teacher Training — Kyoto',
-    dates: 'Nov 14 – 22, 2026',
+    dates: 'Nov 14 – 21, 2026',
     location: 'Kyoto, Japan',
     copy: 'A residential Jivamukti Teacher Training in Kyoto. Among temples and stillness, we study the 75-hour method — asana, chant, and philosophy — with Yuri Ogawa and me, assisted by Chiemi Sora. To register, write to contact@jivamuktiyoga.fr.',
     link: { label: 'Details & Register', href: 'https://www.instagram.com/p/DakwAraMztJ/' },
@@ -59,5 +43,19 @@ export const events: EventItem[] = [
     copy: 'A week of Bhairava Tantra in the Ourika Valley of the Atlas Mountains. Yoga, ritual, meditation, and deep study at the beautiful Bab Zouina, co-led with Ian Szydlowski — practice as a fire that reveals.',
     link: { label: 'Retreat PDF & Details', href: 'https://bab-zouina.com/wp-content/uploads/2026/02/Jivamukt-retreat-with-Ian-Conor-0227.pdf' },
     image: 'event-morocco.jpg',
+  },
+  {
+    title: 'UMA: Jivamukti Yoga & Ancestral Wisdom',
+    dates: 'Mar 15 – 20, 2027',
+    location: 'The Sanubari, Sumba, Indonesia',
+    copy: 'Six days on the remote shores of Sumba, where the ancestral lands of the Marapu people open onto a secluded beach. Together we bring breath, bandha, kriya and asana into dialogue with the land and the living heritage of the Sumbanese people, returning to uma, the place where we belong.',
+    link: { label: 'Retreat Details & Booking', href: 'https://www.retreatscollective.com/sumba' },
+    image: 'event-sumba.jpg',
+  },
+  {
+    title: 'Spanda: Blossoming into Love',
+    dates: 'Apr 23 – 25, 2027',
+    location: 'Château Forbin, France',
+    copy: 'A spring weekend retreat co-led with Léa on spanda, the pulse of the heart, and its blossoming. Jivamukti practice, meditation, mantra and workshops on presence, breath and joy, with vegan meals at Château Forbin. Open to all.',
   },
 ];

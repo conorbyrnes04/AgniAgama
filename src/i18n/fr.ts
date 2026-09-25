@@ -28,6 +28,18 @@ export const fr: Translation = {
     by: 'Par',
   },
 
+  newsletter: {
+    title: 'Lettres du chemin',
+    intro:
+      'Des nouvelles occasionnelles : événements, textes, et ce qui se déploie dans la pratique. Pas de marketing, seulement de la présence — désinscription à tout moment.',
+    compactTitle: 'Rester en lien',
+    emailPlaceholder: 'Votre e-mail',
+    emailLabel: 'Adresse e-mail pour la newsletter',
+    subscribe: 'S’inscrire',
+    notice: 'Bientôt disponible — l’inscription sera active sous peu.',
+    privacy: 'Nous n’envoyons que ce à quoi vous vous êtes inscrit. Désinscription à tout moment.',
+  },
+
   footer: {
     tagline: 'Le feu de la révélation — une conscience éclatante pour la transformation matérielle.',
     person: 'Yoga avec Conor Byrnes',

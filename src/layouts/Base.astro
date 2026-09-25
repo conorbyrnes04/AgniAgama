@@ -159,6 +159,9 @@ const extraJsonLd = jsonLd
     {extraJsonLd.map((block) => (
       <script type="application/ld+json" set:html={JSON.stringify(block)} />
     ))}
+
+    <!-- Cloudflare Web Analytics -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "0740333399d6483c9e518ad22346d0f5"}'></script>
   </head>
   <body>
     <Header theme={headerTheme} lang={lang} />

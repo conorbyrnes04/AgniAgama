@@ -32,6 +32,18 @@ export const en = {
     by: 'By',
   },
 
+  newsletter: {
+    title: 'Letters from the path',
+    intro:
+      "Occasional dispatches on events, writing, and what's unfolding in the practice. No marketing, just presence—unsubscribe anytime.",
+    compactTitle: 'Stay connected',
+    emailPlaceholder: 'Your email',
+    emailLabel: 'Email address for newsletter',
+    subscribe: 'Subscribe',
+    notice: 'Coming soon — newsletter signup will be active shortly.',
+    privacy: 'We only send what you signed up for. Unsubscribe anytime.',
+  },
+
   footer: {
     tagline: 'The fire of revelation — brilliant awareness for material transformation.',
     person: 'Yoga with Conor Byrnes',
@@ -116,7 +128,7 @@ export const en = {
   events: {
     seoTitle: 'Events & Retreats with Conor Byrnes',
     seoDescription:
-      'Upcoming Conor Byrnes yoga retreats, teacher trainings, and ceremonies — plus regular classes at Jivamukti Yoga Paris.',
+      'Upcoming Conor Byrnes yoga retreats, teacher trainings, and ceremonies — Nepal, Kyoto, Morocco, France, and Sumba, Indonesia — plus regular classes at Jivamukti Yoga Paris.',
     heading: 'Events',
     subheading: 'Upcoming Retreats, Trainings & Ceremonies with Conor Byrnes',
     collageAlt1: 'Forest path',

@@ -1,0 +1,214 @@
+---
+/**
+ * NewsletterSignup — Buttondown-backed subscribe component.
+ * Props:
+ *  - variant: "inline" (home/blog) or "footer" (footer)
+ *  - compact: if true, minimal layout for sidebar/footer
+ */
+import { localeFromUrl, useTranslations } from '../i18n';
+
+interface Props {
+  variant?: 'inline' | 'footer';
+  compact?: boolean;
+}
+const { variant = 'inline', compact = false } = Astro.props;
+// Rendered from the footer as well as pages, so read the language off the URL.
+const t = useTranslations(localeFromUrl(Astro.url)).newsletter;
+
+const BUTTONDOWN_USER = import.meta.env.PUBLIC_BUTTONDOWN_USERNAME ?? 'byrnes';
+const isConfigured = !!BUTTONDOWN_USER && !BUTTONDOWN_USER.startsWith('REPLACE_');
+---
+
+<div class:list={['newsletter-signup', variant, { compact }]}>
+  {!compact && (
+    <>
+      <h3 class="newsletter-title">{t.title}</h3>
+      <p class="newsletter-intro">{t.intro}</p>
+    </>
+  )}
+  {compact && <h4 class="newsletter-title-compact">{t.compactTitle}</h4>}
+  
+  <form 
+    class="newsletter-form" 
+    action={isConfigured ? `https://buttondown.email/api/emails/embed-subscribe/${BUTTONDOWN_USER}` : '#'}
+    method="post" 
+    target="_blank"
+    data-configured={isConfigured}
+  >
+    <input 
+      type="email" 
+      name="email" 
+      placeholder={t.emailPlaceholder}
+      
+      required 
+      disabled={!isConfigured}
+      aria-label={t.emailLabel}
+    />
+    <button type="submit" class="btn btn-subscribe" disabled={!isConfigured}>
+      {t.subscribe}
+    </button>
+    <input type="hidden" name="tag" value="agniagama" />
+  </form>
+  
+  {!isConfigured && (
+    <p class="newsletter-notice">{t.notice}</p>
+  )}
+  {isConfigured && (
+    <p class="newsletter-privacy">{t.privacy}</p>
+  )}
+</div>
+
+<style>
+  .newsletter-signup { 
+    position: relative; 
+  }
+  
+  /* Inline variant (home, blog) */
+  .newsletter-signup.inline {
+    background: rgba(255, 252, 245, 0.4);
+    border: 1px solid rgba(52, 71, 52, 0.12);
+    border-radius: 6px;
+    padding: 2rem 2.2rem;
+  }
+  
+  .newsletter-title {
+    font-family: var(--display);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--green-deep);
+    margin-bottom: 0.6rem;
+  }
+  
+  .newsletter-intro {
+    color: #4a4a42;
+    font-size: 0.98rem;
+    font-weight: 300;
+    margin-bottom: 1.4rem;
+    max-width: 54ch;
+  }
+  
+  /* Footer variant */
+  .newsletter-signup.footer {
+    padding: 0;
+  }
+  
+  .newsletter-title-compact {
+    font-family: var(--display);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 0.7rem;
+    color: var(--amber);
+  }
+  
+  /* Form */
+  .newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .newsletter-form input[type="email"] {
+    flex: 1;
+    font-family: var(--body);
+    font-size: 0.95rem;
+    padding: 0.7em 0.9em;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 4px;
+    background: rgba(255,255,255,0.9);
+    font-weight: 300;
+  }
+  
+  .newsletter-signup.footer .newsletter-form input[type="email"] {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.24);
+    color: #fff;
+  }
+  
+  .newsletter-signup.footer .newsletter-form input[type="email"]::placeholder {
+    color: rgba(255,255,255,0.6);
+  }
+  
+  .newsletter-form input[type="email"]:focus {
+    outline: none;
+    border-color: var(--amber);
+    background: #fff;
+  }
+  
+  .newsletter-signup.footer .newsletter-form input[type="email"]:focus {
+    background: rgba(255,255,255,0.18);
+    border-color: var(--amber);
+  }
+  
+  .newsletter-form input[type="email"]:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .btn-subscribe {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.7em 1.5em;
+    background: var(--green-deep);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    white-space: nowrap;
+  }
+  
+  .btn-subscribe:hover:not(:disabled) {
+    background: var(--amber-dark);
+  }
+  
+  .newsletter-signup.footer .btn-subscribe {
+    background: var(--amber);
+    color: var(--green-deep);
+  }
+  
+  .newsletter-signup.footer .btn-subscribe:hover:not(:disabled) {
+    background: #fff;
+  }
+  
+  .btn-subscribe:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* Privacy / notice */
+  .newsletter-privacy,
+  .newsletter-notice {
+    font-size: 0.75rem;
+    margin: 0;
+    opacity: 0.7;
+  }
+  
+  .newsletter-signup.inline .newsletter-privacy,
+  .newsletter-signup.inline .newsletter-notice {
+    color: #5a5a52;
+  }
+  
+  .newsletter-signup.footer .newsletter-privacy,
+  .newsletter-signup.footer .newsletter-notice {
+    color: rgba(255,255,255,0.75);
+  }
+  
+  .newsletter-notice {
+    font-style: italic;
+  }
+  
+  /* Responsive */
+  @media (max-width: 580px) {
+    .newsletter-form {
+      flex-direction: column;
+    }
+    .btn-subscribe {
+      width: 100%;
+    }
+    .newsletter-signup.inline {
+      padding: 1.5rem 1.3rem;
+    }
+  }
+</style>
