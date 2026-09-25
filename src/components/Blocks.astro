@@ -2,7 +2,7 @@
 // Renders parsed blog-post content blocks: headings, paragraphs, lists, images.
 // Consecutive <li> are grouped into a <ul>. Devanagari / transliteration lines
 // (short paragraphs) render fine as normal paragraphs within .prose.
-interface Block { tag: string; text?: string; href?: string; src?: string; alt?: string; }
+interface Block { tag: string; text?: string; href?: string; src?: string; alt?: string; layout?: string; size?: number; }
 interface Props { blocks: Block[]; }
 const { blocks } = Astro.props;
 
@@ -12,12 +12,12 @@ type Node =
   | { type: 'quote'; text: string }
   | { type: 'list'; items: string[] }
   | { type: 'verse'; lines: string[] }
-  | { type: 'img'; src: string; alt: string };
+  | { type: 'img'; src: string; alt: string; layout?: string; size?: number };
 
 const nodes: Node[] = [];
 for (const b of blocks) {
   if (b.tag === 'img' && b.src) {
-    nodes.push({ type: 'img', src: b.src, alt: b.alt ?? '' });
+    nodes.push({ type: 'img', src: b.src, alt: b.alt ?? '', layout: b.layout, size: b.size });
   } else if (b.tag === 'li') {
     const last = nodes[nodes.length - 1];
     if (last && last.type === 'list') last.items.push(b.text ?? '');
@@ -68,6 +68,18 @@ for (let i = 0; i < nodes.length; i++) {
   if (n.type === 'list') return <ul>{n.items.map((it) => <li>{it}</li>)}</ul>;
   if (n.type === 'quote') return <blockquote set:html={n.text} />;
   if (n.type === 'verse') return <div class="verse">{n.lines.map((l) => <p>{l}</p>)}</div>;
+  if (n.type === 'img' && n.layout) {
+    // Pratibha sumi mark: float-left / float-right hug the text via shape-outside,
+    // break sits centered between paragraphs. --s is the desktop width in px.
+    const src = `/media/${n.src}`;
+    const size = n.size ?? 160;
+    const float = n.layout === 'float-left' || n.layout === 'float-right';
+    const cls = float
+      ? `sumi sumi-float ${n.layout === 'float-left' ? 'sumi-left' : 'sumi-right'}`
+      : 'sumi sumi-break';
+    const style = float ? `--s:${size}px;shape-outside:url(${src})` : `--s:${size}px`;
+    return <img class={cls} src={src} alt={n.alt} width={size} height={size} loading="lazy" decoding="async" style={style} />;
+  }
   if (n.type === 'img') return <img src={`/media/${n.src}`} alt={n.alt} loading="lazy" />;
   if (n.href) return <p><a href={n.href} target="_blank" rel="noopener" class="inline-link">{n.text}</a></p>;
   return <p set:html={n.text} />;

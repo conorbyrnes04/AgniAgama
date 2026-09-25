@@ -40,7 +40,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/spiral-moss.svg",
-        "alt": "Sumi spiral"
+        "alt": "Sumi spiral",
+        "layout": "float-right",
+        "size": 140
       },
       {
         "tag": "p",
@@ -53,7 +55,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/mother-plum.svg",
-        "alt": "Sumi mother"
+        "alt": "Sumi mother",
+        "layout": "float-left",
+        "size": 170
       },
       {
         "tag": "p",
@@ -74,7 +78,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/circle-moss.svg",
-        "alt": "Sumi ensō"
+        "alt": "Sumi ensō",
+        "layout": "break",
+        "size": 165
       },
       {
         "tag": "p",
@@ -95,7 +101,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/sun-ochre.svg",
-        "alt": "Sumi sun"
+        "alt": "Sumi sun",
+        "layout": "float-right",
+        "size": 145
       },
       {
         "tag": "p",
@@ -164,7 +172,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/earth-dusty-rose.svg",
-        "alt": "Sumi earth"
+        "alt": "Sumi earth",
+        "layout": "float-left",
+        "size": 165
       },
       {
         "tag": "p",
@@ -203,13 +213,15 @@
         "text": "\"Just as, when entreated by desire, the Creator brings forth for the waking one the aims held in his heart…\""
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/sun-plum.svg",
-        "alt": "Sumi sun"
-      },
-      {
         "tag": "p",
         "text": "Why? Because this universe that seems solid, that seems material, is in itself only vibration. It is made up of the desires, the imaginatings, the intentions, the words, and of course the actions that we give as input into this life."
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/sun-plum.svg",
+        "alt": "Sumi sun",
+        "layout": "float-right",
+        "size": 185
       },
       {
         "tag": "p",
@@ -230,7 +242,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/tree-sage.svg",
-        "alt": "Sumi tree"
+        "alt": "Sumi tree",
+        "layout": "break",
+        "size": 150
       },
       {
         "tag": "p",
@@ -255,7 +269,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/lotus-indigo.svg",
-        "alt": "Sumi lotus"
+        "alt": "Sumi lotus",
+        "layout": "float-left",
+        "size": 190
       },
       {
         "tag": "p",
@@ -332,7 +348,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/sun-terracotta.svg",
-        "alt": "Sumi sun"
+        "alt": "Sumi sun",
+        "layout": "break",
+        "size": 195
       },
       {
         "tag": "p",
@@ -357,7 +375,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/trail-sage.svg",
-        "alt": "Sumi trail"
+        "alt": "Sumi trail",
+        "layout": "float-right",
+        "size": 145
       },
       {
         "tag": "p",
@@ -374,7 +394,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/ganesha-dusty-rose.svg",
-        "alt": "Sumi ganesha"
+        "alt": "Sumi ganesha",
+        "layout": "float-left",
+        "size": 150
       },
       {
         "tag": "p",
@@ -439,7 +461,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/yin_yang-sage.svg",
-        "alt": "Sumi yin_yang"
+        "alt": "Sumi yin_yang",
+        "layout": "break",
+        "size": 215
       },
       {
         "tag": "p",
@@ -456,7 +480,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/butterfly-indigo.svg",
-        "alt": "Sumi butterfly"
+        "alt": "Sumi butterfly",
+        "layout": "float-right",
+        "size": 165
       },
       {
         "tag": "p",
@@ -467,13 +493,15 @@
         "text": "Even saying we are in the ocean keeps a duality between inner and outer. Better said: <strong>we are the ocean of consciousness, the ocean of light, the ocean of love, embodying this wave-like form called \"me\" for a short period of time.</strong> As the wave rises and the wave crashes, for the ocean there's no drama at all. It's just the passing expression of its love for creation, for play, for dynamism."
       },
       {
-        "tag": "p",
-        "text": "So our practice is to allow ourselves to relax into who we are. <strong>Trying to be somebody all the time, well, it's a lot of work.</strong> And when we finally get exhausted of that, we can allow ourselves to be who we truly are, beyond the concepts and categories that are fundamentally dualistic, coming from the mind. We can allow ourselves to be the oneness, the source."
-      },
-      {
         "tag": "img",
         "src": "sumi/wc/tides-moss.svg",
-        "alt": "Sumi tides"
+        "alt": "Sumi tides",
+        "layout": "float-left",
+        "size": 135
+      },
+      {
+        "tag": "p",
+        "text": "So our practice is to allow ourselves to relax into who we are. <strong>Trying to be somebody all the time, well, it's a lot of work.</strong> And when we finally get exhausted of that, we can allow ourselves to be who we truly are, beyond the concepts and categories that are fundamentally dualistic, coming from the mind. We can allow ourselves to be the oneness, the source."
       },
       {
         "tag": "p",
@@ -534,7 +562,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/heart-ochre.svg",
-        "alt": "Sumi heart"
+        "alt": "Sumi heart",
+        "layout": "float-right",
+        "size": 165
       },
       {
         "tag": "p",
@@ -555,7 +585,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/rose-sage.svg",
-        "alt": "Sumi rose"
+        "alt": "Sumi rose",
+        "layout": "break",
+        "size": 155
       },
       {
         "tag": "p",
@@ -572,7 +604,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/lotus-amber.svg",
-        "alt": "Sumi lotus"
+        "alt": "Sumi lotus",
+        "layout": "float-left",
+        "size": 155
       },
       {
         "tag": "p",
@@ -627,17 +661,19 @@
         "text": "One pulse. Three faces."
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/triangle-warm-grey.svg",
-        "alt": "Sumi triangle"
-      },
-      {
         "tag": "p",
         "text": "If you have landed on Agni Agama before, you have already met them in English: Will it. Know it. Act it. This is that teaching elaborated from its source."
       },
       {
         "tag": "p",
         "text": "Most of us do not fail for lack of information. We fail because the three sisters have been divorced."
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/triangle-warm-grey.svg",
+        "alt": "Sumi triangle",
+        "layout": "float-left",
+        "size": 185
       },
       {
         "tag": "p",
@@ -710,7 +746,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/water-terracotta.svg",
-        "alt": "Sumi water"
+        "alt": "Sumi water",
+        "layout": "break",
+        "size": 195
       },
       {
         "tag": "p",
@@ -733,13 +771,15 @@
         "text": "Ibn ʿArabī's line, which Pratibha keeps in the Know Yourself collection: who knows himself knows his Lord. Jñāna here is not information about a distant God. It is recognition. Pratyabhijñā. The flash."
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/lightning-indigo.svg",
-        "alt": "Sumi lightning"
-      },
-      {
         "tag": "p",
         "text": "That flash has a name. Pratibhā. Luminous intelligence. Not acquired learning, but the brilliance that makes understanding possible at all."
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/lightning-indigo.svg",
+        "alt": "Sumi lightning",
+        "layout": "float-right",
+        "size": 145
       },
       {
         "tag": "p",
@@ -752,7 +792,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/fire-moss.svg",
-        "alt": "Sumi fire"
+        "alt": "Sumi fire",
+        "layout": "break",
+        "size": 170
       },
       {
         "tag": "p",
@@ -815,7 +857,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/star-warm-grey.svg",
-        "alt": "Sumi star"
+        "alt": "Sumi star",
+        "layout": "break",
+        "size": 195
       },
       {
         "tag": "p",
@@ -836,7 +880,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/moon-ochre.svg",
-        "alt": "Sumi moon"
+        "alt": "Sumi moon",
+        "layout": "float-right",
+        "size": 150
       },
       {
         "tag": "p",
@@ -847,13 +893,15 @@
         "text": "Thomas Merton, the great Christian mystic, stated it plainly enough, that we must know peace to sow peace: “The rush and pressure of modern life are a form, perhaps the most common form, of… innate violence. To allow oneself to be carried away by a multitude of conflicting concerns, to surrender to too many demands, to commit oneself to too many projects, to want to help everyone in everything, is to succumb to violence. The frenzy of our activism neutralizes our work for peace. It destroys our own inner capacity for peace. It destroys the fruitfulness of our own work, because it kills the root of inner wisdom which makes work fruitful.” — Conjectures of a Guilty Bystander (1966)"
       },
       {
-        "tag": "p",
-        "text": "Our practice must include getting to know the aspect within us that isn’t up against the test of time, soaking in it like a warm bath every chance we get; and yet in the same breath we must meet the challenge that this darkening human dream asks of us now. There is no escape from this great archetypal battle, whether we want it or not; all of us are being called on, our balance is being tested. All of us are being asked by the great force of life: When it comes to love and nourishing life, will you do what, in your heart, you know to be right?"
-      },
-      {
         "tag": "img",
         "src": "sumi/wc/lotus-sage.svg",
-        "alt": "Sumi lotus"
+        "alt": "Sumi lotus",
+        "layout": "float-left",
+        "size": 160
+      },
+      {
+        "tag": "p",
+        "text": "Our practice must include getting to know the aspect within us that isn’t up against the test of time, soaking in it like a warm bath every chance we get; and yet in the same breath we must meet the challenge that this darkening human dream asks of us now. There is no escape from this great archetypal battle, whether we want it or not; all of us are being called on, our balance is being tested. All of us are being asked by the great force of life: When it comes to love and nourishing life, will you do what, in your heart, you know to be right?"
       },
       {
         "tag": "p",
@@ -930,13 +978,15 @@
         "text": "And yet its true nature as pure light (prakāśa-mātra) is never lost."
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/eye-slate.svg",
-        "alt": "Sumi eye"
-      },
-      {
         "tag": "p",
         "text": "There is a verse I came across in the Tantralokā yesterday, and it struck me with its metaphorical depth and potency. It speaks of the three primary forms of light the ancients knew and that illuminated their lives: soma, sūrya, agni — moon, sun, and fire."
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/eye-slate.svg",
+        "alt": "Sumi eye",
+        "layout": "float-left",
+        "size": 150
       },
       {
         "tag": "p",
@@ -973,7 +1023,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/moon-indigo.svg",
-        "alt": "Sumi moon"
+        "alt": "Sumi moon",
+        "layout": "break",
+        "size": 165
       },
       {
         "tag": "h4",
@@ -988,11 +1040,6 @@
         "text": "In that brief reprieve from the engineered obsession to do and be more, we may taste the nectar of simply being at peace with our own minds. This moon-light, this cooling softness, can be felt as the exhale, the easing out of effort and stress."
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/sun-warm-grey.svg",
-        "alt": "Sumi sun"
-      },
-      {
         "tag": "h4",
         "text": "Sun — The Inhale, The Light of Realization"
       },
@@ -1001,13 +1048,15 @@
         "text": "Then there is the sun: the realization that startles, rearranges, clarifies. When it rises, the shapes that once frightened us in the night reveal themselves in their true form. What we thought was a menacing figure, death over our shoulder, turns out to be a blossoming tree, a nourisher and protector grounding and guiding this life-force eternal."
       },
       {
-        "tag": "p",
-        "text": "This solar clarity allows us to see ourselves and our circumstances for what they are: a miracle. It shows us where we want to go and how to get there. And so we can associate this sunlight of understanding with the inhale — taking in the gift of a new breath, a new moment, a new day, a new life, full of wonder and possibility."
+        "tag": "img",
+        "src": "sumi/wc/sun-warm-grey.svg",
+        "alt": "Sumi sun",
+        "layout": "float-right",
+        "size": 145
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/fire-indigo.svg",
-        "alt": "Sumi fire"
+        "tag": "p",
+        "text": "This solar clarity allows us to see ourselves and our circumstances for what they are: a miracle. It shows us where we want to go and how to get there. And so we can associate this sunlight of understanding with the inhale — taking in the gift of a new breath, a new moment, a new day, a new life, full of wonder and possibility."
       },
       {
         "tag": "h4",
@@ -1016,6 +1065,13 @@
       {
         "tag": "p",
         "text": "And finally, fire: the transformative flame. Sacred fire, stolen from the gods not only to guide the eyes but to transform whatever it touches. Fire brings out the essence of things, burns away impurities, and keeps alive the dream of warmth in all seasons."
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/fire-indigo.svg",
+        "alt": "Sumi fire",
+        "layout": "float-left",
+        "size": 170
       },
       {
         "tag": "p",
@@ -1068,6 +1124,13 @@
         "text": "Cognitive dissonance is one of the first concepts students learn in psychology. It’s the tension we experience when our beliefs, values, and actions don’t align, which eventually results in changing one of them to feel whole again. Think back to 2001: how many people truly believed the Iraqi government was involved in September 11th? But somehow the vast majority of voters and elected officials could do the cognitive gymnastics to equate any Middle Eastern Muslims to enemies. A persistent belief in fantastically destructive weapons was used as justification, until the awkward truth finally had to be shown, none could be found."
       },
       {
+        "tag": "img",
+        "src": "sumi/wc/eye-indigo.svg",
+        "alt": "Sumi eye",
+        "layout": "break",
+        "size": 200
+      },
+      {
         "tag": "p",
         "text": "Today, cognitive dissonance might explain why we value some human lives more than others. This is perhaps the factor that lets us feel Israeli suffering is more real than Palestinian suffering, the factor that helps us believe a war in Europe is more tragic than a war in Sudan, the factor that enables us to see a migrant worker as less human than an American citizen. Through the mental gymnastics of seeing suffering but not speaking or acting against it, we solidify the illusion that someone is more worthy of goodness and life than somebody else. We are now living in this mass hallucination where some human lives are valued more than others; and until we collectively break out of this illusion, we will never truly be at peace."
       },
@@ -1082,7 +1145,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/mirror-amber.svg",
-        "alt": "Sumi mirror"
+        "alt": "Sumi mirror",
+        "layout": "float-left",
+        "size": 150
       },
       {
         "tag": "p",
@@ -1099,7 +1164,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/sun-terracotta.svg",
-        "alt": "Sumi sun"
+        "alt": "Sumi sun",
+        "layout": "float-right",
+        "size": 185
       },
       {
         "tag": "p",
@@ -1112,7 +1179,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/circle-ochre.svg",
-        "alt": "Sumi circle"
+        "alt": "Sumi circle",
+        "layout": "float-left",
+        "size": 170
       },
       {
         "tag": "p",
@@ -1153,17 +1222,19 @@
         "text": "apaśuśaktiḥ = becomes like one in whom the binding power existing in the limited self is absent."
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/labyrinth-moss.svg",
-        "alt": "Sumi labyrinth"
-      },
-      {
         "tag": "p",
         "text": "1. Are we Truly Free?"
       },
       {
         "tag": "p",
         "text": "An ancient question continues to perplex philosophers, scientists, and spiritual seekers today: Do we really choose, are we truly free to decide, or are we merely acting out the script of some universal playwright, or our biology and the randomness of circumstance?  The idea that free will is an illusion is rooted in some of the most refined spiritual philosophies and is also aligned with a plethora of contemporary neuroscientific work. On the surface, this idea might seem quite menacing, almost nihilistic, that nothing I or others do is under our control and therefore we can harm and exploit without ever needing to assign responsibility. But what if, this realization, rather than a cause of despair, was a means for liberation? What if by realizing the deeply interpenetrating nature of all things, from neurons to cosmic consciousness, of essential oneness, served as the fundamental ground to live in greater harmony, compassion, and acceptance?"
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/labyrinth-moss.svg",
+        "alt": "Sumi labyrinth",
+        "layout": "float-right",
+        "size": 160
       },
       {
         "tag": "p",
@@ -1203,13 +1274,15 @@
         "href": "https://direct.mit.edu/books/book/4462/Elbow-RoomThe-Varieties-of-Free-Will-Worth-Wanting"
       },
       {
-        "tag": "p",
-        "text": "Yet this view has deep logical inconsistencies. Aligning our actions to our desires and intentions might be more coherent, perhaps even resulting in happiness, but those desires and intentions are not our own. Every desire we have today is shaped by biological or social forces, I might desire a wonderful life, however I define it, but certainly that definition is based on biological and psychological needs which are clearly outside of my choosing. If we are brave enough to stretch our minds to the point, we can touch the truth that all of this was beyond any personal choosing. And rather than being depressing, this is a cause for liberation."
-      },
-      {
         "tag": "img",
         "src": "sumi/wc/eye-plum.svg",
-        "alt": "Sumi eye"
+        "alt": "Sumi eye",
+        "layout": "float-left",
+        "size": 135
+      },
+      {
+        "tag": "p",
+        "text": "Yet this view has deep logical inconsistencies. Aligning our actions to our desires and intentions might be more coherent, perhaps even resulting in happiness, but those desires and intentions are not our own. Every desire we have today is shaped by biological or social forces, I might desire a wonderful life, however I define it, but certainly that definition is based on biological and psychological needs which are clearly outside of my choosing. If we are brave enough to stretch our minds to the point, we can touch the truth that all of this was beyond any personal choosing. And rather than being depressing, this is a cause for liberation."
       },
       {
         "tag": "p",
@@ -1243,7 +1316,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/feather-indigo.svg",
-        "alt": "Sumi feather"
+        "alt": "Sumi feather",
+        "layout": "break",
+        "size": 185
       },
       {
         "tag": "p",
@@ -1266,17 +1341,19 @@
         "text": "Compassion for Others: Understanding that others, too, are the product of circumstances beyond their control fosters deeper compassion. When someone acts out of anger, fear, or confusion, we can recognize that they are not choosing those actions in a vacuum—they are expressions of a vast network of causes. Just as we seek to be understood, we can extend that same understanding to others, breaking down the walls of judgment."
       },
       {
-        "tag": "img",
-        "src": "sumi/wc/water-sage.svg",
-        "alt": "Sumi water"
-      },
-      {
         "tag": "p",
         "text": "6. Moving with Nature Instead of Against It"
       },
       {
         "tag": "p",
         "text": "Accepting that the ego has not real freedom is freedom, freedom from the illusion of control. Life is not something we need to battle or control, but something we can flow with. Like the ripple in the pond, we are the motion of the universe. The Śiva Sūtra reminds us that when we recall our pure essence, śuddha tattva, we transcend the illusion of separateness and realize that we are part of the cosmic dance."
+      },
+      {
+        "tag": "img",
+        "src": "sumi/wc/water-sage.svg",
+        "alt": "Sumi water",
+        "layout": "float-right",
+        "size": 170
       },
       {
         "tag": "p",
@@ -1305,7 +1382,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/star-terracotta.svg",
-        "alt": "Sumi star"
+        "alt": "Sumi star",
+        "layout": "break",
+        "size": 185
       },
       {
         "tag": "p",
@@ -1381,7 +1460,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/eye-indigo.svg",
-        "alt": "Sumi eye"
+        "alt": "Sumi eye",
+        "layout": "break",
+        "size": 175
       },
       {
         "tag": "p",
@@ -1403,7 +1484,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/mountain-dusty-rose.svg",
-        "alt": "Sumi mountain"
+        "alt": "Sumi mountain",
+        "layout": "float-right",
+        "size": 130
       },
       {
         "tag": "p",
@@ -1422,7 +1505,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/trail-moss.svg",
-        "alt": "Sumi trail"
+        "alt": "Sumi trail",
+        "layout": "float-left",
+        "size": 185
       },
       {
         "tag": "p",
@@ -1510,7 +1595,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/tides-plum.svg",
-        "alt": "Sumi tides"
+        "alt": "Sumi tides",
+        "layout": "float-left",
+        "size": 145
       },
       {
         "tag": "p",
@@ -1729,7 +1816,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/infinity-indigo.svg",
-        "alt": "Sumi infinity"
+        "alt": "Sumi infinity",
+        "layout": "float-left",
+        "size": 175
       },
       {
         "tag": "p",
@@ -1747,7 +1836,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/spiral-slate.svg",
-        "alt": "Sumi spiral"
+        "alt": "Sumi spiral",
+        "layout": "float-right",
+        "size": 135
       },
       {
         "tag": "p",
@@ -1760,7 +1851,9 @@
       {
         "tag": "img",
         "src": "sumi/wc/mandala-dusty-rose.svg",
-        "alt": "Sumi mandala"
+        "alt": "Sumi mandala",
+        "layout": "break",
+        "size": 180
       },
       {
         "tag": "p",

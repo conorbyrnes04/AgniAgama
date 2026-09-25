@@ -193,6 +193,34 @@ section { padding-block: clamp(3.5rem, 8vw, 7rem); }
 .prose .verse p { margin: 0 0 0.1em; line-height: 1.55; font-size: 1.05rem; }
 .prose .verse p:empty { height: 0.7em; }
 
+/* Pratibha sumi marks (see Blocks.astro): watercolor glyphs that either float
+   inline with the text (text hugs the silhouette via shape-outside) or sit
+   centered as a paragraph break. --s is the desktop width set per mark. */
+.prose { display: flow-root; } /* the last float always clears before the article ends */
+.prose img.sumi { border-radius: 0; height: auto; aspect-ratio: 1 / 1; }
+.prose img.sumi-break { width: var(--s, 180px); max-width: 60%; margin: 2.2em auto; clear: both; }
+.prose img.sumi-float {
+  width: var(--s, 160px);
+  max-width: 42%;
+  margin-top: 0.4em;
+  margin-bottom: 0.7em;
+  shape-margin: 0.9em;
+  shape-image-threshold: 0.1;
+}
+.prose img.sumi-left { float: left; margin-left: 0; margin-right: 1.1em; }
+.prose img.sumi-right { float: right; margin-right: 0; margin-left: 1.1em; }
+.prose h2, .prose h3, .prose h4, .prose blockquote, .prose .verse,
+.prose ul, .prose li, .prose img:not(.sumi) { clear: both; }
+@media (max-width: 640px) {
+  .prose img.sumi-float { width: calc(84px + (var(--s, 160px) - 130px) / 3); margin-top: 0.3em; shape-margin: 0.7em; }
+  .prose img.sumi-left { margin-right: 0.9em; }
+  .prose img.sumi-right { margin-left: 0.9em; }
+  .prose img.sumi-break { width: 120px; margin: 1.8em auto; }
+}
+@media (max-width: 379px) {
+  .prose img.sumi-float { width: calc(78px + (var(--s, 160px) - 130px) / 3.5); }
+}
+
 /* Reveal-on-scroll */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
 .reveal.in { opacity: 1; transform: none; }
