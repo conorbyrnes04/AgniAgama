@@ -21,6 +21,14 @@ export interface EventItem {
 
 export const events: EventItem[] = [
   {
+    title: 'Sunday Deep Dive',
+    dates: 'Oct 4, 2026',
+    location: 'Jivamukti Yoga Paris',
+    copy: 'A two-hour Jivamukti class immersed in ambient and downtempo soundscapes, with a live DJ set by PR3S3NT. 100% of funds go to the Jango Project.',
+    link: { label: 'Jivamukti Yoga Paris Schedule', href: 'https://www.jivamuktiyoga.fr/schedule/' },
+    image: 'event-sunday-deep-dive.jpg',
+  },
+  {
     title: 'Himalayan Pilgrimage Retreat',
     dates: 'Oct 10 – 17, 2026',
     location: 'Pokhara & Annapurna, Nepal',
